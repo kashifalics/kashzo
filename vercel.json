@@ -1,27 +1,16 @@
 {
-    "services": {
-        "frontend": {
-            "root": ".",
-            "framework": "nextjs"
-        },
-        "backend": {
-            "root": "backend"
-        }
+  "name": "kashzo",
+  "buildCommand": "npm run build",
+  "framework": "nextjs",
+  "nodejs_version": "20",
+  "env": {
+    "NEXT_PUBLIC_SITE_URL": {
+      "description": "The public URL of your site",
+      "required": true
     },
-    "rewrites": [
-        {
-            "source": "/api/backend(/.*)?",
-            "destination": {
-                "type": "service",
-                "service": "backend"
-            }
-        },
-        {
-            "source": "/(.*)",
-            "destination": {
-                "type": "service",
-                "service": "frontend"
-            }
-        }
-    ]
+    "NEXT_PUBLIC_GA4_ID": {
+      "description": "Google Analytics 4 ID (optional)",
+      "required": false
+    }
+  }
 }

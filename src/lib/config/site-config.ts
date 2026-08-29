@@ -78,7 +78,7 @@ export const siteMetadata = {
  * Feature flags
  */
 export const features = {
-  chatbotEnabled: true,
+  chatbotEnabled: false, // Disabled for public launch
   analyticsEnabled: true,
   testimonialsSectionEnabled: false, // Enable when testimonials are approved
   teamSectionEnabled: false, // Enable when team info is available
