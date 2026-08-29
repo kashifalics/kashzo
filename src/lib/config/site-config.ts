@@ -1,5 +1,17 @@
 import type { SiteConfig } from '@/lib/types';
 
+export const socialLinks = {
+  linkedin: '#',
+  github: '#',
+  facebook: '#',
+  instagram: '#',
+};
+
+export const whatsappConfig = {
+  number: '447405104696',
+  message: "Hi Kashzo Solutions, I'm interested in your services and would like to discuss a project.",
+};
+
 /**
  * Global site configuration for Kashzo Solutions
  * Update this file with final company information
@@ -14,14 +26,7 @@ export const siteConfig: SiteConfig = {
     email: 'info@kashzo.com', // TODO: Update with actual email
     phone: undefined, // TODO: Add phone if needed
   },
-  social: {
-    linkedin: '', // TODO: Add LinkedIn URL
-    facebook: '', // TODO: Add Facebook URL
-    instagram: '', // TODO: Add Instagram URL
-    x: '', // TODO: Add X URL
-    github: '', // TODO: Add GitHub URL (optional)
-    youtube: '', // TODO: Add YouTube URL (optional)
-  },
+  social: socialLinks,
   colors: {
     primary: {
       900: '#04111F', // Darkest navy
