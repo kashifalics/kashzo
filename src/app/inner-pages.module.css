@@ -14,3 +14,4 @@
 @media(prefers-reduced-motion:reduce){.serviceCard,.projectCard,.projectVisual,.cardLink::after{transition:none}}
 .cardGrid>div:last-child:nth-child(3n+1){grid-column:2}
 @media(max-width:1050px){.cardGrid>div:last-child:nth-child(3n+1){grid-column:auto}}
+.projectCard h2{display:-webkit-box;min-height:55px;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2}.projectCard>p{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:3}.projectCard .tags{margin-top:18px;padding-top:0}.projectCta{margin-top:auto}
