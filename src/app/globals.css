@@ -63,6 +63,7 @@
 html {
   scroll-behavior: smooth;
   color: var(--color-neutral-900);
+  background: var(--color-primary-900);
 }
 
 body {
@@ -72,6 +73,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+:focus-visible { outline: 3px solid var(--color-accent-main); outline-offset: 3px; }
 
 /* Selection styling */
 ::selection {
@@ -219,12 +222,5 @@ button {
   * {
     transition: none !important;
     animation: none !important;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--color-neutral-950);
-    color: var(--color-neutral-50);
   }
 }

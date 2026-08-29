@@ -1,6 +1,5 @@
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { Container, Section, Grid } from '@/components/ui/Container';
+import { Container, Section } from '@/components/ui/Container';
 import { LinkButton } from '@/components/ui/Button';
 import { projects } from '@/lib/data/projects';
 

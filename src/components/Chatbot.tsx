@@ -27,6 +27,7 @@ export function Chatbot() {
   const [input, setInput] = useState('');
   const [isSending, setIsSending] = useState(false);
   const bottomRef = useRef<HTMLDivElement | null>(null);
+  const messageId = useRef(0);
 
   const promptExamples = useMemo(() => suggestions, []);
 
@@ -37,7 +38,7 @@ export function Chatbot() {
     }
 
     const userMessage: Message = {
-      id: `user-${Date.now()}`,
+      id: `user-${++messageId.current}`,
       role: 'user',
       content: trimmed,
     };
@@ -55,7 +56,7 @@ export function Chatbot() {
 
       const data = await response.json();
       const assistantMessage: Message = {
-        id: `assistant-${Date.now()}`,
+        id: `assistant-${++messageId.current}`,
         role: 'assistant',
         content:
           data.answer ||
@@ -63,11 +64,11 @@ export function Chatbot() {
       };
 
       setMessages((current) => [...current, assistantMessage]);
-    } catch (error) {
+    } catch {
       setMessages((current) => [
         ...current,
         {
-          id: `assistant-${Date.now()}`,
+          id: `assistant-${++messageId.current}`,
           role: 'assistant',
           content:
             'I hit a temporary issue. You can still send a project brief via the contact page or email us directly.',

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Container, Section, Grid } from '@/components/ui/Container';
 
 const insights = [
