@@ -4,6 +4,7 @@ import { Container, Section, Grid } from '@/components/ui/Container';
 import { LinkButton } from '@/components/ui/Button';
 import { services } from '@/lib/config/services';
 import { projects } from '@/lib/data/projects';
+import { Card } from '@/components/ui/Card';
 
 export async function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
@@ -48,15 +49,15 @@ export default async function ServiceDetailPage({
               <h2 className="text-h2 mb-6 text-primary-900">What this service includes</h2>
               <div className="space-y-4">
                 {service.subservices.map((sub) => (
-                  <div key={sub.title} className="border border-neutral-200 rounded-xl p-5">
+                  <Card key={sub.title} border shadow="sm" padding="md">
                     <h3 className="text-h4 mb-2 text-primary-900">{sub.title}</h3>
                     {sub.description && <p className="text-neutral-600">{sub.description}</p>}
-                  </div>
+                  </Card>
                 ))}
               </div>
             </div>
 
-            <aside className="rounded-2xl border border-primary-100 bg-primary-50 p-6">
+            <aside className="rounded-3xl border border-primary-100 bg-primary-50 p-7 shadow-sm">
               <h3 className="text-h4 mb-4 text-primary-900">Typical outcomes</h3>
               <ul className="space-y-3 text-neutral-700">
                 <li>• Better operational efficiency</li>
@@ -82,16 +83,16 @@ export default async function ServiceDetailPage({
 
           <Grid cols={3} gap="lg">
             {relatedProjects.slice(0, 3).map((project) => (
-              <article key={project.id} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+              <Card key={project.id} hover border shadow="sm" padding="lg" className="flex min-h-72 flex-col">
                 <p className="text-xs font-semibold uppercase tracking-[0.15em] text-primary-600 mb-2">
                   {project.category}
                 </p>
                 <h3 className="text-h4 mb-2 text-primary-900">{project.title}</h3>
                 <p className="text-neutral-600 mb-4">{project.summary}</p>
-                <Link href={`/work/${project.slug}`} className="text-sm font-semibold text-primary-700 hover:text-primary-900">
+                <Link href={`/work/${project.slug}`} className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-primary-700 hover:text-primary-900">
                   Read case study →
                 </Link>
-              </article>
+              </Card>
             ))}
           </Grid>
         </Container>

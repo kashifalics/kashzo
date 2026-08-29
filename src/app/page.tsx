@@ -54,14 +54,14 @@ export default function Home() {
       </div>
     </section>
 
-    <section className={`${styles.section} ${styles.work}`}>
+    <section id="selected-work" className={`${styles.section} ${styles.work}`}>
       <div className={styles.shell}>
         <Reveal className={styles.sectionTop}><div><SectionTitle label="Selected work" title="Engineering in production." copy="Real systems built for real business use—from intelligent automation to platforms people depend on."/></div><Link href="/work" className={styles.textLink}>View all work <ArrowUpRight size={17}/></Link></Reveal>
-        <div className={styles.projectGrid}>{selectedProjects.map((project,index)=><Reveal key={project.id} delay={(index%2)*.08}><Link href={`/work/${project.slug}`} className={styles.project}><div className={styles.projectContent}><p className={styles.meta}>{project.category} / {project.industry}</p><h3>{project.title}</h3><p>{project.summary}</p><div className={styles.tags}>{project.technologies.slice(0,5).map(tech=><span key={tech}>{tech}</span>)}</div></div></Link></Reveal>)}</div>
+        <div className={styles.projectGrid}>{selectedProjects.map((project,index)=><Reveal key={project.id} delay={(index%3)*.06}><Link href={`/work/${project.slug}`} className={styles.project}><div className={styles.projectVisual} aria-hidden="true"><span/><span/><span/></div><div className={styles.projectContent}><p className={styles.meta}>{project.category} / {project.industry}</p><h3>{project.title}</h3><p>{project.summary}</p><div className={styles.tags}>{project.technologies.slice(0,4).map(tech=><span key={tech}>{tech}</span>)}</div><span className={styles.projectLink}>View Case Study <ArrowRight size={15}/></span></div></Link></Reveal>)}</div>
       </div>
     </section>
 
-    <section className={`${styles.section} ${styles.services}`}>
+    <section id="services-overview" className={`${styles.section} ${styles.services}`}>
       <div className={styles.shell}><Reveal><SectionTitle dark label="Capabilities" title="Four disciplines. One delivery system." copy="Strategy, engineering and growth expertise aligned around outcomes—not hand-offs."/></Reveal><div className={styles.serviceGrid}>{services.map((service,index)=><Reveal key={service.id} delay={index*.07}><Link className={styles.service} href={`/services/${service.slug}`}><span className={styles.serviceNum}>0{index+1}</span><h3>{service.title.replace(' & Growth','')}</h3><div className={styles.capabilities}>{capabilityNames[index].map(item=><span key={item}>{item}</span>)}</div></Link></Reveal>)}</div></div>
     </section>
 

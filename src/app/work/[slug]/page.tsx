@@ -47,7 +47,7 @@ export default async function WorkDetailPage({
               <p className="text-neutral-700">{project.outcome}</p>
             </div>
 
-            <div className="rounded-2xl border border-primary-100 bg-primary-50 p-6">
+            <div className="rounded-3xl border border-primary-100 bg-primary-50 p-7 shadow-sm">
               <h3 className="text-h4 mb-4 text-primary-900">What was built</h3>
               <ul className="space-y-3 text-neutral-700">
                 {project.features.map((feature) => (

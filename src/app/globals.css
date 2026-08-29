@@ -53,6 +53,15 @@
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shared card system */
+  --card-radius: 1.5rem;
+  --card-visual-radius: 1rem;
+  --card-border-light: rgba(7, 26, 45, 0.1);
+  --card-border-dark: rgba(184, 204, 236, 0.14);
+  --card-shadow: 0 12px 34px rgba(7, 26, 45, 0.07);
+  --card-shadow-hover: 0 20px 48px rgba(7, 26, 45, 0.13);
+  --card-transition: 280ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ==================== Base Styles ==================== */

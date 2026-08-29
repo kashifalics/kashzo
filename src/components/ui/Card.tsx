@@ -38,11 +38,11 @@ export function Card({
   return (
     <div
       className={cn(
-        'bg-white rounded-lg',
+        'bg-white rounded-3xl [box-shadow:var(--card-shadow)]',
         paddingClasses[padding],
         shadowClasses[shadow],
         border && 'border border-neutral-200',
-        hover && 'transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer',
+        hover && 'transition-all duration-300 hover:-translate-y-1 hover:border-accent-500 hover:[box-shadow:var(--card-shadow-hover)] cursor-pointer',
         className
       )}
     >
@@ -117,10 +117,10 @@ export function ProjectCard({
       hover
       padding="none"
       shadow="md"
-      className={cn('overflow-hidden flex flex-col h-full', className)}
+      className={cn('overflow-hidden flex flex-col h-full rounded-3xl', className)}
     >
       {image && (
-        <div className="relative w-full h-48 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+        <div className="relative m-3 mb-0 h-44 overflow-hidden rounded-2xl bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
           {/* Placeholder for project image */}
           <div className="text-center text-primary-600">
             <svg
