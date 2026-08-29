@@ -36,9 +36,10 @@ export default function Home() {
       <div className={`${styles.shell} ${styles.heroGrid}`}>
         <div>
           <Reveal><p className={styles.eyebrow}>AI systems · software engineering · digital growth</p></Reveal>
-          <Reveal delay={.08}><h1>We engineer intelligent digital products <em>that perform.</em></h1></Reveal>
+          <Reveal delay={.08}><h1><span>We engineer</span><span>intelligent digital products</span><em>that perform.</em></h1></Reveal>
           <Reveal delay={.16}><p className={styles.heroCopy}>AI systems, production software, mobile products and digital growth solutions engineered for real businesses.</p></Reveal>
           <Reveal delay={.24} className={styles.buttons}><Link href="/contact" className={styles.primary}>Start a Project <ArrowUpRight size={17}/></Link><Link href="/work" className={styles.secondary}>Explore Our Work <ArrowRight size={17}/></Link></Reveal>
+          <Reveal delay={.3} className={styles.heroProof}><span><i aria-hidden="true">✓</i> 20+ years team expertise</span><span><i aria-hidden="true">✓</i> Production-focused delivery</span><span><i aria-hidden="true">✓</i> International experience</span></Reveal>
         </div>
         <Reveal delay={.2} y={14}><HeroVisual/></Reveal>
       </div>
