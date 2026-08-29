@@ -18,7 +18,7 @@
 .heroProof{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:34px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12)}
 .heroProof span{display:inline-flex;align-items:center;gap:7px;color:#aebbc6;font-size:11px;font-weight:650}
 .heroProof i{display:grid;width:17px;height:17px;place-items:center;border:1px solid rgba(199,161,90,.65);border-radius:50%;color:#d7b875;font-size:10px;font-style:normal}
-@media(max-width:900px){.heroMedia{min-height:430px}}
+@media(max-width:900px){.heroGrid{grid-template-columns:1fr}.heroMedia{min-height:430px}}
 @media(max-width:640px){.hero{padding:58px 0 50px}.hero h1{font-size:clamp(41px,12.5vw,56px)}.heroProof{display:grid;gap:10px}.heroMedia{min-height:310px}.heroMediaCaption{right:16px;bottom:15px;left:16px}}
 
 /* Shared premium card language */
@@ -43,3 +43,4 @@
 .whyGrid{grid-template-columns:repeat(3,1fr)}
 @media(max-width:900px){.processGrid{grid-template-columns:repeat(2,1fr)}.whyGrid{grid-template-columns:1fr}}
 @media(max-width:640px){.processGrid{grid-template-columns:1fr}}
+@media(max-width:640px){.section{padding:56px 0}.heading{font-size:clamp(32px,10vw,42px);line-height:1.08}.lede{margin-top:18px}.hero{padding:52px 0 58px}.heroGrid{gap:34px}.hero h1{font-size:clamp(37px,11.5vw,48px);line-height:1.03;letter-spacing:-.045em}.heroCopy{font-size:16px!important}.buttons{gap:10px;margin-top:28px}.primary,.secondary{min-height:48px;padding:13px 17px}.heroMedia{min-height:0;aspect-ratio:16/10}.heroMediaCaption span{padding:6px 8px;font-size:9px}.projectContent{min-height:0;padding:20px 14px 12px}.project h3{display:block;min-height:0;overflow:visible;-webkit-line-clamp:unset}.project p{display:block;overflow:visible;-webkit-line-clamp:unset}.projectLink{min-height:44px;align-items:center;padding-top:14px}.service{min-height:0;padding:24px 22px}.service h3{margin:26px 0 16px}.step p{max-width:none}.faqList summary{min-height:60px;align-items:center;padding:18px 0;line-height:1.45}.faqList details p{padding-right:8px}.closing{padding:64px 0}.closing h2{font-size:clamp(36px,11vw,46px)}.closing p{font-size:16px!important}}

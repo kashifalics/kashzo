@@ -13,7 +13,7 @@ const selectedIds = ['hospitality', 'education', 'health-wellness', 'ecommerce',
 const selectedIndustries = selectedIds.map((id) => industries.find((industry) => industry.id === id)).filter((industry): industry is NonNullable<typeof industry> => Boolean(industry));
 
 export default function IndustriesPage() {
-  return <main className={styles.page}>
+  return <div className={styles.page}>
     <section className={styles.hero}><div className={`${styles.shell} ${styles.heroInner}`}>
       <Reveal><p className={styles.eyebrow}>Industries</p><h1>Technology shaped around how the business works.</h1><p className={styles.heroCopy}>We bring a product and engineering perspective to sectors where workflow, data and customer experience create meaningful opportunities.</p></Reveal>
       <Reveal delay={0.12} className={styles.heroAside}><strong>Context before templates</strong><p>We learn the operation first, then shape the system around its users, constraints and goals.</p></Reveal>
@@ -25,5 +25,5 @@ export default function IndustriesPage() {
     </div></section>
 
     <section className={styles.cta}><div className={styles.shell}><Reveal><h2>Your market is not a template.</h2><p>Tell us about the workflow and outcome. We’ll assess where technology can create practical value.</p><Link href="/contact" className={styles.ctaLink}>Discuss your business →</Link></Reveal></div></section>
-  </main>;
+  </div>;
 }

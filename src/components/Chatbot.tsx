@@ -85,7 +85,7 @@ export function Chatbot() {
   };
 
   return (
-    <div className="rounded-3xl border border-neutral-200 bg-white shadow-sm overflow-hidden">
+    <div className="overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm">
       <div className="border-b border-neutral-200 bg-primary-50 px-5 py-4">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-800 text-sm font-bold text-white">
@@ -98,15 +98,15 @@ export function Chatbot() {
         </div>
       </div>
 
-      <div className="flex h-[420px] flex-col">
-        <div className="flex-1 space-y-4 overflow-y-auto p-5">
+      <div className="flex h-[min(520px,calc(100svh-7rem))] min-h-[440px] flex-col sm:h-[520px]">
+        <div className="flex-1 space-y-4 overflow-y-auto p-4 sm:p-5" role="log" aria-live="polite" aria-label="Chat messages">
           {messages.map((message) => (
             <div
               key={message.id}
               className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
             >
               <div
-                className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
+                className={`max-w-[88%] break-words rounded-2xl px-4 py-3 text-sm leading-relaxed sm:max-w-[85%] ${
                   message.role === 'user'
                     ? 'bg-primary-800 text-white'
                     : 'bg-neutral-100 text-neutral-800'
@@ -119,28 +119,30 @@ export function Chatbot() {
           <div ref={bottomRef} />
         </div>
 
-        <div className="border-t border-neutral-200 bg-neutral-50 p-4">
+        <div className="border-t border-neutral-200 bg-neutral-50 p-3 sm:p-4">
           <div className="mb-3 flex flex-wrap gap-2">
             {promptExamples.map((example) => (
               <button
                 key={example}
                 type="button"
                 onClick={() => void sendMessage(example)}
-                className="rounded-full border border-primary-200 bg-white px-3 py-1.5 text-xs font-medium text-primary-700 hover:bg-primary-50"
+                className="min-h-11 rounded-full border border-primary-200 bg-white px-3 py-2 text-left text-xs font-medium text-primary-700 hover:bg-primary-50"
               >
                 {example}
               </button>
             ))}
           </div>
 
-          <form onSubmit={handleSubmit} className="flex gap-2">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-2 sm:flex-row">
+            <label htmlFor="kashzo-chat-input" className="sr-only">Describe your project</label>
             <input
+              id="kashzo-chat-input"
               value={input}
               onChange={(event) => setInput(event.target.value)}
               placeholder="Describe your project..."
-              className="flex-1 rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm outline-none focus:border-primary-400"
+              className="min-w-0 flex-1 rounded-xl border border-neutral-200 bg-white px-4 py-3 text-base outline-none focus:border-primary-400 sm:text-sm"
             />
-            <Button type="submit" variant="primary" size="md" loading={isSending}>
+            <Button type="submit" variant="primary" size="md" loading={isSending} className="w-full sm:w-auto">
               Send
             </Button>
           </form>

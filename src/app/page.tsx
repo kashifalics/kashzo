@@ -56,7 +56,7 @@ export default function Home() {
           </Reveal>
         </div>
         <Reveal delay={0.18} y={14} className={styles.heroMedia}>
-          <Image src="/images/kashzo-ai-systems-hero.webp" alt="A refined digital workspace representing connected AI and software systems" fill priority sizes="(max-width: 900px) 100vw, 46vw" className={styles.heroImage} />
+          <Image src="/images/kashzo-ai-systems-hero.webp" alt="A refined digital workspace representing connected AI and software systems" fill preload sizes="(max-width: 900px) 100vw, 46vw" className={styles.heroImage} />
           <div className={styles.heroMediaCaption}><span>Strategy</span><span>Engineering</span><span>Delivery</span></div>
         </Reveal>
       </div>

@@ -25,7 +25,7 @@ export function Card({
     none: '',
     sm: 'p-4',
     md: 'p-6',
-    lg: 'p-8',
+    lg: 'p-6 sm:p-8',
   };
 
   const shadowClasses = {

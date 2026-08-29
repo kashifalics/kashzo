@@ -50,8 +50,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={`${inter.className} flex min-h-screen flex-col bg-white text-neutral-900`}>
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1" tabIndex={-1}>{children}</main>
         <Footer />
         <WhatsAppButton />
       </body>

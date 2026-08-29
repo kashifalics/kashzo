@@ -73,9 +73,12 @@ html {
   scroll-behavior: smooth;
   color: var(--color-neutral-900);
   background: var(--color-primary-900);
+  overflow-x: clip;
 }
 
 body {
+  min-width: 320px;
+  max-width: 100%;
   background-color: white;
   font-family: var(--font-sans);
   color: var(--color-neutral-900);
@@ -83,7 +86,35 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+main,
+section,
+article,
+aside,
+div {
+  min-width: 0;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
 :focus-visible { outline: 3px solid var(--color-accent-main); outline-offset: 3px; }
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 10px;
+  left: 10px;
+  transform: translateY(-150%);
+  padding: 11px 16px;
+  background: var(--color-accent-main);
+  color: var(--color-primary-900);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.skip-link:focus { transform: translateY(0); }
 
 /* Selection styling */
 ::selection {
@@ -120,6 +151,7 @@ h6 {
   letter-spacing: -0.02em;
   font-feature-settings: 'kern' 1;
   color: var(--color-primary-900);
+  overflow-wrap: break-word;
 }
 
 h1 {
@@ -188,6 +220,13 @@ button {
   transition: all var(--transition-base);
 }
 
+button,
+input,
+select,
+textarea {
+  min-height: 44px;
+}
+
 /* ==================== Utility Classes ==================== */
 .container-max {
   max-width: 80rem;
@@ -232,4 +271,11 @@ button {
     transition: none !important;
     animation: none !important;
   }
+}
+
+@media (max-width: 640px) {
+  h1 { font-size: clamp(2.25rem, 10vw, 3rem); line-height: 1.08; }
+  h2 { font-size: clamp(1.85rem, 8vw, 2.35rem); line-height: 1.12; }
+  h3 { font-size: clamp(1.4rem, 6vw, 1.8rem); }
+  p { line-height: 1.68; }
 }

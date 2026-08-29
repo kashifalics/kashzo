@@ -101,7 +101,7 @@ export function ContactForm() {
         </label>
       </div>
 
-      <div className={styles.grid}>
+      <div className={`${styles.grid} ${styles.single}`}>
         <label className={styles.field}>
           Service
           <select

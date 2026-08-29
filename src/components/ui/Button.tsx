@@ -32,7 +32,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseClasses =
-      'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
+      'inline-flex min-h-11 items-center justify-center whitespace-normal text-center font-semibold rounded-lg transition-all duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
 
     const variantClasses = {
       primary:
@@ -120,7 +120,7 @@ export const LinkButton = React.forwardRef<
     ref
   ) => {
     const baseClasses =
-      'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 no-underline';
+      'inline-flex min-h-11 items-center justify-center whitespace-normal text-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 no-underline';
 
     const variantClasses = {
       primary:

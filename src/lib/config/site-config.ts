@@ -1,10 +1,9 @@
 import type { SiteConfig } from '@/lib/types';
 
 export const socialLinks = {
-  linkedin: '#',
-  github: '#',
-  facebook: '#',
-  instagram: '#',
+  linkedin: 'https://www.linkedin.com/company/kashzo-solutions/',
+  facebook: 'https://www.facebook.com/Kashzosolutions/',
+  instagram: 'https://www.instagram.com/kashzosolutions/',
 };
 
 export const whatsappConfig = {

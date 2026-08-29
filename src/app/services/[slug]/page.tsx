@@ -64,7 +64,7 @@ export default async function ServiceDetailPage({
               </div>
             </div>
 
-            <aside className="rounded-3xl border border-primary-100 bg-primary-50 p-7 shadow-sm">
+            <aside className="rounded-3xl border border-primary-100 bg-primary-50 p-5 shadow-sm sm:p-7">
               <h3 className="text-h4 mb-4 text-primary-900">Typical outcomes</h3>
               <ul className="space-y-3 text-neutral-700">
                 {outcomesByService[service.slug].map((outcome) => <li key={outcome}>• {outcome}</li>)}
@@ -87,13 +87,13 @@ export default async function ServiceDetailPage({
 
           <Grid cols={3} gap="lg">
             {relatedProjects.slice(0, 3).map((project) => (
-              <Card key={project.id} hover border shadow="sm" padding="lg" className="flex min-h-72 flex-col">
+              <Card key={project.id} hover border shadow="sm" padding="lg" className="flex min-h-0 flex-col lg:min-h-72">
                 <p className="text-xs font-semibold uppercase tracking-[0.15em] text-primary-600 mb-2">
                   {project.category}
                 </p>
                 <h3 className="text-h4 mb-2 text-primary-900">{project.title}</h3>
                 <p className="text-neutral-600 mb-4">{project.summary}</p>
-                <Link href={`/work/${project.slug}`} className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-primary-700 hover:text-primary-900">
+                <Link href={`/work/${project.slug}`} className="mt-auto inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-primary-700 hover:text-primary-900">
                   Read case study →
                 </Link>
               </Card>

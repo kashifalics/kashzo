@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  return <main className={styles.page}>
+  return <div className={styles.page}>
     <section className={styles.hero}><div className={`${styles.shell} ${styles.heroInner}`}>
       <Reveal><p className={styles.eyebrow}>Capabilities</p><h1>Focused expertise from idea to production.</h1><p className={styles.heroCopy}>AI systems, web platforms, mobile products and digital growth—connected through one practical delivery approach.</p></Reveal>
       <Reveal delay={0.12} className={styles.heroAside}><strong>One accountable partner</strong><p>Product decisions, engineering and launch stay connected instead of passing between disconnected teams.</p></Reveal>
@@ -22,5 +22,5 @@ export default function ServicesPage() {
     </div></section>
 
     <section className={styles.cta}><div className={styles.shell}><Reveal><h2>Not sure where your requirement fits?</h2><p>Start with the workflow and commercial goal. We’ll help define the right technical scope.</p><Link href="/contact" className={styles.ctaLink}>Book a discovery conversation →</Link></Reveal></div></section>
-  </main>;
+  </div>;
 }

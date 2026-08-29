@@ -16,7 +16,7 @@ const principles = [
 ];
 
 export default function AboutPage() {
-  return <main className={styles.page}>
+  return <div className={styles.page}>
     <section className={styles.hero}><div className={`${styles.shell} ${styles.heroInner}`}>
       <Reveal><p className={styles.eyebrow}>About Kashzo</p><h1>A focused technology partner for ambitious businesses.</h1><p className={styles.heroCopy}>We combine product judgement, AI engineering and software delivery to turn complex requirements into practical digital products.</p></Reveal>
       <Reveal delay={0.12} className={styles.heroAside}><strong>How we operate</strong><p>Direct collaboration, clear decisions and accountable delivery from the first conversation through launch.</p></Reveal>
@@ -33,5 +33,5 @@ export default function AboutPage() {
     </div></section>
 
     <section className={styles.cta}><div className={styles.shell}><Reveal><h2>Need a team that can own the path to production?</h2><p>Bring us the business problem, an existing system or a focused product brief.</p><Link href="/contact" className={styles.ctaLink}>Start a conversation →</Link></Reveal></div></section>
-  </main>;
+  </div>;
 }
