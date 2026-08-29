@@ -58,6 +58,13 @@ export default async function WorkDetailPage({
                 ))}
               </ul>
 
+              <div className="mt-8 border-t border-primary-100 pt-6">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-primary-600">Core technology</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.slice(0, 6).map((tech) => <span key={tech} className="rounded-full border border-primary-100 bg-white px-3 py-1.5 text-xs text-neutral-700">{tech}</span>)}
+                </div>
+              </div>
+
               <div className="mt-6">
                 <LinkButton href="/contact" variant="primary" size="md">
                   Discuss your project
@@ -68,31 +75,6 @@ export default async function WorkDetailPage({
         </Container>
       </Section>
 
-      <Section padding="xl" background="soft">
-        <Container>
-          <div className="mb-8">
-            <h2 className="text-h2 text-primary-900">Technology stack</h2>
-          </div>
-
-          <div className="flex flex-wrap gap-3">
-            {project.technologies.map((tech) => (
-              <span key={tech} className="rounded-full border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-700">
-                {tech}
-              </span>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      <Section padding="xl" background="white">
-        <Container>
-          <div className="text-center">
-            <LinkButton href="/work" variant="outline" size="lg">
-              Back to all work
-            </LinkButton>
-          </div>
-        </Container>
-      </Section>
     </>
   );
 }

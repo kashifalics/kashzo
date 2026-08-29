@@ -6,6 +6,13 @@ import { services } from '@/lib/config/services';
 import { projects } from '@/lib/data/projects';
 import { Card } from '@/components/ui/Card';
 
+const outcomesByService: Record<string, string[]> = {
+  'ai-machine-learning': ['Automate high-friction workflows', 'Make approved knowledge easier to use', 'Support faster, better-informed decisions'],
+  'web-development': ['Replace fragmented manual processes', 'Create a reliable platform for users and teams', 'Build a maintainable foundation for growth'],
+  'mobile-app-development': ['Put important workflows in users’ hands', 'Deliver a consistent cross-device experience', 'Connect mobile activity to core business systems'],
+  'digital-marketing': ['Create clearer acquisition journeys', 'Connect campaign data and automation', 'Improve conversion through measured iteration'],
+};
+
 export async function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
 }
@@ -48,7 +55,7 @@ export default async function ServiceDetailPage({
             <div>
               <h2 className="text-h2 mb-6 text-primary-900">What this service includes</h2>
               <div className="space-y-4">
-                {service.subservices.map((sub) => (
+                {service.subservices.slice(0, 8).map((sub) => (
                   <Card key={sub.title} border shadow="sm" padding="md">
                     <h3 className="text-h4 mb-2 text-primary-900">{sub.title}</h3>
                     {sub.description && <p className="text-neutral-600">{sub.description}</p>}
@@ -60,10 +67,7 @@ export default async function ServiceDetailPage({
             <aside className="rounded-3xl border border-primary-100 bg-primary-50 p-7 shadow-sm">
               <h3 className="text-h4 mb-4 text-primary-900">Typical outcomes</h3>
               <ul className="space-y-3 text-neutral-700">
-                <li>• Better operational efficiency</li>
-                <li>• Clearer business intelligence</li>
-                <li>• Higher-quality product experiences</li>
-                <li>• Scalable systems that evolve with your business</li>
+                {outcomesByService[service.slug].map((outcome) => <li key={outcome}>• {outcome}</li>)}
               </ul>
               <div className="mt-6">
                 <LinkButton href="/contact" variant="primary" size="md">

@@ -1,15 +1,37 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Reveal } from '@/components/motion/Reveal';
 import styles from '../inner-pages.module.css';
 
-export const metadata: Metadata = { title: 'About Kashzo | Engineering for Real Operations', description: 'Learn how Kashzo combines AI engineering, software delivery and product thinking to build reliable digital systems.' };
-const principles = [['01','Clarity over hype','We define the operational problem before choosing technology.'],['02','Production over prototypes','Architecture, security and maintainability are part of the build—not an afterthought.'],['03','Outcomes over output','We connect product decisions to the business result the system must support.'],['04','Partnership beyond launch','Deployment, optimisation and ongoing development are built into how we work.']];
-const metrics = [['20+','Full-stack expertise','Years of engineering experience represented within the team.'],['5+','AI engineering','Years focused on applied AI systems and automation.'],['International','Delivery experience','Working across markets, teams and operating environments.'],['End-to-end','One accountable partner','AI, web, mobile and growth capabilities aligned around delivery.']];
+export const metadata: Metadata = {
+  title: 'About Kashzo | Product and Engineering Partner',
+  description: 'Learn how Kashzo combines product thinking, AI engineering and software delivery to build dependable digital products.',
+};
 
-export default function AboutPage(){return <main className={styles.page}>
-  <section className={styles.hero}><div className={`${styles.shell} ${styles.heroInner}`}><Reveal><p className={styles.eyebrow}>About Kashzo</p><h1>Engineering built around the real operation.</h1><p className={styles.heroCopy}>Kashzo brings together AI engineering, software delivery, product thinking and digital growth to turn complex requirements into dependable systems.</p></Reveal><Reveal delay={.12} className={styles.heroAside}><strong>Our position</strong><p>We are a production-focused technology partner—not a prototype studio or a volume outsourcing agency.</p></Reveal></div></section>
-  <section className={`${styles.section} ${styles.white}`}><div className={`${styles.shell} ${styles.split}`}><Reveal><p className={styles.label}>Who we are</p><h2 className={styles.heading}>Technical depth with product judgement.</h2></Reveal><Reveal delay={.08} className={styles.prose}><p>Our work sits at the intersection of strategy, software engineering and operational delivery. We help teams move from an opportunity or constraint to a system that people can actually use and operate.</p><p>That means understanding workflows, data, users, integrations and deployment conditions before making architecture decisions. The result is technology shaped around the business—not the reverse.</p><div className={styles.principles}>{principles.map(([number,title,copy])=><div className={styles.principle} key={title}><span>{number}</span><div><h3>{title}</h3><p>{copy}</p></div></div>)}</div></Reveal></div></section>
-  <section className={`${styles.section} ${styles.dark}`}><div className={styles.shell}><Reveal><p className={styles.label}>Experience</p><h2 className={styles.heading}>Credibility measured in delivery.</h2><p className={styles.lede}>The experience behind Kashzo spans full-stack engineering, applied AI and international production delivery.</p></Reveal><div className={styles.metricGrid}>{metrics.map(([number,title,copy],index)=><Reveal key={title} delay={index*.06} className={styles.metric}><strong>{number}</strong><h3>{title}</h3><p>{copy}</p></Reveal>)}</div></div></section>
-  <section className={styles.cta}><div className={styles.shell}><Reveal><h2>Need an engineering partner who can own the outcome?</h2><p>Bring us the business problem, existing system or product brief. We’ll help define the practical way forward.</p><Link href="/contact" className={styles.ctaLink}>Start a project →</Link></Reveal></div></section>
- </main>}
+const principles = [
+  ['01', 'Clarity before code', 'We define the operational problem, users and desired outcome before selecting technology.'],
+  ['02', 'Small, visible steps', 'We build in focused increments so priorities, progress and trade-offs remain clear.'],
+  ['03', 'Quality for the real world', 'Security, maintainability and deployment are part of the product—not work left for later.'],
+];
+
+export default function AboutPage() {
+  return <main className={styles.page}>
+    <section className={styles.hero}><div className={`${styles.shell} ${styles.heroInner}`}>
+      <Reveal><p className={styles.eyebrow}>About Kashzo</p><h1>A focused technology partner for ambitious businesses.</h1><p className={styles.heroCopy}>We combine product judgement, AI engineering and software delivery to turn complex requirements into practical digital products.</p></Reveal>
+      <Reveal delay={0.12} className={styles.heroAside}><strong>How we operate</strong><p>Direct collaboration, clear decisions and accountable delivery from the first conversation through launch.</p></Reveal>
+    </div></section>
+
+    <section className={`${styles.section} ${styles.white}`}><div className={`${styles.shell} ${styles.aboutGrid}`}>
+      <Reveal className={styles.aboutMedia}><Image src="/images/kashzo-product-planning.webp" alt="Digital product planning with wireframes and software architecture" fill sizes="(max-width: 900px) 100vw, 48vw" className={styles.aboutImage} /></Reveal>
+      <Reveal delay={0.08} className={styles.prose}><p className={styles.label}>Built for useful outcomes</p><h2 className={styles.heading}>Technical depth with practical product judgement.</h2><p>Our work starts with understanding the workflow, business context and people who will use the product. That foundation guides the architecture, experience and delivery plan.</p><p>Kashzo is intentionally focused: one accountable partner across AI, web, mobile and the growth systems that support a product after launch.</p></Reveal>
+    </div></section>
+
+    <section className={`${styles.section} ${styles.soft}`}><div className={styles.shell}>
+      <Reveal><p className={styles.label}>Working principles</p><h2 className={styles.heading}>A straightforward way to build.</h2></Reveal>
+      <div className={styles.principleCards}>{principles.map(([number, title, copy], index) => <Reveal key={title} delay={index * 0.06} className={styles.principleCard}><span>{number}</span><h3>{title}</h3><p>{copy}</p></Reveal>)}</div>
+    </div></section>
+
+    <section className={styles.cta}><div className={styles.shell}><Reveal><h2>Need a team that can own the path to production?</h2><p>Bring us the business problem, an existing system or a focused product brief.</p><Link href="/contact" className={styles.ctaLink}>Start a conversation →</Link></Reveal></div></section>
+  </main>;
+}

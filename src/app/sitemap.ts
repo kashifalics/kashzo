@@ -6,10 +6,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     '',
     '/about',
-    '/chat',
     '/contact',
     '/industries',
-    '/insights',
     '/services',
     '/work',
     '/privacy-policy',

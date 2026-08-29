@@ -4,7 +4,7 @@ import { siteConfig } from '@/lib/config/site-config';
 import styles from './Footer.module.css';
 
 const serviceLinks = [['AI & Machine Learning','/services/ai-machine-learning'],['Web Development','/services/web-development'],['Mobile App Development','/services/mobile-app-development'],['Digital Marketing','/services/digital-marketing']];
-const companyLinks = [['Home','/'],['About','/about'],['Work','/work'],['Industries','/industries'],['Insights','/insights'],['Contact','/contact']];
+const companyLinks = [['Home','/'],['About','/about'],['Work','/work'],['Industries','/industries'],['Contact','/contact']];
 const legalLinks = [['Privacy Policy','/privacy-policy'],['Cookie Policy','/cookie-policy'],['Terms','/terms']];
 const socialItems: Array<{ key: 'linkedin' | 'github' | 'facebook' | 'instagram'; label: string; icon: ComponentType<SVGProps<SVGSVGElement>> }> = [
   { key: 'linkedin', label: 'LinkedIn', icon: LinkedInIcon }, { key: 'github', label: 'GitHub', icon: GitHubIcon },

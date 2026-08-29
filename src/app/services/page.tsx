@@ -4,12 +4,23 @@ import { Reveal } from '@/components/motion/Reveal';
 import { services } from '@/lib/config/services';
 import styles from '../inner-pages.module.css';
 
-export const metadata: Metadata = { title: 'Services | Kashzo Solutions', description: 'AI, web, mobile and digital growth services engineered for production business environments.' };
-const process=[['01','Discover','Goals, users, workflows and constraints.'],['02','Architect','System boundaries, data and delivery plan.'],['03','Build','Focused implementation in working increments.'],['04','Validate','Quality, security and operational testing.'],['05','Launch','Controlled deployment and enablement.'],['06','Evolve','Optimisation, scaling and ongoing development.']];
+export const metadata: Metadata = {
+  title: 'Services | Kashzo Solutions',
+  description: 'AI, web, mobile and digital growth services engineered for production business environments.',
+};
 
-export default function ServicesPage(){return <main className={styles.page}>
-  <section className={styles.hero}><div className={`${styles.shell} ${styles.heroInner}`}><Reveal><p className={styles.eyebrow}>Capabilities</p><h1>Engineering services built to reach production.</h1><p className={styles.heroCopy}>Four connected disciplines covering intelligent systems, production software, mobile products and measurable digital growth.</p></Reveal><Reveal delay={.12} className={styles.heroAside}><strong>One delivery system</strong><p>Strategy, architecture, implementation and optimisation stay connected from first decision to ongoing operation.</p></Reveal></div></section>
-  <section className={`${styles.section} ${styles.soft}`}><div className={styles.shell}><Reveal><p className={styles.label}>What we build</p><h2 className={styles.heading}>Specialist capabilities without fragmented delivery.</h2></Reveal><div className={styles.cardGrid}>{services.map((service,index)=><Reveal key={service.id} delay={(index%3)*.06}><article className={styles.serviceCard}><div className={styles.serviceTop}><span className={styles.number}>0{index+1}</span><span className={styles.category}>{service.category}</span></div><h2>{service.title}</h2><p>{service.description}</p><ul className={styles.bulletGrid}>{service.subservices.slice(0,4).map(item=><li key={item.title}>{item.title}</li>)}</ul><Link className={styles.cardLink} href={`/services/${service.slug}`}>Explore capability</Link></article></Reveal>)}</div></div></section>
-  <section className={`${styles.section} ${styles.dark}`}><div className={styles.shell}><Reveal><p className={styles.label}>How we work</p><h2 className={styles.heading}>A disciplined path from requirement to reliable system.</h2></Reveal><div className={styles.process}>{process.map(([number,title,copy],index)=><Reveal key={title} delay={index*.05} className={styles.processStep}><span>{number}</span><h3>{title}</h3><p>{copy}</p></Reveal>)}</div></div></section>
-  <section className={styles.cta}><div className={styles.shell}><Reveal><h2>Not sure where your requirement fits?</h2><p>We can assess the workflow, technical constraints and commercial goal before recommending the right engagement.</p><Link href="/contact" className={styles.ctaLink}>Book a discovery conversation →</Link></Reveal></div></section>
- </main>}
+export default function ServicesPage() {
+  return <main className={styles.page}>
+    <section className={styles.hero}><div className={`${styles.shell} ${styles.heroInner}`}>
+      <Reveal><p className={styles.eyebrow}>Capabilities</p><h1>Focused expertise from idea to production.</h1><p className={styles.heroCopy}>AI systems, web platforms, mobile products and digital growth—connected through one practical delivery approach.</p></Reveal>
+      <Reveal delay={0.12} className={styles.heroAside}><strong>One accountable partner</strong><p>Product decisions, engineering and launch stay connected instead of passing between disconnected teams.</p></Reveal>
+    </div></section>
+
+    <section className={`${styles.section} ${styles.soft}`}><div className={styles.shell}>
+      <Reveal><p className={styles.label}>What we build</p><h2 className={styles.heading}>Choose the capability. Keep the delivery connected.</h2></Reveal>
+      <div className={styles.cardGrid}>{services.map((service, index) => <Reveal key={service.id} delay={(index % 2) * 0.06}><article className={styles.serviceCard}><div className={styles.serviceTop}><span className={styles.number}>0{index + 1}</span><span className={styles.category}>{service.category}</span></div><h2>{service.title}</h2><p>{service.description}</p><ul className={styles.bulletGrid}>{service.subservices.slice(0, 3).map((item) => <li key={item.title}>{item.title}</li>)}</ul><Link className={styles.cardLink} href={`/services/${service.slug}`}>Explore capability</Link></article></Reveal>)}</div>
+    </div></section>
+
+    <section className={styles.cta}><div className={styles.shell}><Reveal><h2>Not sure where your requirement fits?</h2><p>Start with the workflow and commercial goal. We’ll help define the right technical scope.</p><Link href="/contact" className={styles.ctaLink}>Book a discovery conversation →</Link></Reveal></div></section>
+  </main>;
+}
