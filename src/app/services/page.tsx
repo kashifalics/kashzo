@@ -1,69 +1,15 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Container, Section, Grid } from '@/components/ui/Container';
-import { LinkButton } from '@/components/ui/Button';
+import { Reveal } from '@/components/motion/Reveal';
 import { services } from '@/lib/config/services';
+import styles from '../inner-pages.module.css';
 
-export default function ServicesPage() {
-  return (
-    <>
-      <Section padding="xl" background="gradient">
-        <Container>
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-600 mb-4">
-              What we do
-            </p>
-            <h1 className="text-h1 mb-6 text-primary-900">Services built for business performance.</h1>
-            <p className="text-body-lg text-neutral-700">
-              From AI strategy to production software and growth systems, we design digital capabilities that operate in the real world.
-            </p>
-          </div>
-        </Container>
-      </Section>
+export const metadata: Metadata = { title: 'Services | Kashzo Solutions', description: 'AI, web, mobile and digital growth services engineered for production business environments.' };
+const process=[['01','Discover','Goals, users, workflows and constraints.'],['02','Architect','System boundaries, data and delivery plan.'],['03','Build','Focused implementation in working increments.'],['04','Validate','Quality, security and operational testing.'],['05','Launch','Controlled deployment and enablement.'],['06','Evolve','Optimisation, scaling and ongoing development.']];
 
-      <Section padding="xl" background="white">
-        <Container>
-          <Grid cols={2} gap="lg">
-            {services.map((service) => (
-              <article key={service.id} className="border border-neutral-200 rounded-2xl p-6 bg-white shadow-sm hover:shadow-md transition-shadow">
-                <div className="mb-4 flex items-center justify-between">
-                  <span className="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-primary-700">
-                    {service.category}
-                  </span>
-                </div>
-                <h2 className="text-h3 mb-3 text-primary-900">{service.title}</h2>
-                <p className="text-neutral-600 mb-6">{service.description}</p>
-
-                <ul className="space-y-2 text-sm text-neutral-700 mb-6">
-                  {service.subservices.slice(0, 4).map((sub) => (
-                    <li key={sub.title} className="flex gap-2">
-                      <span className="text-accent-main">•</span>
-                      <span>{sub.title}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Link href={`/services/${service.slug}`} className="inline-flex items-center text-sm font-semibold text-primary-700 hover:text-primary-900">
-                  View service details →
-                </Link>
-              </article>
-            ))}
-          </Grid>
-        </Container>
-      </Section>
-
-      <Section padding="xl" background="soft">
-        <Container>
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-h2 mb-4 text-primary-900">Need a custom solution?</h2>
-            <p className="text-body-lg text-neutral-700 mb-8">
-              We can scope a system that matches your goals, technical constraints, and delivery realities.
-            </p>
-            <LinkButton href="/contact" variant="primary" size="lg">
-              Book a Discovery Call
-            </LinkButton>
-          </div>
-        </Container>
-      </Section>
-    </>
-  );
-}
+export default function ServicesPage(){return <main className={styles.page}>
+  <section className={styles.hero}><div className={`${styles.shell} ${styles.heroInner}`}><Reveal><p className={styles.eyebrow}>Capabilities</p><h1>Engineering services built to reach production.</h1><p className={styles.heroCopy}>Four connected disciplines covering intelligent systems, production software, mobile products and measurable digital growth.</p></Reveal><Reveal delay={.12} className={styles.heroAside}><strong>One delivery system</strong><p>Strategy, architecture, implementation and optimisation stay connected from first decision to ongoing operation.</p></Reveal></div></section>
+  <section className={`${styles.section} ${styles.soft}`}><div className={styles.shell}><Reveal><p className={styles.label}>What we build</p><h2 className={styles.heading}>Specialist capabilities without fragmented delivery.</h2></Reveal><div className={styles.cardGrid}>{services.map((service,index)=><Reveal key={service.id} delay={(index%2)*.07}><article className={styles.serviceCard}><div className={styles.serviceTop}><span className={styles.number}>0{index+1}</span><span className={styles.category}>{service.category}</span></div><h2>{service.title}</h2><p>{service.description}</p><ul className={styles.bulletGrid}>{service.subservices.slice(0,6).map(item=><li key={item.title}>{item.title}</li>)}</ul><Link className={styles.cardLink} href={`/services/${service.slug}`}>Explore capability →</Link></article></Reveal>)}</div></div></section>
+  <section className={`${styles.section} ${styles.dark}`}><div className={styles.shell}><Reveal><p className={styles.label}>How we work</p><h2 className={styles.heading}>A disciplined path from requirement to reliable system.</h2></Reveal><div className={styles.process}>{process.map(([number,title,copy],index)=><Reveal key={title} delay={index*.05} className={styles.processStep}><span>{number}</span><h3>{title}</h3><p>{copy}</p></Reveal>)}</div></div></section>
+  <section className={styles.cta}><div className={styles.shell}><Reveal><h2>Not sure where your requirement fits?</h2><p>We can assess the workflow, technical constraints and commercial goal before recommending the right engagement.</p><Link href="/contact" className={styles.ctaLink}>Book a discovery conversation →</Link></Reveal></div></section>
+ </main>}

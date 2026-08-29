@@ -1,82 +1,15 @@
-import { Container, Section, Grid } from '@/components/ui/Container';
-import { LinkButton } from '@/components/ui/Button';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { Reveal } from '@/components/motion/Reveal';
+import styles from '../inner-pages.module.css';
 
-export default function AboutPage() {
-  return (
-    <>
-      <Section padding="xl" background="gradient">
-        <Container>
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-600 mb-4">About Kashzo</p>
-            <h1 className="text-h1 mb-6 text-primary-900">We build technology for real operations.</h1>
-            <p className="text-body-lg text-neutral-700">
-              Kashzo brings together AI engineering, software delivery, product thinking, and digital growth to help businesses move faster with better systems.
-            </p>
-          </div>
-        </Container>
-      </Section>
+export const metadata: Metadata = { title: 'About Kashzo | Engineering for Real Operations', description: 'Learn how Kashzo combines AI engineering, software delivery and product thinking to build reliable digital systems.' };
+const principles = [['01','Clarity over hype','We define the operational problem before choosing technology.'],['02','Production over prototypes','Architecture, security and maintainability are part of the build—not an afterthought.'],['03','Outcomes over output','We connect product decisions to the business result the system must support.'],['04','Partnership beyond launch','Deployment, optimisation and ongoing development are built into how we work.']];
+const metrics = [['20+','Full-stack expertise','Years of engineering experience represented within the team.'],['5+','AI engineering','Years focused on applied AI systems and automation.'],['International','Delivery experience','Working across markets, teams and operating environments.'],['End-to-end','One accountable partner','AI, web, mobile and growth capabilities aligned around delivery.']];
 
-      <Section padding="xl" background="white">
-        <Container>
-          <Grid cols={2} gap="lg">
-            <div>
-              <h2 className="text-h2 mb-4 text-primary-900">Who we are</h2>
-              <p className="text-neutral-700 mb-4">
-                We are a digital product and engineering studio focused on AI, software systems, and business-critical automation.
-              </p>
-              <p className="text-neutral-700 mb-4">
-                Our work sits at the intersection of strategy, software engineering, and operational delivery: we help teams turn technical ideas into working systems that support daily business outcomes.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
-              <h3 className="text-h4 mb-4 text-primary-900">What we value</h3>
-              <ul className="space-y-3 text-neutral-700">
-                <li>• Clear thinking over hype</li>
-                <li>• Real business use cases over vanity features</li>
-                <li>• Production-grade engineering and maintainability</li>
-                <li>• AI that supports business decisions, not isolated demos</li>
-              </ul>
-            </div>
-          </Grid>
-        </Container>
-      </Section>
-
-      <Section padding="xl" background="soft">
-        <Container>
-          <div className="text-center mb-10">
-            <h2 className="text-h2 text-primary-900">Our delivery model</h2>
-          </div>
-
-          <Grid cols={3} gap="lg">
-            <div className="rounded-2xl border border-neutral-200 bg-white p-6">
-              <div className="text-3xl font-bold text-accent-main mb-3">01</div>
-              <h3 className="text-h4 mb-2 text-primary-900">Scope</h3>
-              <p className="text-neutral-600">We map your real-world objectives, constraints, and system needs before design decisions are made.</p>
-            </div>
-            <div className="rounded-2xl border border-neutral-200 bg-white p-6">
-              <div className="text-3xl font-bold text-accent-main mb-3">02</div>
-              <h3 className="text-h4 mb-2 text-primary-900">Engineer</h3>
-              <p className="text-neutral-600">We design and build reliable systems using product thinking, clean architecture, and scalable implementation.</p>
-            </div>
-            <div className="rounded-2xl border border-neutral-200 bg-white p-6">
-              <div className="text-3xl font-bold text-accent-main mb-3">03</div>
-              <h3 className="text-h4 mb-2 text-primary-900">Operate</h3>
-              <p className="text-neutral-600">We support deployment, iteration, and optimisation so the product continues to perform after launch.</p>
-            </div>
-          </Grid>
-        </Container>
-      </Section>
-
-      <Section padding="xl" background="white">
-        <Container>
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-h2 mb-4 text-primary-900">Ready to build something serious?</h2>
-            <p className="text-body-lg text-neutral-700 mb-8">We can help scope the right solution for your team and timeline.</p>
-            <LinkButton href="/contact" variant="primary" size="lg">Start a project</LinkButton>
-          </div>
-        </Container>
-      </Section>
-    </>
-  );
-}
+export default function AboutPage(){return <main className={styles.page}>
+  <section className={styles.hero}><div className={`${styles.shell} ${styles.heroInner}`}><Reveal><p className={styles.eyebrow}>About Kashzo</p><h1>Engineering built around the real operation.</h1><p className={styles.heroCopy}>Kashzo brings together AI engineering, software delivery, product thinking and digital growth to turn complex requirements into dependable systems.</p></Reveal><Reveal delay={.12} className={styles.heroAside}><strong>Our position</strong><p>We are a production-focused technology partner—not a prototype studio or a volume outsourcing agency.</p></Reveal></div></section>
+  <section className={`${styles.section} ${styles.white}`}><div className={`${styles.shell} ${styles.split}`}><Reveal><p className={styles.label}>Who we are</p><h2 className={styles.heading}>Technical depth with product judgement.</h2></Reveal><Reveal delay={.08} className={styles.prose}><p>Our work sits at the intersection of strategy, software engineering and operational delivery. We help teams move from an opportunity or constraint to a system that people can actually use and operate.</p><p>That means understanding workflows, data, users, integrations and deployment conditions before making architecture decisions. The result is technology shaped around the business—not the reverse.</p><div className={styles.principles}>{principles.map(([number,title,copy])=><div className={styles.principle} key={title}><span>{number}</span><div><h3>{title}</h3><p>{copy}</p></div></div>)}</div></Reveal></div></section>
+  <section className={`${styles.section} ${styles.dark}`}><div className={styles.shell}><Reveal><p className={styles.label}>Experience</p><h2 className={styles.heading}>Credibility measured in delivery.</h2><p className={styles.lede}>The experience behind Kashzo spans full-stack engineering, applied AI and international production delivery.</p></Reveal><div className={styles.metricGrid}>{metrics.map(([number,title,copy],index)=><Reveal key={title} delay={index*.06} className={styles.metric}><strong>{number}</strong><h3>{title}</h3><p>{copy}</p></Reveal>)}</div></div></section>
+  <section className={styles.cta}><div className={styles.shell}><Reveal><h2>Need an engineering partner who can own the outcome?</h2><p>Bring us the business problem, existing system or product brief. We’ll help define the practical way forward.</p><Link href="/contact" className={styles.ctaLink}>Start a project →</Link></Reveal></div></section>
+ </main>}

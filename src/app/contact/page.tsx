@@ -1,45 +1,11 @@
-import { Container, Section } from '@/components/ui/Container';
+import type { Metadata } from 'next';
 import { ContactForm } from '@/components/ContactForm';
+import { Reveal } from '@/components/motion/Reveal';
+import styles from '../inner-pages.module.css';
 
-export default function ContactPage() {
-  return (
-    <>
-      <Section padding="xl" background="gradient">
-        <Container>
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-600 mb-4">Contact</p>
-            <h1 className="text-h1 mb-6 text-primary-900">Tell us what you need to build.</h1>
-            <p className="text-body-lg text-neutral-700">
-              Share a brief and we’ll help shape the right system for your business, timeline, and technical goals.
-            </p>
-          </div>
-        </Container>
-      </Section>
+export const metadata: Metadata = { title: 'Contact | Start a Project with Kashzo', description: 'Tell Kashzo about your AI, software, mobile or growth requirement and start a practical discovery conversation.' };
 
-      <Section padding="xl" background="white">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] items-start">
-            <aside className="rounded-2xl border border-primary-100 bg-primary-50 p-6">
-              <h2 className="text-h3 mb-4 text-primary-900">How we can help</h2>
-              <ul className="space-y-4 text-neutral-700">
-                <li>• AI product design and implementation</li>
-                <li>• Web platforms and SaaS systems</li>
-                <li>• Mobile apps and enterprise workflows</li>
-                <li>• Growth systems and automation</li>
-              </ul>
-
-              <div className="mt-8 border-t border-primary-200 pt-6">
-                <p className="text-sm uppercase tracking-[0.12em] text-primary-600 mb-2">Email</p>
-                <a href="mailto:info@kashzo.com" className="text-primary-800 font-medium">info@kashzo.com</a>
-              </div>
-            </aside>
-
-            <div className="rounded-2xl border border-neutral-200 bg-white p-6 md:p-8 shadow-sm">
-              <ContactForm />
-            </div>
-          </div>
-        </Container>
-      </Section>
-    </>
-  );
-}
+export default function ContactPage(){return <main className={styles.page}>
+  <section className={styles.hero}><div className={`${styles.shell} ${styles.heroInner}`}><Reveal><p className={styles.eyebrow}>Start a project</p><h1>Tell us what needs to work better.</h1><p className={styles.heroCopy}>Share the business objective, current workflow or product requirement. We’ll help frame the right technical approach.</p></Reveal><Reveal delay={.12} className={styles.heroAside}><strong>A useful first brief</strong><p>Include the desired outcome, users, existing systems, constraints and target timing. Early-stage ideas are welcome too.</p></Reveal></div></section>
+  <section className={`${styles.section} ${styles.soft}`}><div className={`${styles.shell} ${styles.contactGrid}`}><Reveal><aside className={styles.contactAside}><h2>How we can help</h2><p>Projects can start with discovery, a defined delivery scope or an existing system that needs improvement.</p><ul className={styles.contactList}><li>AI products, agents and automation</li><li>Web platforms and SaaS systems</li><li>Mobile products and enterprise workflows</li><li>Digital growth and marketing automation</li></ul><div className={styles.contactDetail}><span>Direct email</span><a href="mailto:info@kashzo.com">info@kashzo.com</a></div><p className={styles.contactNote}>We review each brief before responding so the first conversation can be specific and useful.</p></aside></Reveal><Reveal delay={.08} className={styles.formSurface}><ContactForm/></Reveal></div></section>
+ </main>}

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Button } from '@/components/ui/Button';
+import styles from './ContactForm.module.css';
 
 interface FormState {
   name: string;
@@ -48,7 +49,7 @@ export function ContactForm() {
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
     if (!serviceId || !templateId || !publicKey) {
-      setSubmitted(true);
+      setError('Online submissions are not configured yet. Please email info@kashzo.com directly.');
       setIsSending(false);
       return;
     }
@@ -83,21 +84,20 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
-      <div className="grid gap-5 md:grid-cols-2">
-        <label className="block text-sm font-medium text-neutral-700">
+    <form onSubmit={handleSubmit} className={styles.form}>
+      <div className={styles.grid}>
+        <label className={styles.field}>
           Name
           <input
             name="name"
             value={form.name}
             onChange={handleChange}
             required
-            className="mt-2 w-full rounded-lg border border-neutral-200 bg-white px-4 py-3"
             placeholder="Your name"
           />
         </label>
 
-        <label className="block text-sm font-medium text-neutral-700">
+        <label className={styles.field}>
           Email
           <input
             type="email"
@@ -105,31 +105,28 @@ export function ContactForm() {
             value={form.email}
             onChange={handleChange}
             required
-            className="mt-2 w-full rounded-lg border border-neutral-200 bg-white px-4 py-3"
             placeholder="you@company.com"
           />
         </label>
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2">
-        <label className="block text-sm font-medium text-neutral-700">
+      <div className={styles.grid}>
+        <label className={styles.field}>
           Company
           <input
             name="company"
             value={form.company}
             onChange={handleChange}
-            className="mt-2 w-full rounded-lg border border-neutral-200 bg-white px-4 py-3"
             placeholder="Company name"
           />
         </label>
 
-        <label className="block text-sm font-medium text-neutral-700">
+        <label className={styles.field}>
           Service
           <select
             name="service"
             value={form.service}
             onChange={handleChange}
-            className="mt-2 w-full rounded-lg border border-neutral-200 bg-white px-4 py-3"
           >
             <option>AI & Machine Learning</option>
             <option>Web Development</option>
@@ -140,14 +137,13 @@ export function ContactForm() {
         </label>
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2">
-        <label className="block text-sm font-medium text-neutral-700">
+      <div className={styles.grid}>
+        <label className={styles.field}>
           Budget range
           <select
             name="budgetRange"
             value={form.budgetRange}
             onChange={handleChange}
-            className="mt-2 w-full rounded-lg border border-neutral-200 bg-white px-4 py-3"
           >
             <option value="">Select budget</option>
             <option value="under_25k">Under $25k</option>
@@ -158,13 +154,12 @@ export function ContactForm() {
           </select>
         </label>
 
-        <label className="block text-sm font-medium text-neutral-700">
+        <label className={styles.field}>
           Timeline
           <select
             name="timeline"
             value={form.timeline}
             onChange={handleChange}
-            className="mt-2 w-full rounded-lg border border-neutral-200 bg-white px-4 py-3"
           >
             <option value="">Select timeline</option>
             <option value="urgent">ASAP / urgent</option>
@@ -176,7 +171,7 @@ export function ContactForm() {
         </label>
       </div>
 
-      <label className="block text-sm font-medium text-neutral-700">
+      <label className={styles.field}>
         Project details
         <textarea
           name="description"
@@ -184,25 +179,24 @@ export function ContactForm() {
           onChange={handleChange}
           required
           rows={6}
-          className="mt-2 w-full rounded-lg border border-neutral-200 bg-white px-4 py-3"
           placeholder="Tell us about your goals, current workflow, and what you need built."
         />
       </label>
 
       {submitted && (
-        <div className="rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
+        <div className={`${styles.status} ${styles.success}`} role="status">
           Thanks — your project brief has been captured. Our team will review it and get back to you.
         </div>
       )}
 
       {error && (
-        <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+        <div className={`${styles.status} ${styles.error}`} role="alert">
           {error}
         </div>
       )}
 
-      <div className="pt-2">
-        <Button type="submit" variant="primary" size="lg" loading={isSending} className="w-full md:w-auto">
+      <div>
+        <Button type="submit" variant="primary" size="lg" loading={isSending} className={styles.submit}>
           Send project brief
         </Button>
       </div>
