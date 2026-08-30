@@ -1,55 +1,6 @@
 import Link from 'next/link';
+import { WebsitePackageCards } from './WebsitePackageCards';
 import styles from './ServicePricing.module.css';
-
-const websitePackages = [
-  {
-    name: 'Launch Website',
-    price: '£349+',
-    highlighted: false,
-    bestFor: 'Startups, small businesses and simple professional company websites.',
-    scope: [
-      'Up to 3 core pages',
-      'Responsive design and professional styling',
-      'Contact or enquiry form',
-      'Social media integration',
-      'Basic technical SEO',
-      'Basic performance optimisation',
-      'Deployment',
-    ],
-  },
-  {
-    name: 'Business Website',
-    price: '£699+',
-    bestFor: 'Established businesses requiring stronger content and lead generation.',
-    highlighted: true,
-    scope: [
-      'Up to 6 core pages',
-      'Responsive custom UI',
-      'Enquiry and contact forms',
-      'CMS where appropriate',
-      'Portfolio or case-study section',
-      'Analytics and SEO foundations',
-      'Social integrations and conversion CTAs',
-      'Performance optimisation',
-    ],
-  },
-  {
-    name: 'Growth Website',
-    price: '£1,249+',
-    highlighted: false,
-    bestFor: 'Growing businesses requiring a more comprehensive digital presence.',
-    scope: [
-      'Up to 10 core pages',
-      'Custom UX/UI and advanced responsive design',
-      'CMS and insights publishing',
-      'Portfolio or case studies',
-      'Advanced, restrained animation',
-      'Analytics and technical SEO architecture',
-      'Conversion-focused structure',
-      'Performance optimisation and richer integrations',
-    ],
-  },
-] as const;
 
 const customWebProjects = [
   'SaaS',
@@ -74,19 +25,7 @@ export function ServicePricing({ serviceSlug }: { serviceSlug: string }) {
           <p>These packages cover professional business websites. Final scope and pricing depend on content, functionality, integrations and delivery requirements.</p>
         </div>
 
-        <div className={styles.packageGrid}>
-          {websitePackages.map((item) => (
-            <article key={item.name} className={`${styles.package} ${item.highlighted ? styles.highlighted : ''}`}>
-              {item.highlighted && <span className={styles.popular}>Most popular</span>}
-              <p className={styles.packageLabel}>Starting from</p>
-              <p className={styles.price}>{item.price}</p>
-              <h3>{item.name}</h3>
-              <p className={styles.bestFor}>{item.bestFor}</p>
-              <ul>{item.scope.map((scopeItem) => <li key={scopeItem}>{scopeItem}</li>)}</ul>
-              <Link href="/contact" className={styles.packageCta}>Request This Package <span aria-hidden="true">→</span></Link>
-            </article>
-          ))}
-        </div>
+        <WebsitePackageCards />
 
         <p className={styles.disclaimer}>Prices are starting estimates, not fixed quotations. Content volume, custom functionality and integrations can change the final scope.</p>
 

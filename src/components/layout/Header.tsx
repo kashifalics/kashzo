@@ -1,10 +1,10 @@
 'use client';
 
 import { ArrowUpRight, Menu, X } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
+import { BrandLockup } from './BrandLockup';
 import styles from './Header.module.css';
 
 const links = [['Home', '/'], ['Services', '/services'], ['Work', '/work'], ['Industries', '/industries'], ['About', '/about'], ['Insights', '/insights']] as const;
@@ -115,15 +115,7 @@ export function Header() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.inner}>
         <Link href="/" className={styles.brand} aria-label="Kashzo Solutions home">
-          <Image
-            src="/brand/kashzo-logo-full.png"
-            alt="Kashzo Solutions"
-            width={1126}
-            height={378}
-            preload
-            sizes="(max-width: 380px) 148px, (max-width: 900px) 166px, 188px"
-            className={styles.logo}
-          />
+          <BrandLockup preload />
         </Link>
         <nav className={styles.nav} aria-label="Primary navigation">{links.map(([label, href]) => <Link key={href} href={href} className={active(href) ? styles.active : ''} aria-current={active(href) ? 'page' : undefined}>{label}</Link>)}</nav>
         <div className={styles.actions}><Link href="/contact" className={styles.cta}>Start a Project <ArrowUpRight size={15} /></Link></div>

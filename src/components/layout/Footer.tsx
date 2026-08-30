@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import { BrandLockup } from './BrandLockup';
 import { SocialLinks } from './SocialLinks';
 import styles from './Footer.module.css';
 
@@ -17,7 +17,7 @@ export function Footer() {
     <div className={styles.grid}>
       <div className={styles.company}>
         <Link href="/" className={styles.brand} aria-label="Kashzo Solutions home">
-          <Image src="/brand/kashzo-logo-full.png" alt="Kashzo Solutions" width={1126} height={378} sizes="230px" className={styles.logo} />
+          <BrandLockup context="footer" />
         </Link>
         <p className={styles.intro}>Engineering intelligent digital products that perform—across AI, software, mobile and growth.</p>
         <div className={styles.socials}><SocialLinks /></div>
