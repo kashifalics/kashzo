@@ -1,4 +1,7 @@
+import type { Metadata } from 'next';
 import { Container, Section } from '@/components/ui/Container';
+
+export const metadata: Metadata = { title: 'Privacy Policy | Kashzo Solutions', alternates: { canonical: '/privacy-policy' } };
 
 export default function PrivacyPolicyPage() {
   return (

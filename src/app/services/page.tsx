@@ -7,6 +7,7 @@ import styles from '../inner-pages.module.css';
 export const metadata: Metadata = {
   title: 'Services | Kashzo Solutions',
   description: 'AI, web, mobile and digital growth services engineered for production business environments.',
+  alternates: { canonical: '/services' },
 };
 
 export default function ServicesPage() {

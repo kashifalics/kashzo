@@ -1,4 +1,7 @@
+import type { Metadata } from 'next';
 import { Container, Section } from '@/components/ui/Container';
+
+export const metadata: Metadata = { title: 'Cookie Policy | Kashzo Solutions', alternates: { canonical: '/cookie-policy' } };
 
 export default function CookiePolicyPage() {
   return (

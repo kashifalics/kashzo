@@ -1,10 +1,13 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Container, Section, Grid } from '@/components/ui/Container';
 import { LinkButton } from '@/components/ui/Button';
+import { ServicePricing } from '@/components/ServicePricing';
 import { services } from '@/lib/config/services';
 import { projects } from '@/lib/data/projects';
 import { Card } from '@/components/ui/Card';
+import styles from './service-detail.module.css';
 
 const outcomesByService: Record<string, string[]> = {
   'ai-machine-learning': ['Automate high-friction workflows', 'Make approved knowledge easier to use', 'Support faster, better-informed decisions'],
@@ -15,6 +18,17 @@ const outcomesByService: Record<string, string[]> = {
 
 export async function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const service = services.find((item) => item.slug === slug);
+  if (!service) return {};
+  return {
+    title: `${service.title} | Kashzo Solutions`,
+    description: service.description,
+    alternates: { canonical: `/services/${service.slug}` },
+  };
 }
 
 export default async function ServiceDetailPage({
@@ -31,6 +45,7 @@ export default async function ServiceDetailPage({
 
   const relatedProjects = projects.filter(
     (project) =>
+      service.relatedProjects.includes(project.id) ||
       service.relatedProjects.includes(project.slug) ||
       project.category === service.category
   );
@@ -54,12 +69,12 @@ export default async function ServiceDetailPage({
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-start">
             <div>
               <h2 className="text-h2 mb-6 text-primary-900">What this service includes</h2>
-              <div className="space-y-4">
-                {service.subservices.slice(0, 8).map((sub) => (
-                  <Card key={sub.title} border shadow="sm" padding="md">
-                    <h3 className="text-h4 mb-2 text-primary-900">{sub.title}</h3>
+              <div className={styles.capabilityGrid}>
+                {service.subservices.map((sub) => (
+                  <article key={sub.title} className={styles.capabilityCard}>
+                    <h3>{sub.title}</h3>
                     {sub.description && <p className="text-neutral-600">{sub.description}</p>}
-                  </Card>
+                  </article>
                 ))}
               </div>
             </div>
@@ -78,6 +93,16 @@ export default async function ServiceDetailPage({
           </div>
         </Container>
       </Section>
+
+      {(service.slug === 'web-development' || service.slug === 'mobile-app-development') && (
+        <Section padding="xl" background="white">
+          <Container>
+            <div id="pricing" className={styles.pricingAnchor}>
+              <ServicePricing serviceSlug={service.slug} />
+            </div>
+          </Container>
+        </Section>
+      )}
 
       <Section padding="xl" background="soft">
         <Container>

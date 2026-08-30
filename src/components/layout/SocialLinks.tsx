@@ -14,7 +14,7 @@ const items: Array<{
 
 export function SocialLinks({ theme = 'dark', showLabels = false }: { theme?: 'dark' | 'light'; showLabels?: boolean }) {
   return <nav className={`${styles.links} ${styles[theme]}`} aria-label="Kashzo Solutions social media">
-    {items.map(({ key, label, icon: Icon }) => <a key={key} href={socialLinks[key]} target="_blank" rel="noopener noreferrer" aria-label={`Visit Kashzo Solutions on ${label}`} className={styles.link}>
+    {items.map(({ key, label, icon: Icon }) => <a key={key} href={socialLinks[key]} target="_blank" rel="noopener noreferrer" aria-label={`Kashzo Solutions on ${label}`} className={styles.link}>
       <Icon aria-hidden="true" />
       {showLabels && <span>{label}</span>}
     </a>)}

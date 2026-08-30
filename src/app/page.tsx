@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,10 +9,15 @@ import { faqs } from '@/lib/data/faqs';
 import { projects } from '@/lib/data/projects';
 import styles from './home.module.css';
 
+export const metadata: Metadata = { alternates: { canonical: '/' } };
+
 const projectSlugs = [
   'hotel-management-voice-agent',
-  'enterprise-rag-knowledge-assistant',
+  'seo-performance-optimisation-engine',
+  'ocr-automation-aws-textract',
+  'voice-calling-agent-lead-generation',
   'educational-learning-platform',
+  'saqinova-wellness-platform',
 ];
 
 const selectedProjects = projectSlugs
@@ -47,18 +53,27 @@ export default function Home() {
     <section className={styles.hero}>
       <div className={`${styles.shell} ${styles.heroGrid}`}>
         <div>
-          <Reveal><p className={styles.eyebrow}>AI systems · software products · digital growth</p></Reveal>
-          <Reveal delay={0.08}><h1><span>Digital products</span><span>engineered for</span><em>real business.</em></h1></Reveal>
-          <Reveal delay={0.16}><p className={styles.heroCopy}>Kashzo designs and builds AI systems, web platforms and mobile products that improve how ambitious businesses operate and grow.</p></Reveal>
+          <Reveal><p className={styles.eyebrow}><span>AI systems</span><span>Software products</span><span>Digital growth</span></p></Reveal>
+          <Reveal delay={0.08}><h1><span>We engineer intelligent </span><span>digital products </span><em>that perform.</em></h1></Reveal>
+          <Reveal delay={0.16}><p className={styles.heroCopy}>AI systems, production software, mobile products and digital growth solutions engineered for real businesses.</p></Reveal>
           <Reveal delay={0.24} className={styles.buttons}>
-            <Link href="/contact" className={styles.primary}>Discuss your project <ArrowUpRight size={17} /></Link>
-            <Link href="/work" className={styles.secondary}>View selected work <ArrowRight size={17} /></Link>
+            <Link href="/contact" className={styles.primary}>Start a Project <ArrowUpRight size={17} /></Link>
+            <Link href="/work" className={styles.secondary}>Explore Our Work <ArrowRight size={17} /></Link>
           </Reveal>
         </div>
         <Reveal delay={0.18} y={14} className={styles.heroMedia}>
           <Image src="/images/kashzo-ai-systems-hero.webp" alt="A refined digital workspace representing connected AI and software systems" fill preload sizes="(max-width: 900px) 100vw, 46vw" className={styles.heroImage} />
           <div className={styles.heroMediaCaption}><span>Strategy</span><span>Engineering</span><span>Delivery</span></div>
         </Reveal>
+      </div>
+    </section>
+
+    <section className={styles.experience} aria-label="Kashzo team experience">
+      <div className={`${styles.shell} ${styles.stats}`}>
+        <div className={styles.stat}><strong>20+ Years</strong><span>Full-stack engineering expertise within our team</span></div>
+        <div className={styles.stat}><strong>5+ Years</strong><span>AI engineering expertise within our team</span></div>
+        <div className={styles.stat}><strong>International</strong><span>Production project delivery</span></div>
+        <div className={styles.stat}><strong>End-to-End</strong><span>AI · Web · Mobile · Growth</span></div>
       </div>
     </section>
 

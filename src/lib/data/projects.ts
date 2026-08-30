@@ -43,16 +43,7 @@ export const projects: Project[] = [
     technologies: ['Voice AI', 'Vapi', 'Python', 'FastAPI', 'OpenAI', 'Embeddings', 'RAG'],
     integrations: ['Supabase', 'PostgreSQL', 'n8n', 'REST APIs', 'Webhooks'],
     outcome: 'Production voice system delivering guest-facing AI capability with integrated backend automation.',
-    screenshots: [
-      {
-        url: '/images/projects/hotel-voice-agent-1.png',
-        alt: 'Voice agent architecture diagram',
-      },
-      {
-        url: '/images/projects/hotel-voice-agent-2.png',
-        alt: 'Guest conversation flow',
-      },
-    ],
+    screenshots: [],
   },
   {
     id: 'rag-knowledge-assistant',
@@ -86,16 +77,7 @@ export const projects: Project[] = [
     technologies: ['Python', 'FastAPI', 'OpenAI', 'Anthropic', 'LangChain', 'LangGraph'],
     integrations: ['Supabase', 'PostgreSQL', 'pgvector', 'Next.js'],
     outcome: 'Enterprise knowledge system that transforms dispersed information into instant, grounded answers.',
-    screenshots: [
-      {
-        url: '/images/projects/rag-assistant-1.png',
-        alt: 'RAG knowledge assistant interface',
-      },
-      {
-        url: '/images/projects/rag-assistant-2.png',
-        alt: 'Admin knowledge management dashboard',
-      },
-    ],
+    screenshots: [],
   },
   {
     id: 'seo-engine',
@@ -132,16 +114,7 @@ export const projects: Project[] = [
       'Data Ingestion → Crawling/Audit Pipeline → AI/ML Analysis → Keyword Processing → Rules Engine → Optimisation Workflows → Analytics Integration → CRM Integration → Dashboards/Reporting',
     technologies: ['Python', 'AI/ML', 'NLP', 'Data Processing', 'API Development'],
     outcome: 'Enterprise SEO platform replacing fragmented operations with structured, intelligent optimisation.',
-    screenshots: [
-      {
-        url: '/images/projects/seo-engine-1.png',
-        alt: 'SEO platform dashboard',
-      },
-      {
-        url: '/images/projects/seo-engine-2.png',
-        alt: 'Technical audit results',
-      },
-    ],
+    screenshots: [],
   },
   {
     id: 'ocr-automation',
@@ -176,16 +149,7 @@ export const projects: Project[] = [
       'Document Upload → Cloud Storage → Processing Trigger → AWS Textract → Validation/Mapping → Structured Data → Business System',
     technologies: ['AWS', 'OCR', 'Document AI', 'Cloud Architecture', 'Automation'],
     outcome: 'Serverless document processing system eliminating manual entry and reducing processing time.',
-    screenshots: [
-      {
-        url: '/images/projects/ocr-1.png',
-        alt: 'Document processing pipeline',
-      },
-      {
-        url: '/images/projects/ocr-2.png',
-        alt: 'Extracted structured data example',
-      },
-    ],
+    screenshots: [],
   },
   {
     id: 'voice-calling-agent',
@@ -222,12 +186,7 @@ export const projects: Project[] = [
     integrations: ['CRM', 'Calendar', 'Salesforce', 'Hubspot'],
     outcome:
       'Automated lead qualification and appointment setting within compliance and quality boundaries.',
-    screenshots: [
-      {
-        url: '/images/projects/voice-calling-1.png',
-        alt: 'Voice calling agent dashboard',
-      },
-    ],
+    screenshots: [],
   },
   {
     id: 'saqinova',
@@ -265,16 +224,8 @@ export const projects: Project[] = [
       'Live website demonstrating responsive design, conversion-focused UX, and local search architecture for service businesses.',
     screenshots: [
       {
-        url: '/images/projects/saqinova-1.png',
-        alt: 'Saqinova homepage desktop',
-      },
-      {
-        url: '/images/projects/saqinova-2.png',
-        alt: 'Saqinova mobile view',
-      },
-      {
-        url: '/images/projects/saqinova-3.png',
-        alt: 'Service page example',
+        url: '/images/projects/saqinova-homepage.png',
+        alt: 'Saqinova live website homepage',
       },
     ],
   },
@@ -312,16 +263,7 @@ export const projects: Project[] = [
     ],
     technologies: ['Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL'],
     outcome: 'Production learning platform supporting multiple user types and measurable educational outcomes.',
-    screenshots: [
-      {
-        url: '/images/projects/educational-1.png',
-        alt: 'Learning platform dashboard',
-      },
-      {
-        url: '/images/projects/educational-2.png',
-        alt: 'Course content area',
-      },
-    ],
+    screenshots: [],
   },
   {
     id: 'on-demand-services-app',
@@ -355,16 +297,7 @@ export const projects: Project[] = [
     ],
     technologies: ['Flutter', 'React Native', 'Firebase', 'Stripe'],
     outcome: 'Production on-demand services platform with real-time capabilities.',
-    screenshots: [
-      {
-        url: '/images/projects/on-demand-1.png',
-        alt: 'Customer app interface',
-      },
-      {
-        url: '/images/projects/on-demand-2.png',
-        alt: 'Provider dashboard',
-      },
-    ],
+    screenshots: [],
   },
   {
     id: 'personal-assistant-app',
@@ -394,16 +327,7 @@ export const projects: Project[] = [
     technologies: ['Flutter', 'React Native', 'OpenAI', 'Anthropic', 'LangChain'],
     outcome:
       'Production AI assistant demonstrating cross-capability (Mobile + AI) integration.',
-    screenshots: [
-      {
-        url: '/images/projects/personal-assistant-1.png',
-        alt: 'Chat interface',
-      },
-      {
-        url: '/images/projects/personal-assistant-2.png',
-        alt: 'Voice interaction',
-      },
-    ],
+    screenshots: [],
   },
 ];
 

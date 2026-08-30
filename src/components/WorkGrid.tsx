@@ -6,10 +6,9 @@ import type { Project } from '@/lib/types';
 import { ProjectVisual } from '@/components/ProjectVisual';
 import styles from '@/app/inner-pages.module.css';
 
-const filters = ['All', 'AI', 'Web', 'Mobile', 'Growth'];
-
 export function WorkGrid({ projects }: { projects: Project[] }) {
   const [filter, setFilter] = useState('All');
+  const filters = ['All', ...Array.from(new Set(projects.map((project) => project.category)))];
   const visible = filter === 'All' ? projects : projects.filter(project => project.category === filter);
   return <>
     <div className={styles.filterBar} role="group" aria-label="Filter projects by category">{filters.map(item => <button key={item} type="button" onClick={() => setFilter(item)} aria-pressed={filter === item} className={`${styles.filterButton} ${filter === item ? styles.filterButtonActive : ''}`}>{item}</button>)}</div>

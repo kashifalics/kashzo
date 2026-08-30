@@ -1,4 +1,7 @@
+import type { Metadata } from 'next';
 import { Container, Section } from '@/components/ui/Container';
+
+export const metadata: Metadata = { title: 'Terms of Service | Kashzo Solutions', alternates: { canonical: '/terms' } };
 
 export default function TermsPage() {
   return (

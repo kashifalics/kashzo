@@ -23,6 +23,7 @@ export const metadata: Metadata = {
         url: siteMetadata.ogImage,
         width: 1200,
         height: 630,
+        alt: 'Kashzo Solutions',
       },
     ],
     type: 'website',
@@ -33,9 +34,6 @@ export const metadata: Metadata = {
     description: siteMetadata.description,
     images: [siteMetadata.ogImage],
   },
-  alternates: {
-    canonical: siteMetadata.url,
-  },
 };
 
 interface RootLayoutProps {
@@ -45,10 +43,6 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </head>
       <body className={`${inter.className} flex min-h-screen flex-col bg-white text-neutral-900`}>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <Header />

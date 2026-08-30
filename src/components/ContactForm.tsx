@@ -8,14 +8,20 @@ import styles from './ContactForm.module.css';
 interface FormState {
   name: string;
   email: string;
+  company: string;
   service: string;
+  budget: string;
+  timeline: string;
   description: string;
 }
 
 const initialState: FormState = {
   name: '',
   email: '',
+  company: '',
   service: 'AI & Machine Learning',
+  budget: '',
+  timeline: '',
   description: '',
 };
 
@@ -55,8 +61,12 @@ export function ContactForm() {
         {
           from_name: form.name,
           from_email: form.email,
+          company: form.company || 'Not provided',
           service: form.service,
+          budget: form.budget || 'Not provided',
+          timeline: form.timeline || 'Not provided',
           message: form.description,
+          source: 'Kashzo website contact form',
           to_name: 'Kashzo Solutions',
         },
         {
@@ -101,7 +111,17 @@ export function ContactForm() {
         </label>
       </div>
 
-      <div className={`${styles.grid} ${styles.single}`}>
+      <div className={styles.grid}>
+        <label className={styles.field}>
+          Company <span className={styles.optional}>(optional)</span>
+          <input
+            name="company"
+            value={form.company}
+            onChange={handleChange}
+            placeholder="Company name"
+          />
+        </label>
+
         <label className={styles.field}>
           Service
           <select
@@ -113,7 +133,34 @@ export function ContactForm() {
             <option>Web Development</option>
             <option>Mobile App Development</option>
             <option>Digital Marketing</option>
-            <option>General Consultation</option>
+            <option>Multiple Services</option>
+            <option>Not Sure Yet</option>
+          </select>
+        </label>
+      </div>
+
+      <div className={styles.grid}>
+        <label className={styles.field}>
+          Budget <span className={styles.optional}>(optional)</span>
+          <select name="budget" value={form.budget} onChange={handleChange}>
+            <option value="">Select a range</option>
+            <option>Under £1,000</option>
+            <option>£1,000–£4,999</option>
+            <option>£5,000–£14,999</option>
+            <option>£15,000+</option>
+            <option>Not decided yet</option>
+          </select>
+        </label>
+
+        <label className={styles.field}>
+          Timeline <span className={styles.optional}>(optional)</span>
+          <select name="timeline" value={form.timeline} onChange={handleChange}>
+            <option value="">Select a timeline</option>
+            <option>As soon as possible</option>
+            <option>1–3 months</option>
+            <option>3–6 months</option>
+            <option>6+ months</option>
+            <option>Exploring options</option>
           </select>
         </label>
       </div>

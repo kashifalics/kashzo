@@ -5,6 +5,7 @@ import styles from '../inner-pages.module.css';
 export const metadata: Metadata = {
   title: 'Insights | Kashzo Solutions',
   description: 'Practical perspectives on AI adoption, product engineering and dependable digital delivery.',
+  alternates: { canonical: '/insights' },
 };
 
 const insights = [

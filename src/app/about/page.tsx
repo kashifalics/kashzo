@@ -7,6 +7,7 @@ import styles from '../inner-pages.module.css';
 export const metadata: Metadata = {
   title: 'About Kashzo | Product and Engineering Partner',
   description: 'Learn how Kashzo combines product thinking, AI engineering and software delivery to build dependable digital products.',
+  alternates: { canonical: '/about' },
 };
 
 const principles = [

@@ -1,10 +1,23 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Container, Section } from '@/components/ui/Container';
 import { LinkButton } from '@/components/ui/Button';
+import { ProjectVisual } from '@/components/ProjectVisual';
 import { projects } from '@/lib/data/projects';
 
 export async function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((item) => item.slug === slug);
+  if (!project) return {};
+  return {
+    title: `${project.title} | Kashzo Work`,
+    description: project.summary,
+    alternates: { canonical: `/work/${project.slug}` },
+  };
 }
 
 export default async function WorkDetailPage({
@@ -29,6 +42,9 @@ export default async function WorkDetailPage({
             </p>
             <h1 className="text-h1 mb-6 text-primary-900">{project.title}</h1>
             <p className="text-body-lg text-neutral-700">{project.summary}</p>
+            <div className="mt-10 max-w-3xl">
+              <ProjectVisual slug={project.slug} category={project.category} industry={project.industry} />
+            </div>
           </div>
         </Container>
       </Section>
@@ -66,9 +82,16 @@ export default async function WorkDetailPage({
               </div>
 
               <div className="mt-6">
-                <LinkButton href="/contact" variant="primary" size="md">
-                  Discuss your project
-                </LinkButton>
+                <div className="flex flex-wrap gap-3">
+                  <LinkButton href="/contact" variant="primary" size="md">
+                    Discuss your project
+                  </LinkButton>
+                  {project.externalUrl && project.clientVisibility === 'public' && (
+                    <a href={project.externalUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center rounded-lg border border-primary-200 bg-white px-5 text-sm font-semibold text-primary-800 hover:bg-primary-50">
+                      Visit live project ↗
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           </div>

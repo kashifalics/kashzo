@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { siteMetadata } from '@/lib/config/site-config';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -6,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://kashzo.com/sitemap.xml',
+    sitemap: `${siteMetadata.url}/sitemap.xml`,
   };
 }

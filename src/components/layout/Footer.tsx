@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { SocialLinks } from './SocialLinks';
 import styles from './Footer.module.css';
@@ -15,8 +16,11 @@ export function Footer() {
   return <footer className={styles.footer}><div className={styles.shell}>
     <div className={styles.grid}>
       <div className={styles.company}>
-        <Link href="/" className={styles.brand} aria-label="Kashzo Solutions Ltd home"><span className={styles.mark}>K</span><span className={styles.brandText}><strong>KASHZO</strong><span>Solutions Ltd</span></span></Link>
+        <Link href="/" className={styles.brand} aria-label="Kashzo Solutions home">
+          <Image src="/brand/kashzo-logo-full.png" alt="Kashzo Solutions" width={1126} height={378} sizes="230px" className={styles.logo} />
+        </Link>
         <p className={styles.intro}>Engineering intelligent digital products that perform—across AI, software, mobile and growth.</p>
+        <div className={styles.socials}><SocialLinks /></div>
       </div>
       <FooterColumn title="Services" links={serviceLinks} />
       <FooterColumn title="Company" links={companyLinks} />
@@ -24,7 +28,6 @@ export function Footer() {
     </div>
     <div className={styles.bottom}>
       <p>© {new Date().getFullYear()} Kashzo Solutions Ltd. All rights reserved.</p>
-      <SocialLinks />
     </div>
   </div></footer>;
 }

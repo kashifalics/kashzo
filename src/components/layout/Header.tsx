@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowUpRight, Menu, X } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
@@ -14,6 +15,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const lockedScrollY = useRef(0);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 18);
@@ -25,8 +27,37 @@ export function Header() {
   useEffect(() => {
     if (!open) return;
 
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
+    const body = document.body;
+    const root = document.documentElement;
+    const previousBodyStyles = {
+      position: body.style.position,
+      top: body.style.top,
+      right: body.style.right,
+      left: body.style.left,
+      width: body.style.width,
+      overflow: body.style.overflow,
+      paddingRight: body.style.paddingRight,
+    };
+    const previousRootStyles = {
+      overflow: root.style.overflow,
+      overscrollBehavior: root.style.overscrollBehavior,
+      scrollBehavior: root.style.scrollBehavior,
+    };
+    const scrollbarWidth = window.innerWidth - root.clientWidth;
+
+    lockedScrollY.current = window.scrollY;
+    body.style.position = 'fixed';
+    body.style.top = `-${lockedScrollY.current}px`;
+    body.style.right = '0';
+    body.style.left = '0';
+    body.style.width = '100%';
+    body.style.overflow = 'hidden';
+    if (scrollbarWidth > 0) {
+      body.style.paddingRight = `${scrollbarWidth}px`;
+    }
+    root.style.overflow = 'hidden';
+    root.style.overscrollBehavior = 'none';
+
     const panel = panelRef.current;
     panel?.querySelector<HTMLElement>('[data-autofocus]')?.focus();
 
@@ -52,13 +83,20 @@ export function Header() {
 
     document.addEventListener('keydown', onKeyDown);
     return () => {
-      document.body.style.overflow = previousOverflow;
       document.removeEventListener('keydown', onKeyDown);
+      Object.assign(body.style, previousBodyStyles);
+      root.style.overflow = previousRootStyles.overflow;
+      root.style.overscrollBehavior = previousRootStyles.overscrollBehavior;
+      root.style.scrollBehavior = 'auto';
+      window.scrollTo(0, lockedScrollY.current);
+      requestAnimationFrame(() => {
+        root.style.scrollBehavior = previousRootStyles.scrollBehavior;
+      });
     };
   }, [open]);
 
   useEffect(() => {
-    const desktop = window.matchMedia('(min-width: 901px)');
+    const desktop = window.matchMedia('(min-width: 1041px)');
     const closeOnDesktop = (event: MediaQueryListEvent) => {
       if (event.matches) setOpen(false);
     };
@@ -76,7 +114,17 @@ export function Header() {
   return <>
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.inner}>
-        <Link href="/" className={styles.brand} aria-label="Kashzo Solutions Ltd home"><span className={styles.mark} aria-hidden="true">K</span><span className={styles.brandText}><strong>KASHZO</strong><span>Solutions Ltd</span></span></Link>
+        <Link href="/" className={styles.brand} aria-label="Kashzo Solutions home">
+          <Image
+            src="/brand/kashzo-logo-full.png"
+            alt="Kashzo Solutions"
+            width={1126}
+            height={378}
+            preload
+            sizes="(max-width: 380px) 148px, (max-width: 900px) 166px, 188px"
+            className={styles.logo}
+          />
+        </Link>
         <nav className={styles.nav} aria-label="Primary navigation">{links.map(([label, href]) => <Link key={href} href={href} className={active(href) ? styles.active : ''} aria-current={active(href) ? 'page' : undefined}>{label}</Link>)}</nav>
         <div className={styles.actions}><Link href="/contact" className={styles.cta}>Start a Project <ArrowUpRight size={15} /></Link></div>
         <button ref={menuButtonRef} className={styles.menuButton} onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-navigation-panel" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}>{open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}</button>

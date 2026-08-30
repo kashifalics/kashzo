@@ -73,9 +73,8 @@ export const siteMetadata = {
   title: 'Kashzo Solutions Ltd - AI & Software Engineering',
   description:
     'We design, build and deploy AI systems, production software, mobile applications and digital growth solutions for modern businesses.',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://kashzo.com',
-  ogImage: '/og-image.png', // TODO: Add OG image
-  twitterHandle: '@kashzo', // TODO: Update
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://kashzo.vercel.app',
+  ogImage: '/brand/kashzo-og.png',
 };
 
 /**

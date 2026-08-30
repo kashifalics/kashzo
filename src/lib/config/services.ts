@@ -48,6 +48,10 @@ export const services: Service[] = [
         description: 'Automate document-heavy processes with AI.',
       },
       {
+        title: 'OCR Automation',
+        description: 'Extract, validate and route structured data from business documents.',
+      },
+      {
         title: 'Computer Vision',
         description: 'Image-based recognition and analysis.',
       },
@@ -109,11 +113,15 @@ export const services: Service[] = [
         description: 'Multi-tenant platforms with subscription infrastructure.',
       },
       {
+        title: 'Enterprise Applications',
+        description: 'Secure business systems for complex teams and workflows.',
+      },
+      {
         title: 'E-commerce Development',
         description: 'Online stores optimized for conversion and performance.',
       },
       {
-        title: 'Marketplace Platforms',
+        title: 'Multi-Vendor Marketplaces',
         description: 'Multi-vendor, multi-buyer ecosystem platforms.',
       },
       {
@@ -121,28 +129,76 @@ export const services: Service[] = [
         description: 'Flexible commerce architecture decoupled from frontend.',
       },
       {
+        title: 'Shopify Development',
+        description: 'Professional Shopify storefronts, themes and integrations.',
+      },
+      {
+        title: 'WooCommerce Development',
+        description: 'Flexible WordPress commerce experiences and integrations.',
+      },
+      {
+        title: 'WordPress Development',
+        description: 'Maintainable business websites built around editorial needs.',
+      },
+      {
         title: 'CMS Development',
-        description: 'Custom content management systems.',
+        description: 'Custom and headless content management systems.',
       },
       {
         title: 'API Development',
         description: 'RESTful and GraphQL APIs for system integration.',
       },
       {
-        title: 'Payment Integration',
+        title: 'API Integrations',
+        description: 'Connect products securely with third-party platforms and data.',
+      },
+      {
+        title: 'CRM Integrations',
+        description: 'Connect leads, customers and workflows with CRM platforms.',
+      },
+      {
+        title: 'Payment Integrations',
         description: 'Secure payment processing and PCI compliance.',
       },
       {
-        title: 'Real-Time Applications',
-        description: 'Live updates, notifications, and collaboration features.',
+        title: 'Customer Portals',
+        description: 'Secure self-service experiences for customers and partners.',
       },
       {
-        title: 'Performance Optimization',
-        description: 'Lighthouse 90+, Core Web Vitals, and load time optimization.',
+        title: 'Admin Dashboards',
+        description: 'Operational interfaces for data, content and workflow control.',
+      },
+      {
+        title: 'Progressive Web Apps',
+        description: 'Installable, responsive web experiences with app-like capability.',
+      },
+      {
+        title: 'Website Redesign',
+        description: 'Modernise structure, experience and visual presentation.',
+      },
+      {
+        title: 'Technical SEO Implementation',
+        description: 'Build search-ready foundations into architecture and delivery.',
+      },
+      {
+        title: 'Accessibility Improvements',
+        description: 'Improve inclusive use against WCAG-aligned standards.',
+      },
+      {
+        title: 'Performance Optimisation',
+        description: 'Improve Core Web Vitals, loading and runtime performance.',
       },
       {
         title: 'Cloud Deployment',
         description: 'AWS, Azure, Google Cloud, and Vercel deployments.',
+      },
+      {
+        title: 'DevOps',
+        description: 'Automated delivery, infrastructure and release workflows.',
+      },
+      {
+        title: 'Maintenance & Support',
+        description: 'Ongoing product care, monitoring and iterative improvement.',
       },
     ],
     relatedProjects: [
@@ -196,6 +252,10 @@ export const services: Service[] = [
         description: 'Mobile shopping experiences.',
       },
       {
+        title: 'Marketplace Apps',
+        description: 'Mobile products connecting customers, vendors and operators.',
+      },
+      {
         title: 'On-Demand Applications',
         description: 'Uber-style service platforms.',
       },
@@ -208,6 +268,18 @@ export const services: Service[] = [
         description: 'Serverless and containerized backends.',
       },
       {
+        title: 'Payments',
+        description: 'Secure in-app checkout and payment workflows.',
+      },
+      {
+        title: 'Authentication',
+        description: 'Secure onboarding, identity and account access.',
+      },
+      {
+        title: 'Push Notifications',
+        description: 'Timely transactional and engagement messaging.',
+      },
+      {
         title: 'Real-Time Features',
         description: 'Push notifications, live data, and chat.',
       },
@@ -216,7 +288,15 @@ export const services: Service[] = [
         description: 'Location-aware features and mapping.',
       },
       {
-        title: 'Performance Optimization',
+        title: 'Chat',
+        description: 'Real-time customer, provider and team conversations.',
+      },
+      {
+        title: 'Mobile UI/UX',
+        description: 'Accessible, platform-aware mobile product experiences.',
+      },
+      {
+        title: 'Performance Optimisation',
         description: 'Battery-efficient, fast-loading applications.',
       },
       {
@@ -253,6 +333,10 @@ export const services: Service[] = [
         description: 'Geographic targeting and local search.',
       },
       {
+        title: 'On-Page SEO',
+        description: 'Search-focused page structure, content and metadata.',
+      },
+      {
         title: 'Content SEO',
         description: 'Content strategy and keyword optimization.',
       },
@@ -261,8 +345,20 @@ export const services: Service[] = [
         description: 'Comprehensive site analysis and recommendations.',
       },
       {
+        title: 'Keyword Research',
+        description: 'Prioritised search demand and opportunity analysis.',
+      },
+      {
+        title: 'Content Strategy',
+        description: 'Content planning aligned with audiences and acquisition goals.',
+      },
+      {
         title: 'Google Ads',
         description: 'Paid search advertising.',
+      },
+      {
+        title: 'PPC',
+        description: 'Managed pay-per-click acquisition across relevant channels.',
       },
       {
         title: 'Meta Ads',
@@ -273,12 +369,32 @@ export const services: Service[] = [
         description: 'LinkedIn, TikTok, and other social platforms.',
       },
       {
+        title: 'Facebook Advertising',
+        description: 'Targeted Facebook campaigns aligned with commercial goals.',
+      },
+      {
+        title: 'Instagram Advertising',
+        description: 'Creative and conversion-led Instagram campaigns.',
+      },
+      {
+        title: 'LinkedIn Advertising',
+        description: 'B2B audience targeting and lead-generation campaigns.',
+      },
+      {
         title: 'Social Media Marketing',
         description: 'Strategy, content, and community management.',
       },
       {
-        title: 'Content Strategy',
-        description: 'Content planning, creation, and distribution.',
+        title: 'Social Media Management',
+        description: 'Planned publishing, community activity and channel oversight.',
+      },
+      {
+        title: 'Content Creation',
+        description: 'Useful campaign and channel content for defined audiences.',
+      },
+      {
+        title: 'Copywriting',
+        description: 'Clear conversion-focused messaging across digital journeys.',
       },
       {
         title: 'Email Marketing',
@@ -293,12 +409,40 @@ export const services: Service[] = [
         description: 'Systems to capture and qualify leads.',
       },
       {
-        title: 'Conversion Rate Optimization',
+        title: 'Performance Marketing',
+        description: 'Acquisition programmes managed against measurable outcomes.',
+      },
+      {
+        title: 'Landing Page Optimisation',
+        description: 'Improve message clarity, experience and campaign conversion.',
+      },
+      {
+        title: 'Conversion Rate Optimisation',
         description: 'Landing pages, A/B testing, and user experience.',
       },
       {
         title: 'Analytics',
         description: 'GA4, attribution, and reporting.',
+      },
+      {
+        title: 'Reporting',
+        description: 'Clear performance reporting tied to agreed objectives.',
+      },
+      {
+        title: 'Attribution',
+        description: 'Understand how channels and touchpoints support conversion.',
+      },
+      {
+        title: 'Retargeting',
+        description: 'Re-engage relevant audiences across paid channels.',
+      },
+      {
+        title: 'Online Reputation Management',
+        description: 'Monitor and strengthen trust across digital touchpoints.',
+      },
+      {
+        title: 'Digital Growth Strategy',
+        description: 'Connect channels, measurement and experimentation into a focused plan.',
       },
     ],
     relatedProjects: [

@@ -7,6 +7,7 @@ import styles from '../inner-pages.module.css';
 export const metadata: Metadata = {
   title: 'Industries | Kashzo Solutions',
   description: 'Digital products and intelligent systems shaped around the workflows of growing organisations.',
+  alternates: { canonical: '/industries' },
 };
 
 const selectedIds = ['hospitality', 'education', 'health-wellness', 'ecommerce', 'sales-marketing', 'enterprise'];
