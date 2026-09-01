@@ -1,125 +1,49 @@
 import type { Metadata } from 'next';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
-import Image from 'next/image';
+import { ArrowRight, ArrowUpRight, Bot, Check, Code2, Megaphone, Quote, Smartphone, Star } from 'lucide-react';
 import Link from 'next/link';
 import { ProjectVisual } from '@/components/ProjectVisual';
 import { Reveal } from '@/components/motion/Reveal';
 import { WebsitePackageCards } from '@/components/WebsitePackageCards';
-import { services } from '@/lib/config/services';
-import { faqs } from '@/lib/data/faqs';
 import { projects } from '@/lib/data/projects';
 import styles from './home.module.css';
 
-export const metadata: Metadata = { alternates: { canonical: '/' } };
+export const metadata: Metadata = { title: 'AI, Web, Mobile & Digital Growth Solutions', description: 'Kashzo Solutions builds professional websites, AI automation systems, mobile applications and digital marketing solutions for modern businesses.', alternates: { canonical: '/' } };
 
-const projectSlugs = [
-  'hotel-management-voice-agent',
-  'seo-performance-optimisation-engine',
-  'ocr-automation-aws-textract',
-  'voice-calling-agent-lead-generation',
-  'educational-learning-platform',
-  'saqinova-wellness-platform',
-];
+const services = [
+  { title: 'Web Development', slug: 'web-development', icon: Code2, description: 'Professional websites, custom web applications and scalable digital platforms built for usability, performance and business growth.', capabilities: ['Business Websites', 'Custom Web Apps', 'SaaS', 'E-commerce', 'APIs', 'Performance Optimisation'], cta: 'Explore Web Development' },
+  { title: 'AI & Automation', slug: 'ai-machine-learning', icon: Bot, description: 'Practical AI systems and automation solutions that reduce manual work, improve workflows and create smarter customer experiences.', capabilities: ['AI Agents', 'Voice AI', 'RAG', 'Generative AI', 'Workflow Automation', 'NLP'], cta: 'Explore AI Solutions' },
+  { title: 'Mobile App Development', slug: 'mobile-app-development', icon: Smartphone, description: 'Modern mobile products for iOS and Android designed around reliable performance, intuitive experiences and scalable architecture.', capabilities: ['Flutter', 'React Native', 'iOS / Android', 'Business Apps', 'AI Apps', 'API Integration'], cta: 'Explore App Development' },
+  { title: 'Social Media & Digital Marketing', slug: 'digital-marketing', icon: Megaphone, description: 'Digital growth services designed to improve visibility, engagement, lead generation and online brand presence.', capabilities: ['Social Media', 'SEO', 'Paid Ads', 'Content', 'Lead Generation', 'Growth Strategy'], cta: 'Explore Digital Marketing' },
+] as const;
 
-const selectedProjects = projectSlugs
-  .map((slug) => projects.find((project) => project.slug === slug))
-  .filter((project): project is NonNullable<typeof project> => Boolean(project));
+const projectSlugs = ['saqinova-wellness-platform', 'voice-calling-agent-lead-generation', 'educational-learning-platform'];
+const selectedProjects = projectSlugs.map((slug) => projects.find((project) => project.slug === slug)).filter((project): project is NonNullable<typeof project> => Boolean(project));
+const testimonials = [{ name: 'Sajid Ali', quote: 'Sets the standard for technical excellence and operational efficiency. Their rapid learning curve, dedication to quality, and ability to deliver transformative results under pressure are remarkable. Every project showcases their commitment to exceeding client expectations.' }, { name: 'Saqib Ali', quote: null }, { name: 'Leo-James', quote: null }] as const;
+const faqs = [
+  ['What services does Kashzo Solutions provide?', 'Kashzo provides web development, AI and automation solutions, mobile app development, custom software and digital marketing services for businesses.'],
+  ['How much does a website cost?', 'Website projects currently start from the promotional package prices shown above, beginning at £209. Final pricing depends on scope, functionality, content, integrations and project requirements.'],
+  ['Do you build custom web applications and SaaS products?', 'Yes. Custom applications, SaaS platforms, dashboards, portals, marketplaces and other advanced systems are scoped individually rather than included in standard website packages.'],
+  ['How much does mobile app development cost?', 'Mobile application projects are scoped according to functionality, platforms, backend requirements and integrations. Current app development pricing starts from the amount shown on the Mobile App Development service page.'],
+  ['Can Kashzo integrate AI into an existing business?', 'Yes. Kashzo can design AI automation, conversational systems, voice agents, document-processing workflows and other AI integrations based on the business requirement.'],
+  ['Do you work with clients remotely?', 'Yes. Kashzo supports remote project delivery and can work with clients internationally.'],
+] as const;
 
-const capabilityNames = [
-  ['Generative AI', 'RAG', 'Voice Agents'],
-  ['Web Apps', 'SaaS', 'Cloud Platforms'],
-  ['iOS', 'Android', 'Cross-platform'],
-  ['SEO', 'Paid Media', 'Automation'],
-];
+function SectionTitle({ label, title, copy }: { label: string; title: string; copy?: string }) { return <div className={styles.sectionTitle}><p className={styles.label}>{label}</p><h2>{title}</h2>{copy && <p>{copy}</p>}</div>; }
 
-const process = [
-  ['01', 'Discover', 'Define the business goal, users, constraints and success criteria.'],
-  ['02', 'Design', 'Shape the product experience, architecture and practical delivery plan.'],
-  ['03', 'Build', 'Develop and validate the product in focused, visible increments.'],
-  ['04', 'Launch & evolve', 'Deploy reliably, measure performance and improve what matters.'],
-];
+export default function Home() { return <main className={styles.page}>
+  <section className={styles.hero}><div className={`${styles.shell} ${styles.heroGrid}`}><div className={styles.heroContent}><Reveal><p className={styles.eyebrow}>Technology and digital engineering</p></Reveal><Reveal delay={.07}><h1>We build intelligent digital solutions <em>for modern businesses.</em></h1></Reveal><Reveal delay={.14}><p className={styles.heroCopy}>Kashzo Solutions builds professional websites, AI and automation systems, mobile applications and digital marketing solutions that help businesses operate, grow and compete more effectively.</p></Reveal><Reveal delay={.2} className={styles.buttons}><Link href="/contact" className={styles.primary}>Start a Project <ArrowUpRight size={17} /></Link><Link href="/work" className={styles.secondary}>Explore Our Work <ArrowRight size={17} /></Link></Reveal></div><Reveal delay={.15} className={styles.heroPanel}><p>End-to-end capability</p>{services.map(({ title, icon: Icon }, index) => <div key={title} className={styles.heroCapability}><span>0{index + 1}</span><Icon size={19} aria-hidden="true" /><strong>{title}</strong></div>)}<div className={styles.heroNote}><Check size={16} aria-hidden="true" /> International production project delivery</div></Reveal></div><div className={`${styles.shell} ${styles.stats}`} aria-label="Kashzo team expertise"><div><strong>20+ Years</strong><span>Full-stack engineering expertise within the team</span></div><div><strong>5+ Years</strong><span>AI engineering expertise within the team</span></div><div><strong>International</strong><span>Production project delivery</span></div><div><strong>End-to-End</strong><span>AI · Web · Mobile · Growth</span></div></div></section>
 
-const reasons = [
-  ['Senior ownership', 'Direct technical thinking and accountable delivery from discovery through launch.'],
-  ['Business-first engineering', 'Technology choices shaped by the workflow, users and commercial objective.'],
-  ['Built beyond the demo', 'Secure, maintainable systems designed for real operations and continued growth.'],
-];
+  <section className={styles.section} id="services-overview"><div className={styles.shell}><Reveal><SectionTitle label="What we do" title="Four capabilities. One delivery partner." copy="Focused technology and growth services designed around practical business outcomes." /></Reveal><div className={styles.serviceGrid}>{services.map(({ icon: Icon, ...service }, index) => <Reveal key={service.title} delay={index * .05}><Link href={`/services/${service.slug}`} className={styles.serviceCard}><div className={styles.serviceIcon}><Icon aria-hidden="true" /></div><span className={styles.cardIndex}>0{index + 1}</span><h3>{service.title}</h3><p>{service.description}</p><div className={styles.chips}>{service.capabilities.map((item) => <span key={item}>{item}</span>)}</div><strong className={styles.cardLink}>{service.cta} <ArrowRight size={15} /></strong></Link></Reveal>)}</div></div></section>
 
-function SectionTitle({ label, title, copy, dark = false }: { label: string; title: string; copy?: string; dark?: boolean }) {
-  return <><p className={styles.label}>{label}</p><h2 className={`${styles.heading} ${dark ? styles.darkHeading : ''}`}>{title}</h2>{copy && <p className={`${styles.lede} ${dark ? styles.darkCopy : ''}`}>{copy}</p>}</>;
-}
+  <section className={`${styles.section} ${styles.offer}`} id="website-packages"><div className={styles.shell}><Reveal><SectionTitle label="Limited-time offer" title="Save 40% on selected website packages." copy="Launch a professional website with clear starting prices. More advanced platforms and custom software are scoped separately." /></Reveal><Reveal delay={.08}><WebsitePackageCards /></Reveal><Reveal delay={.12} className={styles.customNote}><p><strong>Need something more advanced?</strong> SaaS platforms, custom web applications, e-commerce systems, marketplaces, booking platforms, dashboards, customer portals, APIs and advanced integrations are scoped separately.</p><Link href="/contact">Discuss a Custom Project <ArrowUpRight size={16} /></Link></Reveal></div></section>
 
-export default function Home() {
-  return <div className={styles.page}>
-    <section className={styles.hero}>
-      <div className={`${styles.shell} ${styles.heroGrid}`}>
-        <div>
-          <Reveal><p className={styles.eyebrow}><span>AI systems</span><span>Software products</span><span>Digital growth</span></p></Reveal>
-          <Reveal delay={0.08}><h1><span>We engineer intelligent </span><span>digital products </span><em>that perform.</em></h1></Reveal>
-          <Reveal delay={0.16}><p className={styles.heroCopy}>AI systems, production software, mobile products and digital growth solutions engineered for real businesses.</p></Reveal>
-          <Reveal delay={0.24} className={styles.buttons}>
-            <Link href="/contact" className={styles.primary}>Start a Project <ArrowUpRight size={17} /></Link>
-            <Link href="/work" className={styles.secondary}>Explore Our Work <ArrowRight size={17} /></Link>
-          </Reveal>
-        </div>
-        <Reveal delay={0.18} y={14} className={styles.heroMedia}>
-          <Image src="/images/kashzo-ai-systems-hero.webp" alt="A refined digital workspace representing connected AI and software systems" fill preload sizes="(max-width: 900px) 100vw, 46vw" className={styles.heroImage} />
-          <div className={styles.heroMediaCaption}><span>Strategy</span><span>Engineering</span><span>Delivery</span></div>
-        </Reveal>
-      </div>
-    </section>
+  <section className={styles.section} id="selected-work"><div className={styles.shell}><Reveal><SectionTitle label="Recently delivered" title="Focused solutions, built for real use." copy="A concise selection across web platforms, AI automation and digital learning." /></Reveal><div className={styles.projectGrid}>{selectedProjects.map((project, index) => <Reveal key={project.id} delay={index * .06}><Link href={`/work/${project.slug}`} className={styles.projectCard}><ProjectVisual slug={project.slug} category={project.category} industry={project.industry} /><div className={styles.projectBody}><p>{project.category} · {project.industry}</p><h3>{project.slug === 'saqinova-wellness-platform' ? 'Saqinova' : project.title}</h3><span>{project.slug === 'saqinova-wellness-platform' ? 'A modern digital platform designed with a clean, responsive and conversion-focused experience.' : project.summary}</span><strong>View Case Study <ArrowRight size={15} /></strong></div></Link></Reveal>)}</div><Reveal className={styles.centerLink}><Link href="/work">View All Work <ArrowUpRight size={16} /></Link></Reveal></div></section>
 
-    <section className={styles.experience} aria-label="Kashzo team experience">
-      <div className={`${styles.shell} ${styles.stats}`}>
-        <div className={styles.stat}><strong>20+ Years</strong><span>Full-stack engineering expertise within our team</span></div>
-        <div className={styles.stat}><strong>5+ Years</strong><span>AI engineering expertise within our team</span></div>
-        <div className={styles.stat}><strong>International</strong><span>Production project delivery</span></div>
-        <div className={styles.stat}><strong>End-to-End</strong><span>AI · Web · Mobile · Growth</span></div>
-      </div>
-    </section>
+  <section className={`${styles.section} ${styles.testimonials}`}><div className={styles.shell}><Reveal><SectionTitle label="Client testimonials" title="What our clients say." /></Reveal><div className={styles.testimonialGrid}>{testimonials.map((testimonial, index) => <Reveal key={testimonial.name} delay={index * .06}><article className={styles.testimonialCard}><div className={styles.stars} aria-label="5 out of 5 stars">{Array.from({ length: 5 }, (_, star) => <Star key={star} size={16} fill="currentColor" aria-hidden="true" />)}</div>{testimonial.quote ? <blockquote>“{testimonial.quote}”</blockquote> : <p className={styles.pending}><Quote size={20} aria-hidden="true" /> Verified testimonial copy pending owner approval.</p>}<strong>{testimonial.name}</strong></article></Reveal>)}</div></div></section>
 
-    <section id="selected-work" className={`${styles.section} ${styles.work}`}>
-      <div className={styles.shell}>
-        <Reveal className={styles.sectionTop}><div><SectionTitle label="Selected work" title="Built around real operations." copy="A focused selection of intelligent systems and digital products designed for practical business use." /></div><Link href="/work" className={styles.textLink}>View all work <ArrowUpRight size={17} /></Link></Reveal>
-        <div className={styles.projectGrid}>{selectedProjects.map((project, index) => <Reveal key={project.id} delay={index * 0.06}><Link href={`/work/${project.slug}`} className={styles.project}><ProjectVisual slug={project.slug} category={project.category} industry={project.industry} /><div className={styles.projectContent}><h3>{project.title}</h3><p>{project.summary}</p><div className={styles.tags}>{project.technologies.slice(0, 3).map((tech) => <span key={tech}>{tech}</span>)}</div><span className={styles.projectLink}>View case study <ArrowRight size={15} /></span></div></Link></Reveal>)}</div>
-      </div>
-    </section>
+  <section className={`${styles.section} ${styles.ceo}`}><div className={`${styles.shell} ${styles.ceoGrid}`}><Reveal className={styles.ceoPortrait}><span aria-hidden="true">KC</span><p>Owner photograph pending</p></Reveal><Reveal delay={.08} className={styles.ceoCopy}><p className={styles.label}>Meet the CEO</p><h2>Kashif Ali Choudhary</h2><h3>CEO — Kashzo Solutions</h3><div className={styles.ceoStat}><strong>4+ Years</strong><span>AI & Web Development Experience</span></div><p>Kashif Ali Choudhary is the CEO of Kashzo Solutions with 4+ years of experience across Artificial Intelligence and Web Development. His work focuses on intelligent systems, automation and digital product development, translating business requirements into practical, production-ready technology.</p><div className={styles.chips}><span>Artificial Intelligence</span><span>AI Automation</span><span>Web Development</span><span>Digital Products</span></div></Reveal></div></section>
 
-    <section id="website-packages" className={`${styles.section} ${styles.packages}`}>
-      <div className={styles.shell}>
-        <Reveal><SectionTitle label="Website packages" title="Professional websites with clear starting prices." copy="Choose a starting package based on the scale of your website. Custom applications, SaaS products, e-commerce systems and advanced platforms are scoped separately." /></Reveal>
-        <Reveal delay={0.08} className={styles.packageGridWrap}><WebsitePackageCards compact /></Reveal>
-        <Reveal delay={0.12}>
-          <div className={styles.customPackageNote}>
-            <p><strong>Need something more advanced?</strong> SaaS platforms, e-commerce systems, booking platforms, marketplaces, dashboards, customer portals, API integrations and custom web applications are scoped separately.</p>
-            <Link href="/contact" className={styles.textLink}>Discuss a Custom Project <ArrowUpRight size={17} /></Link>
-          </div>
-        </Reveal>
-      </div>
-    </section>
+  <section className={styles.ctaSection}><div className={styles.shell}><Reveal><p className={styles.label}>Let’s build</p><h2>Have a project in mind?</h2><p>Tell us what you’re building and we’ll help identify the right approach.</p><div className={styles.buttons}><Link href="/contact" className={styles.primary}>Start a Project <ArrowUpRight size={17} /></Link><Link href="/contact" className={styles.secondary}>Contact Us <ArrowRight size={17} /></Link></div></Reveal></div></section>
 
-    <section id="services-overview" className={`${styles.section} ${styles.services}`}>
-      <div className={styles.shell}>
-        <Reveal><SectionTitle dark label="What we do" title="One partner from idea to production." copy="Focused capabilities that connect product thinking, engineering and measurable growth." /></Reveal>
-        <div className={styles.serviceGrid}>{services.map((service, index) => <Reveal key={service.id} delay={index * 0.06}><Link className={styles.service} href={`/services/${service.slug}`}><span className={styles.serviceNum}>0{index + 1}</span><h3>{service.title.replace(' & Growth', '')}</h3><div className={styles.capabilities}>{capabilityNames[index].map((item) => <span key={item}>{item}</span>)}</div></Link></Reveal>)}</div>
-      </div>
-    </section>
-
-    <section className={`${styles.section} ${styles.process}`}><div className={styles.shell}>
-      <Reveal><SectionTitle label="How we work" title="A direct path to a working product." /></Reveal>
-      <div className={styles.processGrid}>{process.map(([number, title, copy], index) => <Reveal key={title} delay={index * 0.06} className={styles.step}><span>{number}</span><h3>{title}</h3><p>{copy}</p></Reveal>)}</div>
-    </div></section>
-
-    <section className={`${styles.section} ${styles.why}`}><div className={styles.shell}>
-      <Reveal><SectionTitle dark label="Why Kashzo" title="A startup partner with production discipline." copy="Lean enough to move quickly, experienced enough to make careful technical decisions." /></Reveal>
-      <div className={styles.whyGrid}>{reasons.map(([title, copy], index) => <Reveal key={title} delay={index * 0.07} className={styles.reason}><strong>0{index + 1}</strong><h3>{title}</h3><p>{copy}</p></Reveal>)}</div>
-    </div></section>
-
-    <section className={`${styles.section} ${styles.faq}`}><div className={`${styles.shell} ${styles.faqGrid}`}>
-      <Reveal><SectionTitle label="FAQ" title="What clients usually ask first." /></Reveal>
-      <Reveal delay={0.08} className={styles.faqList}>{[faqs[10], faqs[14], faqs[5], faqs[11]].map((faq) => <details key={faq.id}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</Reveal>
-    </div></section>
-
-    <section className={styles.closing}><div className={styles.shell}><Reveal><h2>Have a product worth building?</h2><p>Tell us what needs to work better. We’ll help turn it into a focused, practical delivery plan.</p><div className={styles.buttons}><Link href="/contact" className={styles.primary}>Start a conversation <ArrowUpRight size={17} /></Link></div></Reveal></div></section>
-  </div>;
-}
+  <section className={`${styles.section} ${styles.faq}`}><div className={`${styles.shell} ${styles.faqGrid}`}><Reveal><SectionTitle label="Frequently asked questions" title="Straight answers before you start." /></Reveal><Reveal delay={.08} className={styles.faqList}>{faqs.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</Reveal></div></section>
+</main>; }

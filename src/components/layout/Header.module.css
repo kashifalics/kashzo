@@ -7,3 +7,5 @@
 @keyframes headerEntrance{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.header{animation:none}}
 @media(max-width:1040px){.overlay{z-index:75;inset:0}.mobilePanel{z-index:80;top:0}}
+@media(max-width:1040px){.menuButton{border-radius:12px}.mobilePanel{top:82px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));width:min(calc(100vw - 24px),390px);border:1px solid rgba(199,161,90,.3);border-radius:24px;background:#0d1b29;box-shadow:-22px 18px 58px rgba(0,0,0,.38)}.overlay{background:rgba(4,17,31,.68);backdrop-filter:blur(4px)}}
+@media(max-width:380px){.mobilePanel{right:8px;bottom:max(8px,env(safe-area-inset-bottom));width:calc(100vw - 16px);border-radius:20px}}

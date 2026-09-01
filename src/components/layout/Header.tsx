@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 import { BrandLockup } from './BrandLockup';
 import styles from './Header.module.css';
 
-const links = [['Home', '/'], ['Services', '/services'], ['Work', '/work'], ['Industries', '/industries'], ['About', '/about'], ['Insights', '/insights']] as const;
+const links = [['Home', '/'], ['Services', '/services'], ['Work', '/work'], ['About', '/about'], ['Contact', '/contact']] as const;
 
 export function Header() {
   const pathname = usePathname();
