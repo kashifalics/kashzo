@@ -1,5 +1,6 @@
 import { BookOpen, BrainCircuit, CalendarCheck, Database, GraduationCap, Hotel, PhoneCall, UserCheck } from 'lucide-react';
 import Image from 'next/image';
+import { projects } from '@/lib/data/projects';
 import styles from './ProjectVisual.module.css';
 
 export function ProjectVisual({ slug, category, industry }: { slug: string; category: string; industry: string }) {
@@ -9,7 +10,23 @@ export function ProjectVisual({ slug, category, industry }: { slug: string; cate
   if (slug === 'ocr-automation-aws-textract') return <Visual badge={badge} variant="ocr"><div className={styles.window}><div className={styles.document}><i/><i/><i/><i/><span className={styles.scan}/></div><span className={styles.arrow}>→</span><div className={styles.data}><i/><i/><i/></div></div></Visual>;
   if (slug === 'voice-calling-agent-lead-generation') return <Visual badge={badge} variant="calling" description="Representational workflow showing an AI call qualifying a lead and scheduling a meeting"><div className={styles.callFlow}><div className={styles.callStart}><span><PhoneCall/></span><strong>AI CALL</strong><div className={styles.voiceBars}><i/><i/><i/><i/><i/></div></div><span className={styles.flowArrow}>→</span><div className={styles.callActions}><div><UserCheck/><span><small>LEAD</small>Qualified</span></div><div><Database/><span><small>CRM</small>Updated</span></div><div><CalendarCheck/><span><small>CALENDAR</small>Meeting scheduled</span></div></div></div></Visual>;
   if (slug === 'educational-learning-platform') return <Visual badge={badge} variant="education" description="Representational learning platform with courses, lessons and progress tracking"><div className={styles.learningUi}><div className={styles.learningNav}><GraduationCap/><strong>LEARNING</strong><span className={styles.activeLesson}><BookOpen/>Courses</span><span>Lessons</span><span>Assessment</span></div><div className={styles.learningMain}><p>ACTIVE MODULE</p><strong>Learning Progress</strong><div className={styles.progress}><span/></div><div className={styles.moduleCards}><div><BookOpen/><span>Lessons</span></div><div><GraduationCap/><span>Assessment</span></div></div></div></div></Visual>;
-  if (slug === 'saqinova-wellness-platform') return <Visual badge={badge} variant="real" description="Saqinova live website homepage"><Image src="/images/projects/saqinova-homepage.png" alt="" fill sizes="(max-width: 640px) 100vw, (max-width: 1050px) 50vw, 33vw" className={styles.projectImage} /></Visual>;
+  if (slug === 'saqinova-wellness-platform') {
+    const screenshot = projects.find((project) => project.slug === slug)?.screenshots?.[0];
+    if (screenshot) return (
+      <div className={`${styles.visual} ${styles.real}`}>
+        <div className={styles.showcaseBrowser}>
+          <div className={styles.showcaseToolbar} aria-hidden="true">
+            <span className={styles.showcaseControls}><i /><i /><i /></span>
+            <span className={styles.showcaseAddress}>saqinova.com</span>
+            <span className={styles.showcaseStatus}>Live project</span>
+          </div>
+          <div className={styles.showcaseScreen}>
+            <Image src={screenshot.url} alt={screenshot.alt} fill sizes="(max-width: 580px) 86vw, (max-width: 1050px) 44vw, 360px" className={styles.projectImage} />
+          </div>
+        </div>
+      </div>
+    );
+  }
   if (slug === 'enterprise-rag-knowledge-assistant' || slug === 'ai-personal-assistant-mobile-app') return <Visual badge={badge} variant="rag"><div className={styles.window}><div className={styles.stack}><i/><i/><i/></div><div className={styles.brain}><BrainCircuit size={25}/></div><div className={styles.answer}><i/><i/><i/></div></div></Visual>;
   return <Visual badge={badge} variant="mobile"><div className={styles.window}><div className={styles.mobileScreen}><i/><i/><i/></div></div></Visual>;
 }

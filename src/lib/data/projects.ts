@@ -224,8 +224,8 @@ export const projects: Project[] = [
       'Live website demonstrating responsive design, conversion-focused UX, and local search architecture for service businesses.',
     screenshots: [
       {
-        url: '/images/projects/saqinova-homepage.png',
-        alt: 'Saqinova live website homepage',
+        url: '/images/projects/saqinova-pricing-showcase.webp',
+        alt: 'Saqinova website project by Kashzo Solutions',
       },
     ],
   },
