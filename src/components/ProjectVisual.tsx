@@ -15,13 +15,15 @@ export function ProjectVisual({ slug, category, industry }: { slug: string; cate
     if (screenshot) return (
       <div className={`${styles.visual} ${styles.real}`}>
         <div className={styles.showcaseBrowser}>
-          <div className={styles.showcaseToolbar} aria-hidden="true">
-            <span className={styles.showcaseControls}><i /><i /><i /></span>
-            <span className={styles.showcaseAddress}>saqinova.com</span>
-            <span className={styles.showcaseStatus}>Live project</span>
+          <div className={styles.showcaseToolbar}>
+            <span className={styles.showcaseBrand}>
+              <Image src="/images/projects/saqinova-logo.jpeg" alt="Saqinova logo" width={24} height={24} sizes="24px" />
+              <span>Saqinova</span>
+            </span>
+            <span className={styles.showcaseStatus}>Live website</span>
           </div>
           <div className={styles.showcaseScreen}>
-            <Image src={screenshot.url} alt={screenshot.alt} fill sizes="(max-width: 580px) 86vw, (max-width: 1050px) 44vw, 360px" className={styles.projectImage} />
+            <Image src={screenshot.url} alt={screenshot.alt} fill sizes="(max-width: 580px) 92vw, (max-width: 1050px) 46vw, 390px" className={styles.projectImage} />
           </div>
         </div>
       </div>
