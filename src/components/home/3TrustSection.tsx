@@ -261,7 +261,7 @@ export function TrustSection() {
                         <div className={styles.reviewSummary}>
 
                             <strong>
-                                Verified Trustpilot Reviews – 5.0 (1)
+                                Verified Trustpilot Reviews – 5.0 (2)
                             </strong>
 
                             <span>
