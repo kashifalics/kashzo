@@ -4,6 +4,7 @@ import { Playfair_Display, Poppins } from 'next/font/google';
 import './globals.css';
 
 import { SiteHeader } from '@/components/home';
+import { FloatingWhatsApp } from '@/components/14FloatingWhatsApp';
 
 /* =========================================================
    GLOBAL FONTS
@@ -114,6 +115,8 @@ export default function RootLayout({
         <SiteHeader />
 
         {children}
+
+        <FloatingWhatsApp />
       </body>
     </html>
   );
