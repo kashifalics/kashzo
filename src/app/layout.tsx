@@ -4,7 +4,7 @@ import { Playfair_Display, Poppins } from 'next/font/google';
 import './globals.css';
 
 import { SiteHeader } from '@/components/home';
-import { FloatingWhatsApp } from '@/components/14FloatingWhatsApp';
+import { FloatingWhatsApp } from '@/components/home/14FloatingWhatsApp';
 
 /* =========================================================
    GLOBAL FONTS
