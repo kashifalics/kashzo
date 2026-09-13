@@ -11,6 +11,7 @@ import { ServicesSection } from '@/components/home/9ServicesSection';
 import { FounderSection } from '@/components/home/10FounderSection';
 import { FAQSection } from '@/components/home/11FAQSection';
 import { FinalCTA } from '@/components/home/12FinalCTA';
+import { SocialFooter } from '@/components/home/13SocialFooter';
 
 
 export const metadata: Metadata = {
@@ -25,7 +26,6 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main>
-
       <HeroSection />
 
       <TrustSection />
@@ -48,6 +48,7 @@ export default function HomePage() {
 
       <FinalCTA />
 
+      <SocialFooter />
     </main>
   );
 }

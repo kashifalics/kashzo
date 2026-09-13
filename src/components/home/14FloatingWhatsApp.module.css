@@ -1,0 +1,376 @@
+/* =========================================================
+   KASHZO — FLOATING WHATSAPP BUTTON
+========================================================= */
+
+
+/* =========================================================
+   WRAPPER
+========================================================= */
+
+.wrapper {
+    position: fixed;
+
+    right: 18px;
+    bottom: 20px;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 62px;
+    height: 62px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   MAIN BUTTON
+========================================================= */
+
+.button {
+    position: relative;
+
+    z-index: 3;
+
+    display: grid;
+
+    width: 58px;
+    height: 58px;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(145deg,
+            #2bd66f 0%,
+            #16ba57 100%);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 10px 28px rgba(22,
+            186,
+            87,
+            0.3),
+        0 3px 8px rgba(6,
+            24,
+            79,
+            0.14);
+
+    animation:
+        whatsappPop 6s ease-in-out infinite;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.icon {
+    display: block;
+
+    width: 33px;
+    height: 33px;
+}
+
+
+/* =========================================================
+   PULSE
+========================================================= */
+
+.pulse {
+    position: absolute;
+
+    z-index: 1;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(37,
+            211,
+            102,
+            0.27);
+
+    animation:
+        whatsappPulse 2.6s ease-out infinite;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TOOLTIP
+========================================================= */
+
+.tooltip {
+    position: absolute;
+
+    right: 71px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%) translateX(8px);
+
+    min-width: max-content;
+
+    padding:
+        10px 14px;
+
+    border:
+        1px solid rgba(25,
+            125,
+            242,
+            0.1);
+
+    border-radius: 10px;
+
+    background:
+        #ffffff;
+
+    color:
+        var(--color-navy, #06184f);
+
+    font-family:
+        var(--font-site);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 8px 25px rgba(6,
+            24,
+            79,
+            0.12);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Tooltip arrow */
+
+.tooltip::after {
+    content: '';
+
+    position: absolute;
+
+    right: -6px;
+    top: 50%;
+
+    width: 11px;
+    height: 11px;
+
+    transform:
+        translateY(-50%) rotate(45deg);
+
+    background:
+        #ffffff;
+
+    border-top:
+        1px solid rgba(25,
+            125,
+            242,
+            0.08);
+
+    border-right:
+        1px solid rgba(25,
+            125,
+            242,
+            0.08);
+}
+
+
+/* =========================================================
+   POP ANIMATION
+========================================================= */
+
+@keyframes whatsappPop {
+
+    0%,
+    82%,
+    100% {
+        transform:
+            scale(1) translateY(0);
+    }
+
+    86% {
+        transform:
+            scale(1.08) translateY(-3px);
+    }
+
+    89% {
+        transform:
+            scale(0.98) translateY(0);
+    }
+
+    92% {
+        transform:
+            scale(1.04) translateY(-1px);
+    }
+
+    95% {
+        transform:
+            scale(1) translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   PULSE ANIMATION
+========================================================= */
+
+@keyframes whatsappPulse {
+
+    0% {
+        transform:
+            scale(0.9);
+
+        opacity: 0.6;
+    }
+
+    70% {
+        transform:
+            scale(1.45);
+
+        opacity: 0;
+    }
+
+    100% {
+        transform:
+            scale(1.45);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 699px) {
+
+    .wrapper {
+        right: 16px;
+
+        /*
+           Keeps it comfortably above the bottom edge
+           and browser controls.
+        */
+        bottom:
+            calc(18px + env(safe-area-inset-bottom));
+
+        width: 58px;
+        height: 58px;
+    }
+
+
+    .button {
+        width: 55px;
+        height: 55px;
+    }
+
+
+    .pulse {
+        width: 55px;
+        height: 55px;
+    }
+
+
+    .icon {
+        width: 31px;
+        height: 31px;
+    }
+
+
+    /*
+       Keep mobile clean.
+       Customer sees only the WhatsApp button.
+    */
+
+    .tooltip {
+        display: none;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP HOVER
+========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .wrapper:hover .button {
+        transform:
+            translateY(-3px) scale(1.04);
+
+        box-shadow:
+            0 14px 32px rgba(22,
+                186,
+                87,
+                0.34),
+            0 4px 10px rgba(6,
+                24,
+                79,
+                0.12);
+    }
+
+
+    .wrapper:hover .tooltip {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform:
+            translateY(-50%) translateX(0);
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .button,
+    .pulse {
+        animation: none;
+    }
+
+}
