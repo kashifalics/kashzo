@@ -14,12 +14,12 @@ const socialLinks = [
     },
     {
         name: 'LinkedIn',
-        href: '#',
+        href: 'https://www.linkedin.com/company/kashzo-solutions/',
         icon: 'linkedin',
     },
     {
         name: 'X',
-        href: '#',
+        href: 'https://x.com/KashzoSolutions',
         icon: 'x',
     },
     {
