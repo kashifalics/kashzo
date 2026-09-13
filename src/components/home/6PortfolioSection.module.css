@@ -1,0 +1,1192 @@
+/* =========================================================
+   KASHZO — SECTION 6
+   PORTFOLIO / OUR WORK
+
+   MOBILE:
+   1 PROJECT PER ROW
+
+   TABLET + DESKTOP:
+   2 × 2 GRID
+========================================================= */
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section {
+    position: relative;
+
+    overflow: hidden;
+
+    margin-top: -1px;
+
+    padding:
+        34px 0 28px;
+
+    background:
+        linear-gradient(180deg,
+            var(--color-section-soft) 0%,
+            var(--color-white) 14%,
+            var(--color-white) 92%,
+            var(--color-section-soft) 100%);
+
+    color:
+        var(--color-text);
+
+    font-family:
+        var(--font-site);
+}
+
+
+/* =========================================================
+   SHELL
+========================================================= */
+
+.shell {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        calc(100% - (var(--page-padding-mobile) * 2));
+
+    max-width:
+        var(--container-main);
+
+    margin-inline:
+        auto;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro {
+    max-width:
+        var(--container-text);
+
+    margin:
+        0 auto 30px;
+
+    text-align:
+        center;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.eyebrow {
+    margin:
+        0 0 var(--section-label-gap);
+
+    color:
+        var(--color-blue);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-label);
+
+    font-weight:
+        var(--fw-semibold);
+
+    line-height:
+        1.2;
+
+    letter-spacing:
+        var(--tracking-label);
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.heading {
+    margin: 0;
+
+    color:
+        var(--color-navy);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-heading);
+
+    font-weight:
+        var(--fw-bold);
+
+    line-height:
+        var(--lh-heading);
+
+    letter-spacing:
+        var(--tracking-heading);
+}
+
+
+.heading strong {
+    color:
+        var(--color-blue);
+
+    font-weight:
+        inherit;
+}
+
+
+/* =========================================================
+   INTRO DESCRIPTION
+========================================================= */
+
+.description {
+    max-width:
+        620px;
+
+    margin:
+        var(--section-heading-gap) auto 0;
+
+    color:
+        var(--color-body);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-body);
+
+    font-weight:
+        var(--fw-regular);
+
+    line-height:
+        var(--lh-body);
+}
+
+
+/* =========================================================
+   PROJECT GRID
+========================================================= */
+
+.projectGrid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr);
+
+    gap:
+        16px;
+}
+
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.projectCard {
+    min-width: 0;
+
+    overflow: hidden;
+
+    border:
+        var(--border-standard);
+
+    border-radius:
+        var(--radius-card);
+
+    background:
+        var(--color-white);
+
+    box-shadow:
+        var(--shadow-soft);
+
+    transition:
+        border-color var(--transition-base),
+        box-shadow var(--transition-base),
+        transform var(--transition-base);
+}
+
+
+/* =========================================================
+   BROWSER
+========================================================= */
+
+.browser {
+    padding:
+        10px 10px 0;
+}
+
+
+/* =========================================================
+   BROWSER TOP BAR
+========================================================= */
+
+.browserBar {
+    display: grid;
+
+    grid-template-columns:
+        auto minmax(0, 1fr) auto;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    min-height:
+        30px;
+
+    padding:
+        0 9px;
+
+    border:
+        1px solid #e3eaf1;
+
+    border-bottom:
+        0;
+
+    border-radius:
+        10px 10px 0 0;
+
+    background:
+        #f5f7fa;
+}
+
+
+/* =========================================================
+   BROWSER DOTS
+========================================================= */
+
+.browserDots {
+    display: flex;
+
+    align-items: center;
+
+    gap:
+        4px;
+}
+
+
+.browserDots span {
+    display: block;
+
+    width:
+        6px;
+
+    height:
+        6px;
+
+    border-radius:
+        50%;
+}
+
+
+.browserDots span:nth-child(1) {
+    background:
+        #ff6258;
+}
+
+
+.browserDots span:nth-child(2) {
+    background:
+        #ffbd2e;
+}
+
+
+.browserDots span:nth-child(3) {
+    background:
+        #27c840;
+}
+
+
+/* =========================================================
+   ADDRESS BAR
+========================================================= */
+
+.addressBar {
+    min-width: 0;
+
+    overflow: hidden;
+
+    padding:
+        5px 9px;
+
+    border-radius:
+        var(--radius-pill);
+
+    background:
+        #edf1f5;
+
+    color:
+        var(--color-body);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        9px;
+
+    font-weight:
+        var(--fw-medium);
+
+    line-height:
+        1;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+}
+
+
+/* =========================================================
+   BROWSER ACTION
+========================================================= */
+
+.browserAction {
+    color:
+        var(--color-muted);
+
+    font-size:
+        11px;
+
+    line-height:
+        1;
+}
+
+
+/* =========================================================
+   WEBSITE PREVIEW
+========================================================= */
+
+.preview {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio:
+        16 / 9;
+
+    overflow: hidden;
+
+    border:
+        1px solid #e3eaf1;
+
+    border-radius:
+        0 0 9px 9px;
+
+    background:
+        #eef3f8;
+}
+
+
+.previewImage {
+    object-fit:
+        cover;
+
+    object-position:
+        top center;
+}
+
+
+/* =========================================================
+   PROJECT INFORMATION
+========================================================= */
+
+.projectInfo {
+    display: flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        16px;
+
+    padding:
+        16px;
+}
+
+
+/* =========================================================
+   PROJECT COPY
+========================================================= */
+
+.projectCopy {
+    min-width:
+        0;
+}
+
+
+/* =========================================================
+   PROJECT TITLE
+========================================================= */
+
+.projectCopy h3 {
+    margin: 0;
+
+    color:
+        var(--color-navy);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        21px;
+
+    font-weight:
+        var(--fw-bold);
+
+    line-height:
+        1.2;
+
+    letter-spacing:
+        -0.025em;
+}
+
+
+/* =========================================================
+   META
+========================================================= */
+
+.projectMeta {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    margin-top:
+        7px;
+
+    color:
+        var(--color-blue);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-card-text);
+
+    font-weight:
+        var(--fw-medium);
+
+    line-height:
+        1.3;
+}
+
+
+.metaIcon {
+    display: grid;
+
+    width:
+        18px;
+
+    height:
+        18px;
+
+    place-items:
+        center;
+}
+
+
+.metaIcon svg {
+    width:
+        16px;
+
+    height:
+        16px;
+}
+
+
+/* =========================================================
+   PROJECT DESCRIPTION
+========================================================= */
+
+.projectCopy p {
+    margin:
+        9px 0 0;
+
+    color:
+        var(--color-body);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-card-text);
+
+    font-weight:
+        var(--fw-regular);
+
+    line-height:
+        var(--lh-card-text);
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.viewButton {
+    display: flex;
+
+    width: 100%;
+
+    min-height:
+        44px;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        8px;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid #bcd7f3;
+
+    border-radius:
+        var(--radius-small);
+
+    background:
+        var(--color-white);
+
+    color:
+        var(--color-blue);
+
+    text-decoration:
+        none;
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-button);
+
+    font-weight:
+        var(--fw-semibold);
+
+    transition:
+        background var(--transition-base),
+        border-color var(--transition-base),
+        color var(--transition-base),
+        transform var(--transition-base);
+}
+
+
+.viewButton:hover {
+    border-color:
+        var(--color-blue);
+
+    background:
+        var(--color-blue-soft);
+
+    color:
+        var(--color-blue-strong);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.viewButton svg {
+    width:
+        18px;
+
+    height:
+        18px;
+}
+
+
+/* =========================================================
+   BOTTOM CTA
+========================================================= */
+
+.ctaBox {
+    display: grid;
+
+    grid-template-columns:
+        auto minmax(0, 1fr);
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+    margin-top:
+        18px;
+
+    padding:
+        14px;
+
+    border:
+        1px solid #d9e8f7;
+
+    border-radius:
+        var(--radius-medium);
+
+    background:
+        linear-gradient(90deg,
+            #f1f8ff 0%,
+            #f8fbff 100%);
+}
+
+
+/* =========================================================
+   CTA ICON
+========================================================= */
+
+.ctaIcon {
+    display: grid;
+
+    width:
+        40px;
+
+    height:
+        40px;
+
+    place-items:
+        center;
+
+    border-radius:
+        var(--radius-pill);
+
+    background:
+        var(--color-white);
+
+    color:
+        var(--color-blue);
+}
+
+
+.ctaIcon svg {
+    width:
+        21px;
+
+    height:
+        21px;
+}
+
+
+/* =========================================================
+   CTA COPY
+========================================================= */
+
+.ctaCopy {
+    min-width:
+        0;
+}
+
+
+.ctaCopy strong {
+    display: block;
+
+    color:
+        var(--color-navy);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-body);
+
+    font-weight:
+        var(--fw-bold);
+
+    line-height:
+        1.3;
+}
+
+
+.ctaCopy span {
+    display: block;
+
+    margin-top:
+        3px;
+
+    color:
+        var(--color-body);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-card-text);
+
+    line-height:
+        1.4;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.ctaButton {
+    grid-column:
+        1 / -1;
+
+    display: flex;
+
+    width: 100%;
+
+    min-height:
+        45px;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        9px;
+
+    margin-top:
+        3px;
+
+    padding:
+        0 18px;
+
+    border-radius:
+        var(--radius-small);
+
+    background:
+        var(--color-button);
+
+    color:
+        var(--color-white);
+
+    text-decoration:
+        none;
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-button);
+
+    font-weight:
+        var(--fw-semibold);
+
+    transition:
+        background var(--transition-base),
+        transform var(--transition-base);
+}
+
+
+.ctaButton:hover {
+    background:
+        var(--color-button-hover);
+
+    color:
+        var(--color-white);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   BOTTOM DIVIDER
+========================================================= */
+
+.bottomDivider {
+    margin-top:
+        var(--space-8);
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 370px) {
+
+    .section {
+        padding:
+            28px 0 24px;
+    }
+
+
+    .shell {
+        width:
+            calc(100% - 30px);
+    }
+
+
+    .intro {
+        margin-bottom:
+            25px;
+    }
+
+
+    .projectGrid {
+        gap:
+            14px;
+    }
+
+
+    .browser {
+        padding:
+            8px 8px 0;
+    }
+
+
+    .projectInfo {
+        padding:
+            14px;
+    }
+
+
+    .projectCopy h3 {
+        font-size:
+            19px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 700px) {
+
+    .section {
+        padding:
+            42px 0 36px;
+    }
+
+
+    .shell {
+        width:
+            calc(100% - (var(--page-padding-desktop) * 2));
+
+        max-width:
+            1040px;
+    }
+
+
+    .intro {
+        max-width:
+            740px;
+
+        margin-bottom:
+            40px;
+    }
+
+
+    .projectGrid {
+        grid-template-columns:
+            repeat(2,
+                minmax(0, 1fr));
+
+        gap:
+            20px;
+    }
+
+
+    .browser {
+        padding:
+            12px 12px 0;
+    }
+
+
+    .browserBar {
+        min-height:
+            34px;
+    }
+
+
+    .addressBar {
+        font-size:
+            10px;
+    }
+
+
+    .projectInfo {
+        min-height:
+            185px;
+
+        padding:
+            18px;
+    }
+
+
+    .projectCopy h3 {
+        font-size:
+            23px;
+    }
+
+
+    .viewButton {
+        min-height:
+            47px;
+    }
+
+
+    .ctaBox {
+        grid-template-columns:
+            auto minmax(0, 1fr) auto;
+
+        gap:
+            16px;
+
+        margin-top:
+            22px;
+
+        padding:
+            16px 18px;
+    }
+
+
+    .ctaButton {
+        grid-column:
+            auto;
+
+        width:
+            auto;
+
+        min-width:
+            180px;
+
+        min-height:
+            48px;
+
+        margin-top:
+            0;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1000px) {
+
+    .section {
+        padding:
+            48px 0 40px;
+    }
+
+
+    .shell {
+        max-width:
+            1180px;
+    }
+
+
+    .intro {
+        max-width:
+            760px;
+
+        margin-bottom:
+            42px;
+    }
+
+
+    .projectGrid {
+        gap:
+            22px;
+    }
+
+
+    .projectCard {
+        border-radius:
+            var(--radius-large);
+    }
+
+
+    .browser {
+        padding:
+            14px 14px 0;
+    }
+
+
+    .projectInfo {
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 1fr) auto;
+
+        align-items:
+            end;
+
+        gap:
+            20px;
+
+        min-height:
+            170px;
+
+        padding:
+            20px;
+    }
+
+
+    .projectCopy h3 {
+        font-size:
+            25px;
+    }
+
+
+    .projectCopy p {
+        max-width:
+            390px;
+    }
+
+
+    .viewButton {
+        width:
+            auto;
+
+        min-width:
+            150px;
+
+        min-height:
+            48px;
+
+        align-self:
+            end;
+    }
+
+
+    .ctaBox {
+        margin-top:
+            24px;
+
+        padding:
+            17px 20px;
+
+        border-radius:
+            var(--radius-card);
+    }
+
+
+    .ctaIcon {
+        width:
+            48px;
+
+        height:
+            48px;
+    }
+
+
+    .ctaCopy strong {
+        font-size:
+            16px;
+    }
+
+
+    .ctaCopy span {
+        font-size:
+            13px;
+    }
+
+
+    .ctaButton {
+        width:
+            205px;
+
+        min-height:
+            52px;
+    }
+
+
+    .bottomDivider {
+        margin-top:
+            42px;
+    }
+
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1300px) {
+
+    .shell {
+        max-width:
+            1240px;
+    }
+
+
+    .projectGrid {
+        gap:
+            24px;
+    }
+
+
+    .projectInfo {
+        padding:
+            22px;
+    }
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .projectCard:hover {
+        border-color:
+            rgba(25,
+                125,
+                242,
+                0.28);
+
+        box-shadow:
+            var(--shadow-hover);
+
+        transform:
+            translateY(-3px);
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .projectCard,
+    .viewButton,
+    .ctaButton {
+        transition:
+            none;
+    }
+
+
+    .projectCard:hover,
+    .viewButton:hover,
+    .ctaButton:hover {
+        transform:
+            none;
+    }
+
+}

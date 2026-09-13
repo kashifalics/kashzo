@@ -1,0 +1,1213 @@
+/* =========================================================
+   KASHZO — SECTION 4
+   WEBSITE PACKAGES
+   CONSISTENT TYPOGRAPHY SYSTEM
+========================================================= */
+
+.section {
+    --navy: #06184f;
+    --blue: #197df2;
+    --check-blue: #459af2;
+
+    --text: #34455f;
+    --body: #66748e;
+    --muted: #778399;
+
+    --border: #dfe7ef;
+    --divider: #e7edf3;
+
+    position: relative;
+    overflow: hidden;
+
+    margin-top: -1px;
+
+    padding:
+        14px 0 56px;
+
+    background:
+        linear-gradient(180deg,
+            #fbfcfe 0%,
+            #ffffff 16%,
+            #ffffff 88%,
+            #fbfcfe 100%);
+
+    font-family:
+        var(--font-poppins),
+        "Poppins",
+        Arial,
+        sans-serif;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.section::before {
+    display: none;
+}
+
+
+.section::after {
+    content: '';
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -270px;
+
+    width: 520px;
+    height: 340px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(230, 241, 253, 0.25) 0%,
+            rgba(248, 251, 255, 0.06) 68%,
+            transparent 80%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.shell {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        calc(100% - 40px);
+
+    max-width: 900px;
+
+    margin-inline: auto;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro {
+    max-width: 680px;
+
+    margin:
+        0 auto 28px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
+.eyebrow {
+    margin:
+        0 0 12px;
+
+    color:
+        var(--blue);
+
+    font-family:
+        inherit;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.22em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.heading {
+    margin: 0;
+
+    color:
+        var(--navy);
+
+    font-family:
+        inherit;
+
+    font-size: 35px;
+
+    font-weight: 700;
+
+    line-height: 1.07;
+
+    letter-spacing: -0.043em;
+}
+
+
+.heading span {
+    display: block;
+}
+
+
+/* =========================================================
+   SECTION DESCRIPTION
+========================================================= */
+
+.introCopy {
+    margin:
+        16px 0 0;
+
+    color:
+        var(--body);
+
+    font-family:
+        inherit;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    line-height: 1.62;
+}
+
+
+/* =========================================================
+   PACKAGE LIST
+========================================================= */
+
+.packageList {
+    display: grid;
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   PACKAGE CARD
+========================================================= */
+
+.packageCard {
+    position: relative;
+
+    padding:
+        21px 18px 18px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 15px;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 8px 24px rgba(15,
+            35,
+            64,
+            0.04);
+
+    transition:
+        border-color 0.22s ease,
+        box-shadow 0.22s ease,
+        background 0.22s ease,
+        transform 0.22s ease;
+}
+
+
+/* =========================================================
+   ACTIVE CARD
+========================================================= */
+
+.activeCard {
+    border-color:
+        rgba(25,
+            125,
+            242,
+            0.46);
+
+    background:
+        linear-gradient(180deg,
+            #ffffff 0%,
+            #fbfdff 100%);
+
+    box-shadow:
+        0 13px 32px rgba(19,
+            75,
+            139,
+            0.10);
+
+    transform:
+        translateY(-2px);
+}
+
+
+.activeCard::before {
+    content: '';
+
+    position: absolute;
+
+    top: -1px;
+    left: 24px;
+    right: 24px;
+
+    height: 2px;
+
+    border-radius:
+        0 0 999px 999px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(25,
+                125,
+                242,
+                0.7),
+            transparent);
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.cardTop {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr) 128px;
+
+    align-items: start;
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   PACKAGE INFO
+========================================================= */
+
+.packageInfo {
+    min-width: 0;
+}
+
+
+.packageTitleRow {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap:
+        7px 9px;
+}
+
+
+/* =========================================================
+   PACKAGE TITLE
+========================================================= */
+
+.packageTitleRow h3 {
+    margin: 0;
+
+    color:
+        var(--navy);
+
+    font-family:
+        inherit;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    line-height: 1.08;
+
+    letter-spacing:
+        -0.035em;
+}
+
+
+/* =========================================================
+   PACKAGE DESCRIPTION
+========================================================= */
+
+.packageInfo>p {
+    max-width: 295px;
+
+    margin:
+        8px 0 0;
+
+    color:
+        var(--body);
+
+    font-family:
+        inherit;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   MOST POPULAR
+========================================================= */
+
+.popularBadge {
+    display: inline-flex;
+
+    min-height: 23px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        0 9px;
+
+    border-radius: 999px;
+
+    background:
+        #eef5fd;
+
+    color:
+        #237bdc;
+
+    font-family:
+        inherit;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    letter-spacing:
+        0.04em;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================================
+   PRICE AREA
+   RIGHT ALIGNED
+========================================================= */
+
+.priceArea {
+    width: 128px;
+
+    justify-self: end;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    padding-top: 0;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   OLD PRICE
+========================================================= */
+
+.priceArea del {
+    margin:
+        0 0 4px;
+
+    padding: 0;
+
+    color:
+        #778295;
+
+    font-family:
+        inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    text-align: right;
+
+    text-decoration-line:
+        line-through;
+
+    text-decoration-thickness:
+        1.5px;
+
+    text-decoration-color:
+        #778295;
+}
+
+
+/* =========================================================
+   CURRENT PRICE
+========================================================= */
+
+.priceArea strong {
+    display: block;
+
+    margin: 0;
+
+    padding: 0;
+
+    color:
+        var(--navy);
+
+    font-family:
+        inherit;
+
+    font-size: 35px;
+
+    font-weight: 700;
+
+    line-height: 0.98;
+
+    letter-spacing:
+        -0.045em;
+
+    text-align: right;
+
+    font-variant-numeric:
+        lining-nums;
+
+    font-feature-settings:
+        "lnum" 1;
+}
+
+
+/* =========================================================
+   PAYMENT TEXT
+========================================================= */
+
+.priceArea>span {
+    display: block;
+
+    margin-top: 7px;
+
+    color:
+        var(--muted);
+
+    font-family:
+        inherit;
+
+    font-size: 10px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    text-align: right;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CARD DIVIDER
+========================================================= */
+
+.cardDivider {
+    width: 100%;
+
+    height: 1px;
+
+    margin:
+        17px 0 16px;
+
+    background:
+        var(--divider);
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features {
+    display: grid;
+
+    gap: 8px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.features li {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    color:
+        var(--text);
+
+    font-family:
+        inherit;
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   CHECK
+========================================================= */
+
+.checkIcon {
+    display: grid;
+
+    width: 17px;
+    height: 17px;
+
+    flex:
+        0 0 17px;
+
+    place-items: center;
+
+    margin-top: 1px;
+
+    border-radius: 50%;
+
+    background:
+        var(--check-blue);
+
+    color:
+        #ffffff;
+}
+
+
+.checkIcon svg {
+    width: 11px;
+
+    height: 11px;
+}
+
+
+/* =========================================================
+   QUOTE BUTTON
+========================================================= */
+
+.quoteButton {
+    display: flex;
+
+    min-height: 47px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 19px;
+
+    padding:
+        0 17px;
+
+    border: 0;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(95deg,
+            #092d55 0%,
+            #113e68 100%);
+
+    color:
+        #ffffff !important;
+
+    text-decoration:
+        none !important;
+
+    font-family:
+        inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 5px 14px rgba(8,
+            44,
+            84,
+            0.08);
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.quoteButton:visited,
+.quoteButton:hover,
+.quoteButton:active,
+.quoteButton:focus {
+    color:
+        #ffffff !important;
+
+    text-decoration:
+        none !important;
+}
+
+
+.quoteButton:hover {
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 8px 18px rgba(8,
+            44,
+            84,
+            0.12);
+}
+
+
+/* =========================================================
+   CUSTOM QUOTE
+========================================================= */
+
+.customQuote {
+    display: grid;
+
+    grid-template-columns:
+        auto minmax(0, 1fr) auto;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-top: 13px;
+
+    padding:
+        13px 14px;
+
+    border:
+        1px solid #e0e7ef;
+
+    border-radius: 12px;
+
+    background:
+        #fbfcfe;
+
+    color:
+        inherit;
+
+    text-decoration:
+        none !important;
+
+    box-shadow:
+        0 4px 13px rgba(7,
+            27,
+            69,
+            0.02);
+}
+
+
+.customQuote:visited,
+.customQuote:hover,
+.customQuote:active,
+.customQuote:focus {
+    color:
+        inherit;
+
+    text-decoration:
+        none !important;
+}
+
+
+/* =========================================================
+   CUSTOM ICON
+========================================================= */
+
+.customIcon {
+    display: grid;
+
+    width: 32px;
+    height: 32px;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        #eff6fd;
+
+    color:
+        #2382e8;
+}
+
+
+/* =========================================================
+   CUSTOM TEXT
+========================================================= */
+
+.customCopy {
+    min-width: 0;
+}
+
+
+.customCopy strong {
+    display: block;
+
+    color:
+        var(--navy);
+
+    font-family:
+        inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+
+.customCopy>span {
+    display: block;
+
+    margin-top: 3px;
+
+    color:
+        var(--body);
+
+    font-family:
+        inherit;
+
+    font-size: 10px;
+
+    font-weight: 400;
+
+    line-height: 1.4;
+}
+
+
+.customArrow {
+    color:
+        var(--navy);
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 370px) {
+
+    .section {
+        padding:
+            12px 0 50px;
+    }
+
+
+    .shell {
+        width:
+            calc(100% - 30px);
+    }
+
+
+    .intro {
+        margin-bottom:
+            24px;
+    }
+
+
+    .eyebrow {
+        font-size: 9px;
+    }
+
+
+    .heading {
+        font-size: 31px;
+    }
+
+
+    .introCopy {
+        margin-top:
+            14px;
+
+        font-size: 12px;
+    }
+
+
+    .packageCard {
+        padding:
+            18px 15px 15px;
+    }
+
+
+    .cardTop {
+        grid-template-columns:
+            minmax(0, 1fr) 112px;
+
+        gap: 8px;
+    }
+
+
+    .packageTitleRow h3 {
+        font-size: 23px;
+    }
+
+
+    .packageInfo>p {
+        font-size: 11px;
+    }
+
+
+    .priceArea {
+        width:
+            112px;
+    }
+
+
+    .priceArea del {
+        font-size:
+            11px;
+    }
+
+
+    .priceArea strong {
+        font-size:
+            31px;
+    }
+
+
+    .priceArea>span {
+        font-size:
+            9px;
+    }
+
+
+    .features li {
+        font-size:
+            11px;
+    }
+
+
+    .quoteButton {
+        min-height:
+            44px;
+
+        font-size:
+            12.5px;
+    }
+
+
+    .customCopy strong {
+        font-size:
+            11px;
+    }
+
+
+    .customCopy>span {
+        font-size:
+            9px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / DESKTOP
+========================================================= */
+
+@media (min-width: 700px) {
+
+    .section {
+        padding:
+            30px 0 88px;
+    }
+
+
+    .shell {
+        width:
+            min(calc(100% - 80px),
+                900px);
+    }
+
+
+    .intro {
+        max-width:
+            740px;
+
+        margin:
+            0 auto 36px;
+    }
+
+
+    .eyebrow {
+        margin-bottom:
+            14px;
+
+        font-size:
+            12px;
+    }
+
+
+    .heading {
+        font-size:
+            48px;
+    }
+
+
+    .introCopy {
+        margin-top:
+            18px;
+
+        font-size:
+            15px;
+    }
+
+
+    .packageList {
+        gap:
+            18px;
+    }
+
+
+    .packageCard {
+        padding:
+            27px 30px 23px;
+
+        border-radius:
+            17px;
+    }
+
+
+    .cardTop {
+        grid-template-columns:
+            minmax(0, 1fr) 165px;
+
+        gap:
+            26px;
+    }
+
+
+    .packageTitleRow h3 {
+        font-size:
+            31px;
+    }
+
+
+    .packageInfo>p {
+        max-width:
+            450px;
+
+        margin-top:
+            9px;
+
+        font-size:
+            13px;
+    }
+
+
+    .popularBadge {
+        min-height:
+            27px;
+
+        padding:
+            0 11px;
+
+        font-size:
+            9px;
+    }
+
+
+    .priceArea {
+        width:
+            165px;
+    }
+
+
+    .priceArea del {
+        margin-bottom:
+            5px;
+
+        font-size:
+            15px;
+    }
+
+
+    .priceArea strong {
+        font-size:
+            42px;
+    }
+
+
+    .priceArea>span {
+        margin-top:
+            8px;
+
+        font-size:
+            11px;
+    }
+
+
+    .cardDivider {
+        margin:
+            20px 0 18px;
+    }
+
+
+    .features {
+        gap:
+            9px;
+    }
+
+
+    .features li {
+        gap:
+            10px;
+
+        font-size:
+            13px;
+    }
+
+
+    .checkIcon {
+        width:
+            19px;
+
+        height:
+            19px;
+
+        flex-basis:
+            19px;
+    }
+
+
+    .checkIcon svg {
+        width:
+            13px;
+
+        height:
+            13px;
+    }
+
+
+    .quoteButton {
+        min-height:
+            52px;
+
+        margin-top:
+            22px;
+
+        font-size:
+            15px;
+    }
+
+
+    .customQuote {
+        gap:
+            15px;
+
+        margin-top:
+            16px;
+
+        padding:
+            16px 19px;
+
+        border-radius:
+            14px;
+    }
+
+
+    .customIcon {
+        width:
+            39px;
+
+        height:
+            39px;
+    }
+
+
+    .customCopy strong {
+        font-size:
+            13px;
+    }
+
+
+    .customCopy>span {
+        font-size:
+            11px;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP HOVER
+========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .packageCard:hover {
+        border-color:
+            rgba(25,
+                125,
+                242,
+                0.42);
+
+        background:
+            #fbfdff;
+
+        box-shadow:
+            0 12px 34px rgba(19,
+                75,
+                139,
+                0.09);
+
+        transform:
+            translateY(-2px);
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .packageCard,
+    .quoteButton {
+        transition:
+            none;
+    }
+
+
+    .activeCard,
+    .packageCard:hover {
+        transform:
+            none;
+    }
+
+}
