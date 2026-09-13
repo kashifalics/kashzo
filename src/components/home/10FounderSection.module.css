@@ -1,0 +1,1120 @@
+/* =========================================================
+   KASHZO — SECTION 10
+   MEET THE FOUNDER
+
+   MOBILE FIRST
+
+   MOBILE:
+   Photo
+   Content
+   2 × 2 highlight cards
+   CTA
+
+   DESKTOP:
+   Photo left
+   Content right
+========================================================= */
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section {
+    position: relative;
+
+    overflow: hidden;
+
+    margin-top: -1px;
+
+    padding:
+        30px 0 26px;
+
+    background:
+        linear-gradient(180deg,
+            var(--color-section-soft, #f8fbff) 0%,
+            var(--color-white, #ffffff) 15%,
+            var(--color-white, #ffffff) 88%,
+            var(--color-section-soft, #f8fbff) 100%);
+
+    color:
+        var(--color-text, #34445f);
+
+    font-family:
+        var(--font-site);
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATION
+========================================================= */
+
+.section::before {
+    content: '';
+
+    position: absolute;
+
+    top: -160px;
+    right: -180px;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(229,
+            241,
+            253,
+            0.5);
+
+    pointer-events: none;
+}
+
+
+.section::after {
+    content: '';
+
+    position: absolute;
+
+    left: -160px;
+    bottom: -210px;
+
+    width: 400px;
+    height: 400px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(229,
+            241,
+            253,
+            0.42);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SHELL
+========================================================= */
+
+.shell {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        calc(100% - (var(--page-padding-mobile, 20px) * 2));
+
+    max-width:
+        var(--container-main, 1180px);
+
+    margin-inline: auto;
+}
+
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.mainGrid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr);
+
+    gap: 34px;
+}
+
+
+/* =========================================================
+   IMAGE COLUMN
+========================================================= */
+
+.imageColumn {
+    display: flex;
+
+    justify-content: center;
+}
+
+
+/* =========================================================
+   IMAGE CARD
+========================================================= */
+
+.imageCard {
+    position: relative;
+
+    width:
+        min(76vw,
+            420px);
+
+    aspect-ratio:
+        4 / 5;
+
+    overflow: hidden;
+
+    border:
+        1px solid #bcdcfb;
+
+    border-radius:
+        24px;
+
+    background:
+        linear-gradient(145deg,
+            #ffffff 0%,
+            #edf6ff 100%);
+
+    box-shadow:
+        0 18px 45px rgba(6,
+            24,
+            79,
+            0.08);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.founderImage {
+    object-fit: cover;
+
+    object-position:
+        center top;
+}
+
+
+/* =========================================================
+   IMAGE LABEL
+========================================================= */
+
+.imageLabel {
+    position: absolute;
+
+    left: 16px;
+    bottom: 16px;
+
+    display: flex;
+
+    min-width: 180px;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        11px 14px;
+
+    border:
+        1px solid rgba(255,
+            255,
+            255,
+            0.55);
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(5,
+            23,
+            62,
+            0.72);
+
+    box-shadow:
+        0 7px 22px rgba(1,
+            16,
+            50,
+            0.16);
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
+    color:
+        #ffffff;
+}
+
+
+/* =========================================================
+   STATUS DOT
+========================================================= */
+
+.statusDot {
+    width: 10px;
+    height: 10px;
+
+    flex:
+        0 0 10px;
+
+    border-radius: 50%;
+
+    background:
+        var(--color-blue, #197df2);
+
+    box-shadow:
+        0 0 0 3px rgba(25,
+            125,
+            242,
+            0.14);
+}
+
+
+/* =========================================================
+   IMAGE LABEL TEXT
+========================================================= */
+
+.imageLabel div {
+    min-width: 0;
+}
+
+
+.imageLabel strong {
+    display: block;
+
+    margin: 0;
+
+    font-family:
+        var(--font-site);
+
+    font-size: 14px;
+
+    font-weight:
+        var(--fw-semibold, 600);
+
+    line-height: 1.2;
+}
+
+
+.imageLabel span:not(.statusDot) {
+    display: block;
+
+    margin-top: 3px;
+
+    color:
+        rgba(255,
+            255,
+            255,
+            0.82);
+
+    font-family:
+        var(--font-site);
+
+    font-size: 11px;
+
+    font-weight:
+        var(--fw-regular, 400);
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.contentColumn {
+    position: relative;
+
+    min-width: 0;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.eyebrow {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin:
+        0 0 13px;
+
+    color:
+        var(--color-blue, #197df2);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-label, 12px);
+
+    font-weight:
+        var(--fw-semibold, 600);
+
+    line-height: 1.2;
+
+    letter-spacing:
+        var(--tracking-label, 0.2em);
+
+    text-transform: uppercase;
+}
+
+
+.eyebrow::after {
+    content: '';
+
+    display: block;
+
+    width: 35px;
+    height: 1px;
+
+    background:
+        var(--color-blue, #197df2);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.heading {
+    max-width: 700px;
+
+    margin: 0;
+
+    color:
+        var(--color-navy, #06184f);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-heading, 40px);
+
+    font-weight:
+        var(--fw-bold, 700);
+
+    line-height:
+        var(--lh-heading, 1.08);
+
+    letter-spacing:
+        var(--tracking-heading, -0.035em);
+}
+
+
+.heading strong {
+    color:
+        var(--color-blue, #197df2);
+
+    font-weight: inherit;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description {
+    max-width: 690px;
+
+    margin:
+        18px 0 0;
+
+    color:
+        var(--color-text, #34445f);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-body, 16px);
+
+    font-weight:
+        var(--fw-regular, 400);
+
+    line-height:
+        1.68;
+}
+
+
+/* =========================================================
+   HIGHLIGHT GRID
+========================================================= */
+
+.highlightGrid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,
+            minmax(0, 1fr));
+
+    gap: 11px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   HIGHLIGHT CARD
+========================================================= */
+
+.highlightCard {
+    display: grid;
+
+    grid-template-columns:
+        auto minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 0;
+
+    min-height: 84px;
+
+    padding:
+        12px;
+
+    border:
+        1px solid #dce8f3;
+
+    border-radius:
+        14px;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.9);
+
+    box-shadow:
+        0 6px 18px rgba(6,
+            24,
+            79,
+            0.035);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.iconCircle {
+    display: grid;
+
+    width: 48px;
+    height: 48px;
+
+    flex:
+        0 0 48px;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(145deg,
+            #edf6ff 0%,
+            #e4f1fe 100%);
+
+    color:
+        var(--color-blue, #197df2);
+}
+
+
+.iconCircle svg {
+    width: 23px;
+    height: 23px;
+}
+
+
+/* =========================================================
+   HIGHLIGHT TEXT
+========================================================= */
+
+.highlightText {
+    min-width: 0;
+}
+
+
+.highlightText h3 {
+    margin: 0;
+
+    color:
+        var(--color-navy, #06184f);
+
+    font-family:
+        var(--font-site);
+
+    font-size: 13px;
+
+    font-weight:
+        var(--fw-bold, 700);
+
+    line-height: 1.25;
+
+    letter-spacing:
+        -0.015em;
+}
+
+
+.highlightText p {
+    margin:
+        4px 0 0;
+
+    color:
+        var(--color-body, #66748e);
+
+    font-family:
+        var(--font-site);
+
+    font-size: 10.5px;
+
+    font-weight:
+        var(--fw-regular, 400);
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   CTA AREA
+========================================================= */
+
+.ctaArea {
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.ctaButton {
+    display: flex;
+
+    width: 100%;
+
+    min-height: 53px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 11px;
+
+    padding:
+        0 20px;
+
+    border-radius:
+        999px;
+
+    background:
+        linear-gradient(90deg,
+            #096bf1 0%,
+            #197df2 100%);
+
+    color:
+        #ffffff !important;
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-button, 15px);
+
+    font-weight:
+        var(--fw-semibold, 600);
+
+    text-decoration:
+        none !important;
+
+    box-shadow:
+        0 8px 20px rgba(25,
+            125,
+            242,
+            0.17);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.ctaButton:visited,
+.ctaButton:hover,
+.ctaButton:active,
+.ctaButton:focus {
+    color:
+        #ffffff !important;
+
+    text-decoration:
+        none !important;
+}
+
+
+.ctaButton svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* =========================================================
+   CTA NOTE
+========================================================= */
+
+.ctaNote {
+    margin:
+        11px 0 0;
+
+    color:
+        var(--color-body, #66748e);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-small, 12px);
+
+    font-weight:
+        var(--fw-regular, 400);
+
+    line-height: 1.45;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   DECORATIVE MESSAGE
+========================================================= */
+
+.sideMessage {
+    display: none;
+}
+
+
+/* =========================================================
+   BOTTOM DIVIDER
+========================================================= */
+
+.bottomDivider {
+    margin-top:
+        var(--space-8, 32px);
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 370px) {
+
+    .section {
+        padding:
+            24px 0 22px;
+    }
+
+
+    .shell {
+        width:
+            calc(100% - 30px);
+    }
+
+
+    .mainGrid {
+        gap: 28px;
+    }
+
+
+    .imageCard {
+        width:
+            min(78vw,
+                330px);
+
+        border-radius:
+            19px;
+    }
+
+
+    .imageLabel {
+        left: 12px;
+        bottom: 12px;
+
+        min-width: 155px;
+
+        padding:
+            9px 11px;
+    }
+
+
+    .highlightGrid {
+        gap: 8px;
+    }
+
+
+    .highlightCard {
+        min-height: 77px;
+
+        padding: 9px;
+
+        gap: 8px;
+    }
+
+
+    .iconCircle {
+        width: 41px;
+        height: 41px;
+
+        flex-basis: 41px;
+    }
+
+
+    .iconCircle svg {
+        width: 20px;
+        height: 20px;
+    }
+
+
+    .highlightText h3 {
+        font-size: 11.5px;
+    }
+
+
+    .highlightText p {
+        display: none;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 700px) {
+
+    .section {
+        padding:
+            38px 0 34px;
+    }
+
+
+    .shell {
+        width:
+            calc(100% - (var(--page-padding-desktop, 40px) * 2));
+
+        max-width: 1040px;
+    }
+
+
+    .imageCard {
+        width: 450px;
+    }
+
+
+    .contentColumn {
+        max-width: 760px;
+
+        margin-inline: auto;
+    }
+
+
+    .ctaButton {
+        width: 360px;
+    }
+
+
+    .ctaNote {
+        width: 360px;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1000px) {
+
+    .section {
+        padding:
+            46px 0 38px;
+    }
+
+
+    .shell {
+        max-width: 1180px;
+    }
+
+
+    .mainGrid {
+        grid-template-columns:
+            minmax(360px, 0.86fr) minmax(0, 1.25fr);
+
+        align-items: center;
+
+        gap: 52px;
+    }
+
+
+    .imageColumn {
+        justify-content: flex-start;
+    }
+
+
+    .imageCard {
+        width: 100%;
+
+        max-width: 440px;
+
+        aspect-ratio:
+            0.82;
+
+        border-radius:
+            22px;
+    }
+
+
+    .contentColumn {
+        max-width: none;
+
+        margin: 0;
+    }
+
+
+    .heading {
+        max-width: 640px;
+    }
+
+
+    .description {
+        max-width: 650px;
+
+        font-size: 15px;
+    }
+
+
+    .highlightGrid {
+        max-width: 650px;
+
+        gap: 13px;
+
+        margin-top: 27px;
+    }
+
+
+    .highlightCard {
+        min-height: 92px;
+
+        padding:
+            14px 15px;
+
+        gap: 12px;
+    }
+
+
+    .iconCircle {
+        width: 52px;
+        height: 52px;
+
+        flex-basis: 52px;
+    }
+
+
+    .iconCircle svg {
+        width: 25px;
+        height: 25px;
+    }
+
+
+    .highlightText h3 {
+        font-size: 14px;
+    }
+
+
+    .highlightText p {
+        font-size: 11.5px;
+    }
+
+
+    .ctaArea {
+        width: 390px;
+
+        margin-top: 28px;
+    }
+
+
+    .ctaButton {
+        width: 390px;
+
+        min-height: 55px;
+    }
+
+
+    .ctaNote {
+        width: 390px;
+
+        font-size: 12px;
+    }
+
+
+    /*
+       Small handwritten-style note from Sigma.
+    */
+
+    .sideMessage {
+        position: absolute;
+
+        right: -20px;
+        bottom: 16px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        color:
+            rgba(25,
+                125,
+                242,
+                0.38);
+
+        font-family:
+            cursive;
+
+        font-size: 17px;
+
+        font-style: italic;
+
+        line-height: 1.15;
+
+        transform:
+            rotate(-7deg);
+
+        pointer-events: none;
+    }
+
+
+    .bottomDivider {
+        margin-top: 44px;
+    }
+
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1350px) {
+
+    .shell {
+        max-width: 1240px;
+    }
+
+
+    .mainGrid {
+        grid-template-columns:
+            450px minmax(0, 1fr);
+
+        gap: 60px;
+    }
+
+
+    .imageCard {
+        max-width: 450px;
+    }
+
+
+    .heading {
+        max-width: 680px;
+    }
+
+
+    .description {
+        max-width: 690px;
+    }
+
+
+    .highlightGrid {
+        max-width: 690px;
+    }
+
+
+    .sideMessage {
+        right: 5px;
+
+        font-size: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .highlightCard:hover {
+        border-color:
+            rgba(25,
+                125,
+                242,
+                0.28);
+
+        box-shadow:
+            0 12px 27px rgba(6,
+                24,
+                79,
+                0.08);
+
+        transform:
+            translateY(-2px);
+    }
+
+
+    .ctaButton:hover {
+        background:
+            linear-gradient(90deg,
+                #075fd8 0%,
+                #1474e6 100%);
+
+        transform:
+            translateY(-1px);
+
+        box-shadow:
+            0 11px 25px rgba(25,
+                125,
+                242,
+                0.22);
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .highlightCard,
+    .ctaButton {
+        transition: none;
+    }
+
+
+    .highlightCard:hover,
+    .ctaButton:hover {
+        transform: none;
+    }
+
+}

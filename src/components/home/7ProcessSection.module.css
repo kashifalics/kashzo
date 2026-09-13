@@ -1,0 +1,1485 @@
+/* =========================================================
+   KASHZO — SECTION 7
+   HOW IT WORKS
+
+   MOBILE:
+   Vertical process with downward arrows
+
+   DESKTOP:
+   Four cards with horizontal arrows
+========================================================= */
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section {
+    position: relative;
+
+    overflow: hidden;
+
+    margin-top: -1px;
+
+    padding:
+        18px 0 24px;
+
+    background:
+        linear-gradient(180deg,
+            var(--color-section-soft) 0%,
+            var(--color-white) 18%,
+            var(--color-white) 88%,
+            var(--color-section-soft) 100%);
+
+    color:
+        var(--color-text);
+
+    font-family:
+        var(--font-site);
+}
+
+
+/* =========================================================
+   SOFT BACKGROUND SHAPE
+========================================================= */
+
+.section::before {
+    content: '';
+
+    position: absolute;
+
+    top: 55px;
+    left: -140px;
+
+    width: 330px;
+    height: 330px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(231,
+            242,
+            253,
+            0.45);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SOFT DOT DETAIL
+========================================================= */
+
+.section::after {
+    content: '';
+
+    position: absolute;
+
+    top: 150px;
+    right: -35px;
+
+    width: 150px;
+    height: 150px;
+
+    opacity: 0.4;
+
+    background-image:
+        radial-gradient(circle,
+            rgba(25,
+                125,
+                242,
+                0.26) 1.5px,
+            transparent 1.5px);
+
+    background-size:
+        14px 14px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SHELL
+========================================================= */
+
+.shell {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        calc(100% - (var(--page-padding-mobile) * 2));
+
+    max-width:
+        var(--container-main);
+
+    margin-inline:
+        auto;
+}
+
+
+/* =========================================================
+   TOP DIVIDER
+========================================================= */
+
+.topDivider {
+    margin-bottom:
+        26px;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro {
+    max-width:
+        var(--container-text);
+
+    margin:
+        0 auto 30px;
+
+    text-align:
+        center;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.eyebrow {
+    margin:
+        0 0 var(--section-label-gap);
+
+    color:
+        var(--color-blue);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-label);
+
+    font-weight:
+        var(--fw-semibold);
+
+    line-height:
+        1.2;
+
+    letter-spacing:
+        var(--tracking-label);
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.heading {
+    margin: 0;
+
+    color:
+        var(--color-navy);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-heading);
+
+    font-weight:
+        var(--fw-bold);
+
+    line-height:
+        var(--lh-heading);
+
+    letter-spacing:
+        var(--tracking-heading);
+}
+
+
+.heading strong {
+    color:
+        var(--color-blue);
+
+    font-weight:
+        inherit;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description {
+    max-width:
+        590px;
+
+    margin:
+        var(--section-heading-gap) auto 0;
+
+    color:
+        var(--color-body);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-body);
+
+    font-weight:
+        var(--fw-regular);
+
+    line-height:
+        var(--lh-body);
+}
+
+
+/* =========================================================
+   MOBILE PROCESS
+========================================================= */
+
+.processGrid {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap: 0;
+}
+
+
+/* =========================================================
+   STEP GROUP
+========================================================= */
+
+.stepGroup {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+}
+
+
+/* =========================================================
+   STEP CARD
+========================================================= */
+
+.stepCard {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        72px minmax(0, 1fr);
+
+    width: 100%;
+
+    min-height:
+        155px;
+
+    align-items: center;
+
+    gap:
+        14px;
+
+    padding:
+        20px 16px;
+
+    border:
+        var(--border-standard);
+
+    border-radius:
+        var(--radius-card);
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.96);
+
+    box-shadow:
+        var(--shadow-soft);
+
+    transition:
+        border-color var(--transition-base),
+        box-shadow var(--transition-base),
+        transform var(--transition-base);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.stepNumber {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    display: grid;
+
+    width:
+        30px;
+
+    height:
+        30px;
+
+    place-items:
+        center;
+
+    border-radius:
+        var(--radius-pill);
+
+    background:
+        var(--color-blue);
+
+    color:
+        var(--color-white);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        12px;
+
+    font-weight:
+        var(--fw-bold);
+
+    line-height:
+        1;
+
+    box-shadow:
+        0 5px 12px rgba(25,
+            125,
+            242,
+            0.18);
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.iconCircle {
+    display: grid;
+
+    width:
+        68px;
+
+    height:
+        68px;
+
+    place-items:
+        center;
+
+    border-radius:
+        var(--radius-pill);
+
+    background:
+        #edf6ff;
+
+    color:
+        var(--color-blue);
+}
+
+
+.iconCircle svg {
+    width:
+        32px;
+
+    height:
+        32px;
+}
+
+
+/* =========================================================
+   STEP CONTENT
+========================================================= */
+
+.stepContent {
+    min-width:
+        0;
+}
+
+
+.stepContent h3 {
+    margin: 0;
+
+    color:
+        var(--color-navy);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        18px;
+
+    font-weight:
+        var(--fw-bold);
+
+    line-height:
+        1.25;
+
+    letter-spacing:
+        -0.025em;
+}
+
+
+.stepContent p {
+    margin:
+        8px 0 0;
+
+    color:
+        var(--color-body);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-card-text);
+
+    font-weight:
+        var(--fw-regular);
+
+    line-height:
+        1.5;
+}
+
+
+/* =========================================================
+   CONNECTOR
+========================================================= */
+
+.connector {
+    position: relative;
+
+    display: grid;
+
+    width:
+        44px;
+
+    height:
+        48px;
+
+    place-items:
+        center;
+
+    color:
+        var(--color-blue);
+}
+
+
+/* =========================================================
+   MOBILE VERTICAL DOTTED LINE
+========================================================= */
+
+.connector::before {
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 50%;
+
+    border-left:
+        2px dashed rgba(25,
+            125,
+            242,
+            0.65);
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* =========================================================
+   MOBILE ARROW
+========================================================= */
+
+.mobileArrow {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        24px;
+
+    height:
+        24px;
+
+    padding:
+        3px;
+
+    background:
+        var(--color-white);
+
+    color:
+        var(--color-blue);
+}
+
+
+/* =========================================================
+   DESKTOP ARROW HIDDEN BY DEFAULT
+========================================================= */
+
+.desktopArrow {
+    display: none;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.ctaBox {
+    display: grid;
+
+    grid-template-columns:
+        64px minmax(0, 1fr);
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    margin-top:
+        24px;
+
+    padding:
+        18px;
+
+    border:
+        1px solid #d9e8f7;
+
+    border-radius:
+        var(--radius-card);
+
+    background:
+        linear-gradient(120deg,
+            #edf6ff 0%,
+            #f7fbff 100%);
+
+    box-shadow:
+        var(--shadow-soft);
+}
+
+
+/* =========================================================
+   CTA ICON
+========================================================= */
+
+.ctaIcon {
+    display: grid;
+
+    width:
+        64px;
+
+    height:
+        64px;
+
+    place-items:
+        center;
+
+    border:
+        1px solid rgba(255,
+            255,
+            255,
+            0.95);
+
+    border-radius:
+        var(--radius-pill);
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.72);
+
+    color:
+        var(--color-blue);
+}
+
+
+.ctaIcon svg {
+    width:
+        31px;
+
+    height:
+        31px;
+}
+
+
+/* =========================================================
+   CTA COPY
+========================================================= */
+
+.ctaCopy {
+    min-width: 0;
+}
+
+
+.ctaLabel {
+    display: block;
+
+    margin-bottom:
+        5px;
+
+    color:
+        var(--color-blue);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-label);
+
+    font-weight:
+        var(--fw-semibold);
+
+    line-height:
+        1.2;
+
+    letter-spacing:
+        0.12em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.ctaCopy strong {
+    display: block;
+
+    color:
+        var(--color-navy);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        19px;
+
+    font-weight:
+        var(--fw-bold);
+
+    line-height:
+        1.25;
+
+    letter-spacing:
+        -0.025em;
+}
+
+
+.ctaCopy p {
+    margin:
+        7px 0 0;
+
+    color:
+        var(--color-body);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-card-text);
+
+    font-weight:
+        var(--fw-regular);
+
+    line-height:
+        1.45;
+}
+
+
+/* =========================================================
+   CTA ACTION
+========================================================= */
+
+.ctaAction {
+    grid-column:
+        1 / -1;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    margin-top:
+        4px;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.ctaButton {
+    display: flex;
+
+    width: 100%;
+
+    min-height:
+        48px;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        10px;
+
+    padding:
+        0 18px;
+
+    border-radius:
+        var(--radius-small);
+
+    background:
+        var(--color-blue);
+
+    color:
+        var(--color-white);
+
+    text-decoration:
+        none;
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-button);
+
+    font-weight:
+        var(--fw-semibold);
+
+    box-shadow:
+        0 7px 16px rgba(25,
+            125,
+            242,
+            0.14);
+
+    transition:
+        background var(--transition-base),
+        transform var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+
+.ctaButton:hover {
+    background:
+        var(--color-blue-strong);
+
+    color:
+        var(--color-white);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 9px 20px rgba(25,
+            125,
+            242,
+            0.20);
+}
+
+
+.ctaButton svg {
+    width:
+        20px;
+
+    height:
+        20px;
+}
+
+
+/* =========================================================
+   CTA NOTE
+========================================================= */
+
+.ctaNote {
+    margin-top:
+        9px;
+
+    color:
+        var(--color-body);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-small);
+
+    font-weight:
+        var(--fw-regular);
+
+    line-height:
+        1.3;
+}
+
+
+/* =========================================================
+   BOTTOM DIVIDER
+========================================================= */
+
+.bottomDivider {
+    margin-top:
+        var(--space-8);
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 370px) {
+
+    .section {
+        padding:
+            16px 0 22px;
+    }
+
+
+    .shell {
+        width:
+            calc(100% - 30px);
+    }
+
+
+    .intro {
+        margin-bottom:
+            26px;
+    }
+
+
+    .stepCard {
+        grid-template-columns:
+            61px minmax(0, 1fr);
+
+        min-height:
+            145px;
+
+        gap:
+            11px;
+
+        padding:
+            17px 13px;
+    }
+
+
+    .stepNumber {
+        width:
+            27px;
+
+        height:
+            27px;
+
+        top:
+            10px;
+
+        left:
+            10px;
+    }
+
+
+    .iconCircle {
+        width:
+            58px;
+
+        height:
+            58px;
+    }
+
+
+    .iconCircle svg {
+        width:
+            27px;
+
+        height:
+            27px;
+    }
+
+
+    .stepContent h3 {
+        font-size:
+            16px;
+    }
+
+
+    .connector {
+        height:
+            43px;
+    }
+
+
+    .ctaBox {
+        grid-template-columns:
+            55px minmax(0, 1fr);
+
+        padding:
+            15px;
+    }
+
+
+    .ctaIcon {
+        width:
+            55px;
+
+        height:
+            55px;
+    }
+
+
+    .ctaCopy strong {
+        font-size:
+            17px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 700px) {
+
+    .section {
+        padding:
+            30px 0 34px;
+    }
+
+
+    .shell {
+        width:
+            calc(100% - (var(--page-padding-desktop) * 2));
+
+        max-width:
+            1040px;
+    }
+
+
+    .topDivider {
+        margin-bottom:
+            34px;
+    }
+
+
+    .intro {
+        max-width:
+            720px;
+
+        margin-bottom:
+            40px;
+    }
+
+
+    /*
+       Keep tablet vertical because it remains
+       easier to read until desktop width.
+    */
+
+    .stepCard {
+        grid-template-columns:
+            90px minmax(0, 1fr);
+
+        min-height:
+            175px;
+
+        gap:
+            22px;
+
+        padding:
+            24px;
+    }
+
+
+    .stepNumber {
+        width:
+            34px;
+
+        height:
+            34px;
+
+        font-size:
+            13px;
+    }
+
+
+    .iconCircle {
+        width:
+            82px;
+
+        height:
+            82px;
+    }
+
+
+    .iconCircle svg {
+        width:
+            38px;
+
+        height:
+            38px;
+    }
+
+
+    .stepContent h3 {
+        font-size:
+            21px;
+    }
+
+
+    .ctaBox {
+        grid-template-columns:
+            74px minmax(0, 1fr) auto;
+
+        gap:
+            18px;
+
+        padding:
+            20px;
+    }
+
+
+    .ctaIcon {
+        width:
+            74px;
+
+        height:
+            74px;
+    }
+
+
+    .ctaIcon svg {
+        width:
+            35px;
+
+        height:
+            35px;
+    }
+
+
+    .ctaCopy strong {
+        font-size:
+            22px;
+    }
+
+
+    .ctaAction {
+        grid-column:
+            auto;
+
+        width:
+            210px;
+
+        margin-top:
+            0;
+    }
+
+
+    .ctaButton {
+        min-height:
+            50px;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1000px) {
+
+    .section {
+        padding:
+            36px 0 38px;
+    }
+
+
+    .shell {
+        max-width:
+            1180px;
+    }
+
+
+    .intro {
+        max-width:
+            760px;
+
+        margin-bottom:
+            42px;
+    }
+
+
+    /* =====================================================
+       FOUR-COLUMN PROCESS
+    ===================================================== */
+
+    .processGrid {
+        display: grid;
+
+        grid-template-columns:
+            repeat(4,
+                minmax(0, 1fr));
+
+        align-items:
+            stretch;
+
+        gap:
+            52px;
+    }
+
+
+    .stepGroup {
+        position: relative;
+
+        display: block;
+    }
+
+
+    .stepCard {
+        display: flex;
+
+        min-height:
+            310px;
+
+        height:
+            100%;
+
+        flex-direction:
+            column;
+
+        align-items:
+            center;
+
+        gap:
+            0;
+
+        padding:
+            32px 24px 26px;
+
+        text-align:
+            center;
+    }
+
+
+    .stepNumber {
+        top:
+            14px;
+
+        left:
+            14px;
+
+        width:
+            34px;
+
+        height:
+            34px;
+
+        font-size:
+            13px;
+    }
+
+
+    .iconCircle {
+        width:
+            82px;
+
+        height:
+            82px;
+
+        margin-top:
+            3px;
+
+        margin-bottom:
+            20px;
+    }
+
+
+    .iconCircle svg {
+        width:
+            38px;
+
+        height:
+            38px;
+    }
+
+
+    .stepContent h3 {
+        font-size:
+            20px;
+
+        line-height:
+            1.25;
+    }
+
+
+    .stepContent p {
+        margin-top:
+            15px;
+
+        font-size:
+            13px;
+
+        line-height:
+            1.55;
+    }
+
+
+    /* =====================================================
+       HORIZONTAL CONNECTORS
+    ===================================================== */
+
+    .connector {
+        position: absolute;
+
+        z-index: 4;
+
+        top:
+            50%;
+
+        right:
+            -52px;
+
+        width:
+            52px;
+
+        height:
+            30px;
+
+        transform:
+            translateY(-50%);
+    }
+
+
+    .connector::before {
+        top:
+            50%;
+
+        bottom:
+            auto;
+
+        left: 0;
+        right: 0;
+
+        width:
+            100%;
+
+        height: 0;
+
+        border-left: 0;
+
+        border-top:
+            2px dashed rgba(25,
+                125,
+                242,
+                0.65);
+
+        transform:
+            none;
+    }
+
+
+    .mobileArrow {
+        display: none;
+    }
+
+
+    .desktopArrow {
+        position: relative;
+
+        z-index: 2;
+
+        display: block;
+
+        width:
+            26px;
+
+        height:
+            26px;
+
+        padding:
+            3px;
+
+        background:
+            var(--color-white);
+
+        color:
+            var(--color-blue);
+    }
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .ctaBox {
+        grid-template-columns:
+            86px minmax(0, 1fr) 250px;
+
+        gap:
+            22px;
+
+        margin-top:
+            36px;
+
+        padding:
+            24px;
+
+        border-radius:
+            var(--radius-large);
+    }
+
+
+    .ctaIcon {
+        width:
+            86px;
+
+        height:
+            86px;
+    }
+
+
+    .ctaIcon svg {
+        width:
+            40px;
+
+        height:
+            40px;
+    }
+
+
+    .ctaCopy strong {
+        font-size:
+            24px;
+    }
+
+
+    .ctaCopy p {
+        font-size:
+            13px;
+    }
+
+
+    .ctaAction {
+        width:
+            250px;
+    }
+
+
+    .ctaButton {
+        min-height:
+            54px;
+    }
+
+
+    .bottomDivider {
+        margin-top:
+            42px;
+    }
+
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1300px) {
+
+    .shell {
+        max-width:
+            1240px;
+    }
+
+
+    .processGrid {
+        gap:
+            58px;
+    }
+
+
+    .connector {
+        right:
+            -58px;
+
+        width:
+            58px;
+    }
+
+
+    .stepCard {
+        min-height:
+            320px;
+
+        padding:
+            34px 26px 28px;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP HOVER
+========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .stepCard:hover {
+        border-color:
+            rgba(25,
+                125,
+                242,
+                0.28);
+
+        box-shadow:
+            var(--shadow-hover);
+
+        transform:
+            translateY(-3px);
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .stepCard,
+    .ctaButton {
+        transition:
+            none;
+    }
+
+
+    .stepCard:hover,
+    .ctaButton:hover {
+        transform:
+            none;
+    }
+
+}

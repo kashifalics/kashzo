@@ -1,0 +1,932 @@
+/* =========================================================
+   KASHZO — SECTION 9
+   DIGITAL SERVICES
+
+   MOBILE FIRST
+
+   MOBILE:
+   2 cards per row
+
+   TABLET:
+   2 cards per row
+
+   DESKTOP:
+   4 cards per row
+========================================================= */
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section {
+    position: relative;
+
+    overflow: hidden;
+
+    margin-top: -1px;
+
+    padding:
+        30px 0 26px;
+
+    background:
+        linear-gradient(180deg,
+            var(--color-section-soft, #f8fbff) 0%,
+            var(--color-white, #ffffff) 17%,
+            var(--color-white, #ffffff) 88%,
+            var(--color-section-soft, #f8fbff) 100%);
+
+    color:
+        var(--color-text, #34445f);
+
+    font-family:
+        var(--font-site);
+}
+
+
+/* =========================================================
+   LEFT SOFT SHAPE
+========================================================= */
+
+.section::before {
+    content: '';
+
+    position: absolute;
+
+    top: 30px;
+    left: -160px;
+
+    width: 360px;
+    height: 360px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(228,
+            241,
+            254,
+            0.48);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   RIGHT DOT PATTERN
+========================================================= */
+
+.section::after {
+    content: '';
+
+    position: absolute;
+
+    top: 95px;
+    right: -25px;
+
+    width: 145px;
+    height: 155px;
+
+    opacity: 0.52;
+
+    background-image:
+        radial-gradient(circle,
+            rgba(25,
+                125,
+                242,
+                0.28) 1.5px,
+            transparent 1.5px);
+
+    background-size:
+        15px 15px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SHELL
+========================================================= */
+
+.shell {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        calc(100% - (var(--page-padding-mobile, 20px) * 2));
+
+    max-width:
+        var(--container-main, 1180px);
+
+    margin-inline: auto;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro {
+    max-width:
+        var(--container-text, 760px);
+
+    margin:
+        0 auto 30px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.eyebrow {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin:
+        0 0 var(--section-label-gap, 12px);
+
+    color:
+        var(--color-blue, #197df2);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-label, 12px);
+
+    font-weight:
+        var(--fw-semibold, 600);
+
+    line-height: 1.2;
+
+    letter-spacing:
+        var(--tracking-label, 0.2em);
+
+    text-transform: uppercase;
+}
+
+
+/* Small decorative lines */
+
+.eyebrow::before,
+.eyebrow::after {
+    content: '';
+
+    display: block;
+
+    width: 31px;
+    height: 1px;
+
+    background:
+        var(--color-blue, #197df2);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.heading {
+    max-width: 740px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--color-navy, #06184f);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-heading, 40px);
+
+    font-weight:
+        var(--fw-bold, 700);
+
+    line-height:
+        var(--lh-heading, 1.08);
+
+    letter-spacing:
+        var(--tracking-heading, -0.035em);
+}
+
+
+.heading strong {
+    color:
+        var(--color-blue, #197df2);
+
+    font-weight: inherit;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description {
+    max-width: 680px;
+
+    margin:
+        var(--section-heading-gap, 18px) auto 0;
+
+    color:
+        var(--color-body, #66748e);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-body, 16px);
+
+    font-weight:
+        var(--fw-regular, 400);
+
+    line-height:
+        var(--lh-body, 1.65);
+}
+
+
+/* =========================================================
+   SERVICES GRID
+========================================================= */
+
+.servicesGrid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,
+            minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   SERVICE CARD
+========================================================= */
+
+.serviceCard {
+    position: relative;
+
+    display: flex;
+
+    min-width: 0;
+
+    min-height: 255px;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    padding:
+        18px 12px;
+
+    border:
+        1px solid #dce8f3;
+
+    border-radius:
+        var(--radius-card, 18px);
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.96);
+
+    box-shadow:
+        0 8px 25px rgba(6,
+            24,
+            79,
+            0.045);
+
+    text-align: center;
+
+    transition:
+        border-color 0.22s ease,
+        box-shadow 0.22s ease,
+        transform 0.22s ease;
+}
+
+
+/* =========================================================
+   ICON CIRCLE
+========================================================= */
+
+.iconCircle {
+    display: grid;
+
+    width: 70px;
+    height: 70px;
+
+    flex:
+        0 0 70px;
+
+    place-items: center;
+
+    margin-bottom: 16px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(145deg,
+            #edf6ff 0%,
+            #e4f1fe 100%);
+
+    color:
+        var(--color-blue, #197df2);
+}
+
+
+.iconCircle svg {
+    width: 32px;
+    height: 32px;
+}
+
+
+/* =========================================================
+   SERVICE TITLE
+========================================================= */
+
+.serviceCard h3 {
+    margin: 0;
+
+    color:
+        var(--color-navy, #06184f);
+
+    font-family:
+        var(--font-site);
+
+    font-size: 16px;
+
+    font-weight:
+        var(--fw-bold, 700);
+
+    line-height: 1.28;
+
+    letter-spacing:
+        -0.025em;
+}
+
+
+/* =========================================================
+   SERVICE DESCRIPTION
+========================================================= */
+
+.serviceCard p {
+    margin:
+        11px 0 0;
+
+    color:
+        var(--color-body, #66748e);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        13px;
+
+    font-weight:
+        var(--fw-regular, 400);
+
+    line-height:
+        1.48;
+}
+
+
+/* =========================================================
+   CTA AREA
+========================================================= */
+
+.ctaArea {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-top: 24px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.ctaButton {
+    display: flex;
+
+    width:
+        min(100%,
+            320px);
+
+    min-height: 52px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 11px;
+
+    padding:
+        0 22px;
+
+    border-radius:
+        999px;
+
+    background:
+        linear-gradient(90deg,
+            #086af0 0%,
+            #197df2 100%);
+
+    color:
+        #ffffff !important;
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-button, 15px);
+
+    font-weight:
+        var(--fw-semibold, 600);
+
+    text-decoration: none !important;
+
+    box-shadow:
+        0 8px 20px rgba(25,
+            125,
+            242,
+            0.16);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.ctaButton:visited,
+.ctaButton:hover,
+.ctaButton:active,
+.ctaButton:focus {
+    color:
+        #ffffff !important;
+
+    text-decoration:
+        none !important;
+}
+
+
+.ctaButton svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* =========================================================
+   CTA NOTE
+========================================================= */
+
+.ctaNote {
+    margin:
+        11px 0 0;
+
+    color:
+        var(--color-body, #66748e);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-small, 12px);
+
+    font-weight:
+        var(--fw-regular, 400);
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   BOTTOM DIVIDER
+========================================================= */
+
+.bottomDivider {
+    margin-top:
+        var(--space-8, 32px);
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 370px) {
+
+    .section {
+        padding:
+            25px 0 23px;
+    }
+
+
+    .shell {
+        width:
+            calc(100% - 30px);
+    }
+
+
+    .intro {
+        margin-bottom:
+            26px;
+    }
+
+
+    .servicesGrid {
+        gap:
+            10px;
+    }
+
+
+    .serviceCard {
+        min-height:
+            238px;
+
+        padding:
+            15px 9px;
+    }
+
+
+    .iconCircle {
+        width: 60px;
+        height: 60px;
+
+        flex-basis:
+            60px;
+
+        margin-bottom:
+            14px;
+    }
+
+
+    .iconCircle svg {
+        width: 28px;
+        height: 28px;
+    }
+
+
+    .serviceCard h3 {
+        font-size:
+            14px;
+    }
+
+
+    .serviceCard p {
+        margin-top:
+            8px;
+
+        font-size:
+            11.5px;
+    }
+
+
+    .ctaButton {
+        min-height:
+            49px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 700px) {
+
+    .section {
+        padding:
+            38px 0 34px;
+    }
+
+
+    .shell {
+        width:
+            calc(100% - (var(--page-padding-desktop, 40px) * 2));
+
+        max-width:
+            1040px;
+    }
+
+
+    .intro {
+        max-width:
+            760px;
+
+        margin-bottom:
+            38px;
+    }
+
+
+    .servicesGrid {
+        gap:
+            18px;
+    }
+
+
+    .serviceCard {
+        min-height:
+            270px;
+
+        padding:
+            25px 20px;
+    }
+
+
+    .iconCircle {
+        width: 80px;
+        height: 80px;
+
+        flex-basis:
+            80px;
+
+        margin-bottom:
+            19px;
+    }
+
+
+    .iconCircle svg {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    .serviceCard h3 {
+        font-size:
+            18px;
+    }
+
+
+    .serviceCard p {
+        max-width:
+            330px;
+
+        font-size:
+            14px;
+
+        line-height:
+            1.55;
+    }
+
+
+    .ctaArea {
+        margin-top:
+            30px;
+    }
+
+
+    .ctaButton {
+        width:
+            340px;
+
+        min-height:
+            54px;
+
+        font-size:
+            15px;
+    }
+
+
+    .ctaNote {
+        font-size:
+            13px;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1000px) {
+
+    .section {
+        padding:
+            44px 0 38px;
+    }
+
+
+    .shell {
+        max-width:
+            1180px;
+    }
+
+
+    .intro {
+        max-width:
+            800px;
+
+        margin-bottom:
+            40px;
+    }
+
+
+    /* =====================================================
+       FOUR CARDS PER ROW
+    ===================================================== */
+
+    .servicesGrid {
+        grid-template-columns:
+            repeat(4,
+                minmax(0, 1fr));
+
+        gap:
+            18px;
+    }
+
+
+    .serviceCard {
+        min-height:
+            250px;
+
+        padding:
+            24px 18px;
+    }
+
+
+    .iconCircle {
+        width: 76px;
+        height: 76px;
+
+        flex-basis:
+            76px;
+
+        margin-bottom:
+            18px;
+    }
+
+
+    .iconCircle svg {
+        width: 34px;
+        height: 34px;
+    }
+
+
+    .serviceCard h3 {
+        font-size:
+            16px;
+    }
+
+
+    .serviceCard p {
+        margin-top:
+            10px;
+
+        font-size:
+            13px;
+
+        line-height:
+            1.5;
+    }
+
+
+    .ctaArea {
+        margin-top:
+            30px;
+    }
+
+
+    .ctaButton {
+        width:
+            300px;
+
+        min-height:
+            52px;
+    }
+
+
+    .bottomDivider {
+        margin-top:
+            34px;
+    }
+
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1350px) {
+
+    .shell {
+        max-width:
+            1240px;
+    }
+
+
+    .servicesGrid {
+        gap:
+            20px;
+    }
+
+
+    .serviceCard {
+        min-height:
+            260px;
+
+        padding:
+            26px 21px;
+    }
+
+
+    .serviceCard h3 {
+        font-size:
+            17px;
+    }
+
+
+    .serviceCard p {
+        font-size:
+            13.5px;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP HOVER
+========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .serviceCard:hover {
+        border-color:
+            rgba(25,
+                125,
+                242,
+                0.30);
+
+        box-shadow:
+            0 15px 34px rgba(6,
+                24,
+                79,
+                0.09);
+
+        transform:
+            translateY(-3px);
+    }
+
+
+    .ctaButton:hover {
+        background:
+            linear-gradient(90deg,
+                #075fda 0%,
+                #1474e7 100%);
+
+        transform:
+            translateY(-1px);
+
+        box-shadow:
+            0 11px 25px rgba(25,
+                125,
+                242,
+                0.22);
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .serviceCard,
+    .ctaButton {
+        transition:
+            none;
+    }
+
+
+    .serviceCard:hover,
+    .ctaButton:hover {
+        transform:
+            none;
+    }
+
+}

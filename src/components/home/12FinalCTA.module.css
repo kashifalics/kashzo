@@ -1,0 +1,1092 @@
+/* =========================================================
+   KASHZO — SECTION 12
+   FINAL CTA
+
+   MOBILE FIRST
+
+   MOBILE:
+   centred stacked CTA
+   reassurance items vertical
+
+   DESKTOP:
+   large premium CTA panel
+   reassurance items horizontal
+========================================================= */
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section {
+    position: relative;
+
+    overflow: hidden;
+
+    margin-top: -1px;
+
+    padding:
+        30px 0 34px;
+
+    background:
+        linear-gradient(180deg,
+            var(--color-section-soft, #f8fbff) 0%,
+            #ffffff 20%,
+            #f7fbff 100%);
+
+    color:
+        var(--color-text, #34445f);
+
+    font-family:
+        var(--font-site);
+}
+
+
+/* =========================================================
+   SHELL
+========================================================= */
+
+.shell {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        calc(100% - (var(--page-padding-mobile, 20px) * 2));
+
+    max-width:
+        var(--container-main, 1180px);
+
+    margin-inline: auto;
+}
+
+
+/* =========================================================
+   CTA PANEL
+========================================================= */
+
+.ctaPanel {
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        34px 20px 24px;
+
+    border:
+        1px solid #bedcf9;
+
+    border-radius:
+        26px;
+
+    background:
+        linear-gradient(135deg,
+            #edf7ff 0%,
+            #ffffff 45%,
+            #eaf5ff 100%);
+
+    box-shadow:
+        0 16px 45px rgba(6,
+            24,
+            79,
+            0.06);
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATION
+========================================================= */
+
+.ctaPanel::before {
+    content: '';
+
+    position: absolute;
+
+    left: -110px;
+    top: 150px;
+
+    width: 250px;
+    height: 250px;
+
+    border:
+        35px solid rgba(174,
+            215,
+            251,
+            0.22);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.ctaPanel::after {
+    content: '';
+
+    position: absolute;
+
+    right: -95px;
+    top: -95px;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(184,
+            220,
+            253,
+            0.24);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.eyebrow {
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin:
+        0 0 15px;
+
+    color:
+        var(--color-blue, #197df2);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-label, 12px);
+
+    font-weight:
+        var(--fw-semibold, 600);
+
+    line-height: 1.2;
+
+    letter-spacing:
+        var(--tracking-label, 0.2em);
+
+    text-transform: uppercase;
+}
+
+
+.eyebrow::before,
+.eyebrow::after {
+    content: '';
+
+    display: block;
+
+    width: 28px;
+    height: 1px;
+
+    background:
+        var(--color-blue, #197df2);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.heading {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 760px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--color-navy, #06184f);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-heading, 40px);
+
+    font-weight:
+        var(--fw-bold, 700);
+
+    line-height:
+        var(--lh-heading, 1.08);
+
+    letter-spacing:
+        var(--tracking-heading, -0.035em);
+}
+
+
+.heading strong {
+    color:
+        var(--color-blue, #197df2);
+
+    font-weight: inherit;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 650px;
+
+    margin:
+        18px auto 0;
+
+    color:
+        var(--color-text, #34445f);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-body, 16px);
+
+    font-weight:
+        var(--fw-regular, 400);
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.ctaButton {
+    position: relative;
+
+    z-index: 3;
+
+    display: grid;
+
+    grid-template-columns:
+        auto minmax(0, auto) auto;
+
+    width:
+        min(100%,
+            430px);
+
+    min-height: 58px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    margin:
+        27px auto 0;
+
+    padding:
+        0 24px;
+
+    border-radius:
+        999px;
+
+    background:
+        linear-gradient(90deg,
+            #0b75ec 0%,
+            #0879ff 100%);
+
+    color:
+        #ffffff !important;
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-button, 15px);
+
+    font-weight:
+        var(--fw-semibold, 600);
+
+    text-decoration: none !important;
+
+    box-shadow:
+        0 11px 28px rgba(13,
+            121,
+            244,
+            0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.ctaButton:visited,
+.ctaButton:hover,
+.ctaButton:active,
+.ctaButton:focus {
+    color:
+        #ffffff !important;
+
+    text-decoration:
+        none !important;
+}
+
+
+/* =========================================================
+   WHATSAPP ICON
+========================================================= */
+
+.whatsappIcon {
+    width: 27px;
+    height: 27px;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.ctaArrow {
+    width: 22px;
+    height: 22px;
+}
+
+
+/* =========================================================
+   CTA NOTE
+========================================================= */
+
+.ctaNote {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 550px;
+
+    margin:
+        13px auto 0;
+
+    color:
+        var(--color-body, #66748e);
+
+    font-family:
+        var(--font-site);
+
+    font-size:
+        var(--fs-small, 12px);
+
+    font-weight:
+        var(--fw-regular, 400);
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   TRUST GRID
+========================================================= */
+
+.trustGrid {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr);
+
+    gap: 0;
+
+    max-width: 680px;
+
+    margin:
+        26px auto 0;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   TRUST ITEM
+========================================================= */
+
+.trustItem {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        auto minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding:
+        14px 4px;
+}
+
+
+.trustItem:not(:last-child) {
+    border-bottom:
+        1px solid rgba(176,
+            204,
+            229,
+            0.55);
+}
+
+
+/* =========================================================
+   TRUST ICON
+========================================================= */
+
+.trustIcon {
+    display: grid;
+
+    width: 50px;
+    height: 50px;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(225,
+            241,
+            255,
+            0.96);
+
+    color:
+        var(--color-blue, #197df2);
+}
+
+
+.trustIcon svg {
+    width: 25px;
+    height: 25px;
+}
+
+
+/* =========================================================
+   TRUST COPY
+========================================================= */
+
+.trustCopy {
+    min-width: 0;
+}
+
+
+.trustCopy strong {
+    display: block;
+
+    margin: 0;
+
+    color:
+        var(--color-navy, #06184f);
+
+    font-family:
+        var(--font-site);
+
+    font-size: 14px;
+
+    font-weight:
+        var(--fw-bold, 700);
+
+    line-height: 1.3;
+}
+
+
+.trustCopy span {
+    display: block;
+
+    margin-top: 3px;
+
+    color:
+        var(--color-body, #66748e);
+
+    font-family:
+        var(--font-site);
+
+    font-size: 12px;
+
+    font-weight:
+        var(--fw-regular, 400);
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   DECORATIVE MESSAGE
+========================================================= */
+
+.sideMessage {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: fit-content;
+
+    margin:
+        24px 0 0 auto;
+
+    padding-right: 7px;
+
+    color:
+        rgba(25,
+            125,
+            242,
+            0.55);
+
+    font-family:
+        cursive;
+
+    font-size: 15px;
+
+    font-style: italic;
+
+    line-height: 1.05;
+
+    text-align: left;
+
+    transform:
+        rotate(-6deg);
+}
+
+
+/* =========================================================
+   BRAND CLOSING
+========================================================= */
+
+.brandClosing {
+    padding:
+        42px 0 6px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   BRAND NAME
+========================================================= */
+
+.brandName {
+    color:
+        var(--color-navy, #06184f);
+
+    font-family:
+        var(--font-site);
+
+    font-size: 34px;
+
+    font-weight:
+        var(--fw-bold, 700);
+
+    line-height: 1;
+
+    letter-spacing:
+        -0.04em;
+}
+
+
+.brandName span {
+    color:
+        var(--color-blue, #197df2);
+}
+
+
+/* =========================================================
+   BRAND SUBTITLE
+========================================================= */
+
+.brandSub {
+    margin-top: 7px;
+
+    color:
+        var(--color-body, #66748e);
+
+    font-family:
+        var(--font-site);
+
+    font-size: 9px;
+
+    font-weight:
+        var(--fw-semibold, 600);
+
+    line-height: 1;
+
+    letter-spacing:
+        0.42em;
+
+    text-transform: uppercase;
+
+    padding-left:
+        0.42em;
+}
+
+
+/* =========================================================
+   BRAND LINE
+========================================================= */
+
+.brandLine {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    max-width: 470px;
+
+    margin:
+        16px auto 0;
+}
+
+
+.line {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        #bad4ed;
+}
+
+
+.brandLine p {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin: 0;
+
+    color:
+        var(--color-body, #66748e);
+
+    font-family:
+        var(--font-site);
+
+    font-size: 8px;
+
+    font-weight:
+        var(--fw-semibold, 600);
+
+    line-height: 1.2;
+
+    letter-spacing:
+        0.09em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+.brandLine i {
+    color:
+        var(--color-blue, #197df2);
+
+    font-style: normal;
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 370px) {
+
+    .section {
+        padding:
+            24px 0 28px;
+    }
+
+
+    .shell {
+        width:
+            calc(100% - 30px);
+    }
+
+
+    .ctaPanel {
+        padding:
+            29px 15px 21px;
+
+        border-radius: 22px;
+    }
+
+
+    .eyebrow {
+        font-size: 10px;
+    }
+
+
+    .eyebrow::before,
+    .eyebrow::after {
+        width: 20px;
+    }
+
+
+    .ctaButton {
+        min-height: 54px;
+
+        gap: 9px;
+
+        padding:
+            0 15px;
+
+        font-size: 13px;
+    }
+
+
+    .whatsappIcon {
+        width: 24px;
+        height: 24px;
+    }
+
+
+    .ctaArrow {
+        width: 19px;
+        height: 19px;
+    }
+
+
+    .trustIcon {
+        width: 45px;
+        height: 45px;
+    }
+
+
+    .trustCopy strong {
+        font-size: 13px;
+    }
+
+
+    .brandName {
+        font-size: 30px;
+    }
+
+
+    .brandLine {
+        gap: 8px;
+    }
+
+
+    .brandLine p {
+        font-size: 7px;
+
+        gap: 5px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 700px) {
+
+    .section {
+        padding:
+            38px 0 38px;
+    }
+
+
+    .shell {
+        width:
+            calc(100% - (var(--page-padding-desktop, 40px) * 2));
+
+        max-width: 1040px;
+    }
+
+
+    .ctaPanel {
+        padding:
+            48px 40px 32px;
+    }
+
+
+    .heading {
+        max-width: 800px;
+    }
+
+
+    .description {
+        max-width: 660px;
+    }
+
+
+    .trustGrid {
+        grid-template-columns:
+            repeat(3,
+                minmax(0, 1fr));
+
+        max-width: 820px;
+
+        margin-top: 31px;
+    }
+
+
+    .trustItem {
+        padding:
+            8px 21px;
+    }
+
+
+    .trustItem:not(:last-child) {
+        border-bottom: 0;
+
+        border-right:
+            1px solid rgba(176,
+                204,
+                229,
+                0.65);
+    }
+
+
+    .sideMessage {
+        margin-top: 18px;
+    }
+
+
+    .brandClosing {
+        padding-top: 48px;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1000px) {
+
+    .section {
+        padding:
+            44px 0 42px;
+    }
+
+
+    .shell {
+        max-width: 1180px;
+    }
+
+
+    .ctaPanel {
+        padding:
+            52px 70px 34px;
+
+        border-radius: 30px;
+    }
+
+
+    .eyebrow {
+        margin-bottom: 18px;
+    }
+
+
+    .heading {
+        max-width: 820px;
+    }
+
+
+    .description {
+        max-width: 720px;
+
+        font-size: 16px;
+    }
+
+
+    .ctaButton {
+        width: 430px;
+
+        min-height: 60px;
+
+        margin-top: 29px;
+
+        font-size: 16px;
+    }
+
+
+    .whatsappIcon {
+        width: 29px;
+        height: 29px;
+    }
+
+
+    .trustGrid {
+        max-width: 880px;
+
+        margin-top: 33px;
+    }
+
+
+    .trustItem {
+        grid-template-columns:
+            auto minmax(0, 1fr);
+
+        padding:
+            8px 28px;
+    }
+
+
+    .trustIcon {
+        width: 56px;
+        height: 56px;
+    }
+
+
+    .trustIcon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+
+    .trustCopy strong {
+        font-size: 14px;
+    }
+
+
+    .trustCopy span {
+        font-size: 12px;
+    }
+
+
+    .sideMessage {
+        position: absolute;
+
+        right: 38px;
+        top: 250px;
+
+        margin: 0;
+
+        padding: 0;
+
+        font-size: 17px;
+    }
+
+
+    .brandClosing {
+        padding:
+            52px 0 5px;
+    }
+
+
+    .brandName {
+        font-size: 39px;
+    }
+
+
+    .brandLine {
+        max-width: 520px;
+    }
+
+
+    .brandLine p {
+        font-size: 9px;
+    }
+
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1350px) {
+
+    .shell {
+        max-width: 1240px;
+    }
+
+
+    .ctaPanel {
+        padding:
+            58px 85px 36px;
+    }
+
+
+    .sideMessage {
+        right: 52px;
+
+        font-size: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .ctaButton:hover {
+        background:
+            linear-gradient(90deg,
+                #0867da 0%,
+                #086fe8 100%);
+
+        transform:
+            translateY(-2px);
+
+        box-shadow:
+            0 14px 31px rgba(13,
+                121,
+                244,
+                0.27);
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ctaButton {
+        transition: none;
+    }
+
+
+    .ctaButton:hover {
+        transform: none;
+    }
+
+}

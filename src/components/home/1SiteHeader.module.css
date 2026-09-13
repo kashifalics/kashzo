@@ -1,0 +1,378 @@
+/* =========================================================
+   KASHZO — SECTION 1
+   SITE HEADER
+
+   Uses global Kashzo design tokens from:
+   src/app/globals.css
+========================================================= */
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+
+    position:
+        relative;
+
+
+    z-index:
+        50;
+
+
+    width:
+        100%;
+
+
+    background:
+        var(--color-white);
+
+
+    /*
+       Very subtle separation from the hero.
+
+       Uses the global Kashzo divider colour.
+    */
+    border-bottom:
+        1px solid rgba(220,
+            230,
+            239,
+            0.55);
+
+}
+
+
+
+/* =========================================================
+   HEADER INNER
+========================================================= */
+
+.inner {
+
+    /*
+       Header needs to be wider than normal content,
+       so this remains a component-specific width.
+    */
+    width:
+        min(calc(100% - 34px),
+            1180px);
+
+
+    min-height:
+        92px;
+
+
+    margin-inline:
+        auto;
+
+
+    display:
+        flex;
+
+
+    align-items:
+        center;
+
+
+    justify-content:
+        space-between;
+
+
+    gap:
+        var(--space-5);
+
+}
+
+
+
+/* =========================================================
+   LOGO LINK
+========================================================= */
+
+.logoLink {
+
+    display:
+        flex;
+
+
+    min-width:
+        0;
+
+
+    align-items:
+        center;
+
+
+    flex:
+        0 1 auto;
+
+
+    text-decoration:
+        none;
+
+}
+
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+    display:
+        block;
+
+
+    width:
+        auto;
+
+
+    height:
+        55px;
+
+
+    max-width:
+        100%;
+
+
+    object-fit:
+        contain;
+
+}
+
+
+
+/* =========================================================
+   OFFER AREA
+========================================================= */
+
+.offerWrap {
+
+    display:
+        flex;
+
+
+    flex:
+        0 0 auto;
+
+
+    align-items:
+        center;
+
+
+    justify-content:
+        flex-end;
+
+}
+
+
+
+/* =========================================================
+   40% OFF IMAGE
+========================================================= */
+
+.offer {
+
+    display:
+        block;
+
+
+    width:
+        auto;
+
+
+    height:
+        58px;
+
+
+    object-fit:
+        contain;
+
+
+    transform-origin:
+        center;
+
+
+    animation:
+        offerPop 2.4s ease-in-out infinite;
+
+
+    /*
+       Component-specific visual effect,
+       based on the global Kashzo blue.
+    */
+    filter:
+        drop-shadow(0 7px 13px rgba(25,
+                125,
+                242,
+                0.13));
+
+}
+
+
+
+/* =========================================================
+   OFFER ANIMATION
+========================================================= */
+
+@keyframes offerPop {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+
+    50% {
+
+        transform:
+            scale(1.07);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   STANDARD MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .inner {
+
+        width:
+            calc(100% - 28px);
+
+
+        min-height:
+            72px;
+
+
+        gap:
+            var(--space-2);
+
+    }
+
+
+    .logo {
+
+        height:
+            52px;
+
+
+        max-width:
+            205px;
+
+    }
+
+
+    .offer {
+
+        height:
+            54px;
+
+
+        max-width:
+            150px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 370px) {
+
+    .inner {
+
+        gap:
+            var(--space-1);
+
+    }
+
+
+    .logo {
+
+        height:
+            43px;
+
+
+        max-width:
+            160px;
+
+    }
+
+
+    .offer {
+
+        height:
+            44px;
+
+
+        max-width:
+            120px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 850px) {
+
+    .inner {
+
+        min-height:
+            108px;
+
+    }
+
+
+    .logo {
+
+        height:
+            68px;
+
+    }
+
+
+    .offer {
+
+        height:
+            70px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .offer {
+
+        animation:
+            none;
+
+    }
+
+}
